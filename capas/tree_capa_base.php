@@ -10,10 +10,10 @@
                 <li id="google_road" data-jstree='{"icon": "images/cb/cb1.png"}'>Google Road</li>
                 <li id="google_traffic" data-jstree='{"icon": "images/cb/cb1.png"}'>Google Traffic</li>
                 <li id="google_satellite" data-jstree='{"icon": "images/cb/cb1.png"}'>Google Satellite</li>
-                
+<!--
                 <li id="bing_map" data-jstree='{"icon": "images/cb/cb1.png"}'>Bing Map</li>
                 <li id="bing_satellite" data-jstree='{"icon": "images/cb/cb1.png"}'>Bing Satellite</li>
-                
+-->
             </ul>
         </li>
     </ul>

@@ -1,4 +1,4 @@
-var map,hash,measureControl;
+let map,hash,measureControl;
 var overlay_GooglecnSatellite, overlay_GoogleRoad, overlay_GoogleTraffic;
 var overlay_BingMap, overlay_BingSatellite;
 var overlay_OSMStandard;
@@ -94,6 +94,12 @@ $(document).ready(function() {
     .on('changed.jstree', function(e, data) {
 
         nodoSeleccionado = data.instance.get_node(data.selected[data.selected.length-1]).id;
+
+        if (nodoSeleccionado === nodo_base_anterior) {
+            arbolCapaBase.jstree('deselect_all');
+            $(this).jstree('select_node', data.instance.get_node(nodo_base_anterior));
+            return false;
+        }
 
         switch (data.action) {
             case 'ready':

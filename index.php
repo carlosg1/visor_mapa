@@ -53,12 +53,12 @@
             <div id="contenedorArboles">
                 <div id="arbolCapaBase">
                      <!-- incluyo capas base --> 
-                     <?php include("capas/capa_base.php"); ?>
+                     <?php include("capas/tree_capa_base.php"); ?>
                 </div>
 
 				<div id="arbolMCC">
                     <!-- arbol de capa publico -->
-                    <?php include("capas/publico.php"); ?>
+                    <?php include("tree_capas/publico.php"); ?>
 
 				</div>
 			</div>
