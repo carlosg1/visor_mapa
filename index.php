@@ -35,6 +35,7 @@
         <script src="js/mostrar-infowindow.js"></script>
 
         <script src="js/appmcc.js"></script>
+        <script src="capas/publico.js"></script>
        
         <title>Visor de mapa Municipalidad de Corrientes</title>
 
@@ -58,7 +59,7 @@
 
 				<div id="arbolMCC">
                     <!-- arbol de capa publico -->
-                    <?php include("tree_capas/publico.php"); ?>
+                    <?php include("capas/tree_publico.php"); ?>
 
 				</div>
 			</div>

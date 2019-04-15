@@ -1,12 +1,10 @@
 let map,hash,measureControl;
-var overlay_GooglecnSatellite, overlay_GoogleRoad, overlay_GoogleTraffic;
-var overlay_BingMap, overlay_BingSatellite;
-var overlay_OSMStandard;
-var overlay_CapabaseGIS, WMS50;
-var lyr_man_pluv;
-var lyr_man_sumidero;
-var lyr_red_agua_potable;
+let overlay_GooglecnSatellite, overlay_GoogleRoad, overlay_GoogleTraffic;
+let overlay_BingMap, overlay_BingSatellite;
+let overlay_OSMStandard;
+let overlay_CapabaseGIS, wmsMcc;
 let arbolCapaBase = arbolMCC = nodo_base_anterior = nodoSeleccionado = undefined;
+let nodo_pub_selec, nodo_pub_anterior = undefined;
 
 $(document).ready(function() {
 
@@ -18,7 +16,7 @@ $(document).ready(function() {
         drawControl: true,
         //center: [-27.49,-58.82],
         zoomControl: true, 
-        maxZoom: 25,
+        maxZoom: 18,
         minZoom: 1
     }).fitBounds([[-27.5535444089,-58.9200306504],[-27.4048480239,-58.6404398294]]);
 
@@ -69,7 +67,7 @@ $(document).ready(function() {
         identify: false,
     });
 
-    WMS50 = new wms_GIS("http://190.7.30.142:8000/geoserver/wms?", {
+    wmsMcc = new wms_GIS("http://190.7.30.142:8000/geoserver/wms?", {
         format: 'image/png',
         uppercase: true,
         transparent: true,
@@ -80,10 +78,6 @@ $(document).ready(function() {
         info_format: 'application/json',
         opacity: 1
     });
-
-    var lyr_man_pluv = WMS50.getLayer("plan_hidrico:vw_mantenimiento_pluviales");
-    var lyr_man_sumidero = WMS50.getLayer("plan_hidrico:vw_mantenimiento_sumideros");
-    var lyr_red_agua_potable = WMS50.getLayer("infra:Red de Agua de Potable");
 
     L.control.scale().addTo(map);
 
@@ -169,6 +163,32 @@ $(document).ready(function() {
 
     arbolMCC = $('#arbolMCC').jstree({
         'plugins': ["wholerow", "checkbox"]
+    }).on('changed.jstree', function(e, data) {
+        nodo_pub_selec = data.instance.get_node(data.selected[data.selected.length-1]).id;
+
+        switch (data.action) {
+            case 'select_node':
+                switch (data.node.id) {
+                    case 'rehabilitacionDesaguesPluviales':
+                        map.addLayer(lyr_man_pluv);
+                    break;
+                    case 'rehabilitacionSumideros':
+                        map.addLayer(lyr_man_sumidero);
+                    break;
+                }
+            break;
+
+            case 'deselect_node':
+                switch (data.node.id) {
+                    case 'rehabilitacionDesaguesPluviales':
+                    lyr_man_pluv.remove();
+                    break;
+                    case 'rehabilitacionSumideros':
+                    lyr_man_sumidero.remove();
+                    break;
+                }
+            break
+        }
     });
 });
 
