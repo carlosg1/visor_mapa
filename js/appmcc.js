@@ -1,5 +1,6 @@
 var map,hash,measureControl;
 var overlay_GooglecnSatellite, overlay_GoogleRoad, overlay_GoogleTraffic;
+var overlay_BingMap, overlay_BingSatellite;
 var overlay_OSMStandard;
 var overlay_CapabaseGIS, WMS50;
 var lyr_man_pluv;
@@ -8,6 +9,10 @@ var lyr_red_agua_potable;
 let arbolCapaBase = arbolMCC = nodo_base_anterior = nodoSeleccionado = undefined;
 
 $(document).ready(function() {
+
+    // diseño de la barra lateral de arbol
+    //$('#lateral').height($(window).innerHeight() - 130);
+    $('#map').height('100%');
 
     map = L.map('map', {
         drawControl: true,
@@ -23,6 +28,7 @@ $(document).ready(function() {
     map.attributionControl.getContainer().innerHTML='Mapa publico - '+'<a href="http://gis.ciudaddecorrientes.gov.ar" target="_blank">Direccion Gral de SIG</a>';
 
     measureControl = new L.Control.Measure({
+        lang: 'es',
         primaryLengthUnit: 'meters',
         secondaryLengthUnit: 'kilometers',
         primaryAreaUnit: 'sqmeters',
@@ -43,7 +49,12 @@ $(document).ready(function() {
         opacity: 1.0
     });
 
+// no funciona el enlace wms de bing
     overlay_OSMStandard = L.tileLayer('http://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        opacity: 1.0
+    });
+
+    overlay_BingMap = L.tileLayer('http://ecn.dynamic.t0.tiles.virtualearth.net/comp/CompositionHandler/?mkt=en-us&it=G,VE,BX,L,LA&shading=hill', {
         opacity: 1.0
     });
 
@@ -109,6 +120,9 @@ $(document).ready(function() {
                     case 'google_traffic':
                         map.addLayer(overlay_GoogleTraffic);
                         break; 
+/*                    case 'bing_map':
+                        map.addLayer(overlay_BingMap);
+                        break;  */
                 }
 
                 // deselecciona el nodo anterior
@@ -133,6 +147,9 @@ $(document).ready(function() {
                     case 'google_traffic':
                         overlay_GoogleTraffic.remove();
                         break; 
+/*                    case 'bing_map':
+                        overlay_BingMap.remove();
+                        break; */
                 }
 
                 nodo_base_anterior = nodoSeleccionado;

@@ -50,15 +50,15 @@
             </div>
             
 			<!-- contenedor para el arbol -->
-            <div style="font-family: Roboto; font-size: 10pt; overflow: auto; height: 95%;">
-                <div id="arbolCapaBase" style="font-family: Arial;">
+            <div id="contenedorArboles">
+                <div id="arbolCapaBase">
                      <!-- incluyo capas base --> 
                      <?php include("capas/capa_base.php"); ?>
                 </div>
 
 				<div id="arbolMCC">
                     <!-- arbol de capa publico -->
-                    <?php //include("capas/publico.php"); ?>
+                    <?php include("capas/publico.php"); ?>
 
 				</div>
 			</div>
