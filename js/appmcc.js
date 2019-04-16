@@ -40,7 +40,7 @@ $(document).ready(function() {
     });
 
     measureControl.addTo(map);
-    
+
     L.control.scale({maxWidth:150}).addTo(map);
 
     overlay_GooglecnSatellite = L.tileLayer('http://www.google.cn/maps/vt?lyrs=s@189&gl=cn&x={x}&y={y}&z={z}', {
