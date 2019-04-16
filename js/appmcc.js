@@ -8,6 +8,12 @@ let nodo_pub_selec, nodo_pub_anterior = undefined;
 
 $(document).ready(function() {
 
+    // incompatibilidad con navegadores
+    if (L.Browser.ielt9) {
+        alert('Esta aplicacion no es compatible con su Navegador, debera actualizarlo para continuar...');
+        return false;
+      }
+
     // diseño de la barra lateral de arbol
     //$('#lateral').height($(window).innerHeight() - 130);
     $('#map').height('100%');
@@ -34,6 +40,8 @@ $(document).ready(function() {
     });
 
     measureControl.addTo(map);
+    
+    L.control.scale({maxWidth:150}).addTo(map);
 
     overlay_GooglecnSatellite = L.tileLayer('http://www.google.cn/maps/vt?lyrs=s@189&gl=cn&x={x}&y={y}&z={z}', {
         opacity: 1.0
@@ -78,8 +86,6 @@ $(document).ready(function() {
         info_format: 'application/json',
         opacity: 1
     });
-
-    L.control.scale().addTo(map);
 
     // armo el tree
     arbolCapaBase = $('#arbolCapaBase').jstree({
