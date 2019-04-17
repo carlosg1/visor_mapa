@@ -199,25 +199,3 @@ $(document).ready(function() {
 });
 
 
-/*
-var servicioWMS = new wms_GIS("http://172.25.8.80:8080/geoserver/wms?", {
-    format: 'image/png',
-    uppercase: true,
-    transparent: true,
-    version: '1.3.0',
-    continuousWorld : true,
-    tiled: true,
-    attribution: "Direccion Gral de GIS",
-    info_format: 'application/json',
-    opacity: 1
-});
-*/
-
-/*
-var osmGeocoder = new L.Control.OSMGeocoder({
-    collapsed: false,
-    position: 'topleft',
-    text: 'Search',
-});
-*/
-
