@@ -2,7 +2,7 @@ let map,hash,measureControl;
 let overlay_GooglecnSatellite, overlay_GoogleRoad, overlay_GoogleTraffic;
 let overlay_BingMap, overlay_BingSatellite;
 let overlay_OSMStandard;
-let overlay_CapabaseGIS, wmsMcc;
+let capaBaseGis, wmsMcc;
 let arbolCapaBase = arbolMCC = nodo_base_anterior = nodoSeleccionado = undefined;
 let nodo_pub_selec, nodo_pub_anterior = undefined;
 
@@ -20,11 +20,12 @@ $(document).ready(function() {
 
     map = L.map('map', {
         drawControl: true,
-        //center: [-27.49,-58.82],
-        zoomControl: true, 
+        center: [-27.4823,-58.8319],
         maxZoom: 18,
-        minZoom: 1
-    }).fitBounds([[-27.5535444089,-58.9200306504],[-27.4048480239,-58.6404398294]]);
+        minZoom: 1,
+        zoom: 14,
+        zoomControl: true
+    }, 15); //.fitBounds([[-27.5535444089,-58.9200306504],[-27.4048480239,-58.6404398294]]);
 
     hash = new L.Hash(map);
 
@@ -64,15 +65,16 @@ $(document).ready(function() {
         opacity: 1.0
     });
 
-    overlay_CapabaseGIS = L.WMS.layer("http://190.7.30.142:8000/geoserver/wms?version=1.1.1&", "Capa_Base", {
-        format: 'image/png',
-        uppercase: true,
-        transparent: true,
+    capaBaseGis = L.WMS.layer("http://190.7.30.142:8000/geoserver/wms?", "Capa_Base", {
         continuousWorld : true,
-        tiled: true,
+        //crs: L.CRS.EPSG4326,
+        format: 'image/png',
         info_format: 'text/html',
         opacity: 1,
-        identify: false,
+        tiled: true,
+        transparent: true,
+        version: '1.1.1',
+        uppercase: true
     });
 
     wmsMcc = new wms_GIS("http://190.7.30.142:8000/geoserver/wms?", {
@@ -103,7 +105,7 @@ $(document).ready(function() {
 
         switch (data.action) {
             case 'ready':
-               map.addLayer(overlay_CapabaseGIS);
+               map.addLayer(capaBaseGis);
                 nodo_base_anterior = data.selected[0];
                 return  true;
                 break;
@@ -112,7 +114,7 @@ $(document).ready(function() {
                 // prendo el nodo seleccionado
                 switch (nodoSeleccionado) {
                     case 'cbMcc':
-                        map.addLayer(overlay_CapabaseGIS);
+                        map.addLayer(capaBaseGis);
                         break;
                     case 'OpenstreetMap':
                         map.addLayer(overlay_OSMStandard);
@@ -139,7 +141,7 @@ $(document).ready(function() {
             case 'deselect_node':
                 switch (nodo_base_anterior) {
                     case 'cbMcc':
-                        overlay_CapabaseGIS.remove();
+                        capaBaseGis.remove();
                         break;
                     case 'OpenstreetMap':
                         overlay_OSMStandard.remove();
