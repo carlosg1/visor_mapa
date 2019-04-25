@@ -14,7 +14,7 @@
     
         <link rel="stylesheet" href="css/estilo.css"> 
     
-        <script src="js/qgis2web_expressions.js"></script>
+        <!-- <script src="js/qgis2web_expressions.js"></script> -->
         <script src="js/leaflet.js"></script>
         <script src="js/leaflet.rotatedMarker.js"></script>
         <script src="js/leaflet.pattern.js"></script>
