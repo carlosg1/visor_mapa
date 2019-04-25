@@ -8,7 +8,7 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
 
         <link rel="stylesheet" href="css/leaflet.css">
-        <link rel="stylesheet" href="css/qgis2web.css">
+        <!-- <link rel="stylesheet" href="css/qgis2web.css"> --> 
         <link rel="stylesheet" href="css/Control.OSMGeocoder.css">
         <link rel="stylesheet" href="css/leaflet-measure.css">
     
