@@ -42,9 +42,17 @@ var wms_GIS = L.WMS.Source.extend({
             datos1 += '<br />';
         }
 
-        datos1 += '<div style="border-top: 1px solid #7f7f7f; padding-top: 7px; margin-top: 7px; font-family: Roboto; font-size: 11px; color: #7f7f7f">Fuente: Dir. Redes Viales</div>';
+        if (datos1 != undefined) {
 
-        this._map.openPopup(datos1, latlng);
+          datos1 += '<div style="border-top: 1px solid #7f7f7f; padding-top: 7px; margin-top: 7px; font-family: Roboto; font-size: 11px; color: #7f7f7f">Fuente: Dir. Redes Viales</div>';
+
+          this._map.openPopup(datos1, latlng);
+
+        } else {
+
+          alert('Atributos desactivaos para la capa ' + queLayer[0]);
+
+        }
     } /* ,
   
     'ajax': function(url, callback) {

@@ -59,7 +59,7 @@ html, body, #map { width: 100%; height: 100%; padding: 0; margin: 0; }
 
 /* saca los checkbox */
 #planHidrico_anchor > i.jstree-checkbox { display:none; }
-#redesInfraestructura_anchor i.jstree-checkbox { display:none; }
+#infraestructura_anchor i.jstree-checkbox { display:none; }
 #obrasMunicipales_anchor > i.jstree-checkbox { display:none; }
 #planeamientoUrbano_anchor > i.jstree-checkbox { display:none; }
 #infoMunicipal_anchor > i.jstree-checkbox { display:none; }
@@ -69,7 +69,8 @@ html, body, #map { width: 100%; height: 100%; padding: 0; margin: 0; }
 #Transporte_anchor > i.jstree-checkbox { display:none; }
 #redVial_anchor > i.jstree-checkbox { display:none; }
 #infoCatastral_anchor > i.jstree-checkbox { display:none; }
-#l1_anchor > i.jstree-checkbox, #l2_anchor > i.jstree-checkbox { display:none; }
+#desagueLimpio_anchor > i.jstree-checkbox, #desaguePendiente_anchor > i.jstree-checkbox { display:none; }
+#sumideroLimpio_anchor > i.jstree-checkbox, #sumideroPendiente_anchor > i.jstree-checkbox { display:none; }
 
 
 /* #arbolCapasMcc_anchor i.jstree-children .jstree-node { padding-left: 1px; } */
@@ -84,3 +85,6 @@ html, body, #map { width: 100%; height: 100%; padding: 0; margin: 0; }
 #contenedorArboles { overflow: auto; height: 97%; width: 99%; }
 
 .leaflet-control-container .leaflet-control { margin-left: 340px!important; }
+
+/* redefino el estilo de jstree */
+.jstree-wholerow-clicked, .jstree-wholerow-hovered, .jstree-hovered { background: #eeeeee!important; }

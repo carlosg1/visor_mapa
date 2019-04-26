@@ -177,21 +177,33 @@ $(document).ready(function() {
                 switch (data.node.id) {
                     case 'rehabilitacionDesaguesPluviales':
                         map.addLayer(lyr_man_pluv);
-                    break;
+                        break;
                     case 'rehabilitacionSumideros':
                         map.addLayer(lyr_man_sumidero);
-                    break;
+                        break;
+                    case 'redAguaPotable':
+                        map.addLayer(lyr_red_agua_potable);
+                        break;
+                    case 'vw_desagues_pluviales':
+                        map.addLayer(vw_desagues_pluviales);
+                        break;
                 }
             break;
 
             case 'deselect_node':
                 switch (data.node.id) {
                     case 'rehabilitacionDesaguesPluviales':
-                    lyr_man_pluv.remove();
-                    break;
+                        lyr_man_pluv.remove();
+                        break;
                     case 'rehabilitacionSumideros':
-                    lyr_man_sumidero.remove();
-                    break;
+                        lyr_man_sumidero.remove();
+                        break;
+                    case 'redAguaPotable':
+                        lyr_red_agua_potable.remove();
+                        break;
+                    case 'vw_desagues_pluviales':
+                        vw_desagues_pluviales.remove();
+                        break;
                 }
             break
         }

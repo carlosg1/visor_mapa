@@ -12,26 +12,33 @@
 <!-- VISOR PUBLICO --> 
 
 <ul>
-    <li id="arbolCapasMcc" data-jstree='{"opened": true, "icon": false}'><b>Informacion Geogr&aacute;fica</b>
+    <li id="arbolCapasMcc" data-jstree='{"opened": true, "icon": false}'>
+        <b>Informacion Geogr&aacute;fica</b>
         <ul>
             <li id="planHidrico" data-jstree='{"icon": false}'>Plan h&iacute;drico
                 <ul>
-                    <li id="rehabilitacionDesaguesPluviales" data-jstree='{"icon": "images/icon/lazul.png"}'>Rehabilitacion de desagues pluviales
+                    <li id="rehabilitacionDesaguesPluviales" data-jstree='{"icon":"images/polilinea_gral_1.png"}'>
+                        Rehabilitacion de desagues pluviales
                         <ul>
-                            <li id="l1" data-jstree='{"icon": "images/icon/lazul.png"}'>Limpio</li>
-                            <li id="l2" data-jstree='{"icon": "images/icon/lrojo.png"}'>Pendiente</li>
+                            <li id="desagueLimpio" data-jstree='{"icon": "images/icon/lazul.png"}'>Limpio</li>
+                            <li id="desaguePendiente" data-jstree='{"icon": "images/icon/lrojo.png"}'>Pendiente</li>
                         </ul>
                     </li>
-                    <li id="rehabilitacionSumideros">Rehabilitacion de Sumideros</li>
+                    <li id="rehabilitacionSumideros" data-jstree='{"icon": "images/puntos_gral.png"}'>
+                        Rehabilitaci&oacute;n de Sumideros
+                        <ul>
+                            <li id="sumideroLimpio" data-jstree='{"icon": "images/icon/sumidero_limpio.png"}'>Limpio</li>
+                            <li id="sumideroPendiente" data-jstree='{"icon": "images/icon/sumidero_pendiente.png"}'>Pendiente</li>
+                        </ul>
+                    </li>
                 </ul>
             </li>
-
         </ul>
         <ul>
-            <li id="redesInfraestructura" data-jstree='{"icon": false}'>Redes de infraestructura
+            <li id="infraestructura" data-jstree='{"icon": false}'>Infraestructura
                 <ul>
-                    <li>Red de agua potable</li>
-                    <li>Red de desague pluvial</li>
+                    <li id="redAguaPotable" data-jstree='{"icon": "images/icon/red_agua_potable.png"}'>Red de agua potable</li>
+                    <li id="vw_desagues_pluviales" data-jstree='{"icon": "images/icon/desague_pluvial.png"}'>Red de desague pluvial</li>
                     <li>Red de desague cloacal</li>
                     <li>Alumbrado p&uacute;blico</li>
                     <li>Bocas de registro</li>
