@@ -8,13 +8,11 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
 
         <link rel="stylesheet" href="css/leaflet.css">
-        <!-- <link rel="stylesheet" href="css/qgis2web.css"> --> 
         <link rel="stylesheet" href="css/Control.OSMGeocoder.css">
         <link rel="stylesheet" href="css/leaflet-measure.css">
     
         <link rel="stylesheet" href="css/estilo.css"> 
     
-        <!-- <script src="js/qgis2web_expressions.js"></script> -->
         <script src="js/leaflet.js"></script>
         <script src="js/leaflet.rotatedMarker.js"></script>
         <script src="js/leaflet.pattern.js"></script>
