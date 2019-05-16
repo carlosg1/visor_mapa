@@ -19,12 +19,16 @@ $(document).ready(function() {
     $('#map').height('100%');
 
     map = L.map('map', {
-        drawControl: true,
-        //center: [-27.49,-58.82],
-        zoomControl: true, 
-        maxZoom: 18,
-        minZoom: 1
-    }).fitBounds([[-27.5535444089,-58.9200306504],[-27.4048480239,-58.6404398294]]);
+        zoomControl:true,
+        inertia: true,
+        maxZoom:17,
+        minZoom:1,
+        crs: L.CRS.EPSG900913,
+        center: [-27.48483,-58.81393],
+        zoom: 18
+    });
+
+    map.fitBounds([[-27.45664518742547, -58.763208389282234],[-27.504312737195168, -58.87899398803712]]);
 
     hash = new L.Hash(map);
 
