@@ -1,4 +1,4 @@
-let map,hash,measureControl;
+let hash,measureControl;
 let overlay_GooglecnSatellite, overlay_GoogleRoad, overlay_GoogleTraffic;
 let overlay_BingMap, overlay_BingSatellite;
 let overlay_OSMStandard;
@@ -13,39 +13,6 @@ $(document).ready(function() {
         alert('Esta aplicacion no es compatible con su Navegador, debera actualizarlo para continuar...');
         return false;
       }
-
-    // diseño de la barra lateral de arbol
-    //$('#lateral').height($(window).innerHeight() - 130);
-    $('#map').height('100%');
-
-    map = L.map('map', {
-        zoomControl:true,
-        inertia: true,
-        maxZoom:17,
-        minZoom:1,
-        crs: L.CRS.EPSG900913,
-        center: [-27.48483,-58.81393],
-        zoom: 18
-    });
-
-    map.fitBounds([[-27.45664518742547, -58.763208389282234],[-27.504312737195168, -58.87899398803712]]);
-
-    hash = new L.Hash(map);
-
-    map.attributionControl.addAttribution(false);
-    map.attributionControl.getContainer().innerHTML='Mapa publico - '+'<a href="http://gis.ciudaddecorrientes.gov.ar" target="_blank">Direccion Gral de SIG</a>';
-
-    measureControl = new L.Control.Measure({
-        lang: 'es',
-        primaryLengthUnit: 'meters',
-        secondaryLengthUnit: 'kilometers',
-        primaryAreaUnit: 'sqmeters',
-        secondaryAreaUnit: 'hectares'
-    });
-
-    measureControl.addTo(map);
-
-    L.control.scale({maxWidth:150}).addTo(map);
 
     overlay_GooglecnSatellite = L.tileLayer('http://www.google.cn/maps/vt?lyrs=s@189&gl=cn&x={x}&y={y}&z={z}', {
         opacity: 1.0
@@ -91,7 +58,7 @@ $(document).ready(function() {
         opacity: 1
     });
 
-    // armo el tree
+    // armo el tree de capas base
     arbolCapaBase = $('#arbolCapaBase').jstree({
         'plugins': ["checkbox", "wholerow"]
     })
@@ -130,9 +97,6 @@ $(document).ready(function() {
                     case 'google_traffic':
                         map.addLayer(overlay_GoogleTraffic);
                         break; 
-/*                    case 'bing_map':
-                        map.addLayer(overlay_BingMap);
-                        break;  */
                 }
 
                 // deselecciona el nodo anterior
@@ -144,33 +108,31 @@ $(document).ready(function() {
                 switch (nodo_base_anterior) {
                     case 'cbMcc':
                         overlay_CapabaseGIS.remove();
-                        break;
+                    break;
                     case 'OpenstreetMap':
                         overlay_OSMStandard.remove();
-                        break;
+                    break;
                     case 'google_satellite':
                         overlay_GooglecnSatellite.remove();
-                        break;
+                    break;
                     case 'google_road':
                         overlay_GoogleRoad.remove();
-                        break;
+                    break;
                     case 'google_traffic':
                         overlay_GoogleTraffic.remove();
-                        break; 
-/*                    case 'bing_map':
-                        overlay_BingMap.remove();
-                        break; */
+                    break; 
                 }
 
                 nodo_base_anterior = nodoSeleccionado;
 
-                break;
+            break;
         }
 
         return true;
 
     });
 
+    // el tree de capas mcc
     arbolMCC = $('#arbolMCC').jstree({
         'plugins': ["wholerow", "checkbox"]
     }).on('changed.jstree', function(e, data) {

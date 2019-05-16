@@ -30,8 +30,10 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
 
-        <script src="js/mostrar-infowindow.js"></script>
 
+        <script src="mapa/mapa.js"></script>
+        <script src="js/mostrar-infowindow.js"></script>
+        
         <script src="js/appmcc.js"></script>
         <script src="capas/publico.js"></script>
        

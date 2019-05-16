@@ -19,7 +19,7 @@ var wms_GIS = L.WMS.Source.extend({
         if (queLayer[0] === "vw_ide_calle_por_tipo_calzada") { return false; };
 
         if (queLayer[0] === "vw_zona_mantenimiento_calle") { return false; };
-        
+
         /* si hace click en la capa de calles por tipo de calzada, no muestra el infowindow */
         if (datos.features[0].properties['FNA_BARIOS'] !== undefined) { return false; };
 
@@ -28,7 +28,7 @@ var wms_GIS = L.WMS.Source.extend({
             datos1 += '<B>Ultima Fecha Reconstruccion:</B> ' + datos.features[0].properties['ultima_fecha_reconstruccion'].substring(0,10) + '<br>';
             datos1 += '<B>Nro de Intervenciones:</B> ' + datos.features[0].properties['nro_intervenciones'] + '<br>';
         }
-  
+
         if(datos.features[0].properties['ultima_fecha_perfilado'] != undefined){
             var datos1 = '<div style="width:300px; color: #5cc7f9;"><h5>PERFILADO DE CALLE</h5></div>';
             datos1 += '<B>Ultima Fecha Perfilado:</B> ' + datos.features[0].properties['ultima_fecha_perfilado'].substring(0,10) + '<br>';
