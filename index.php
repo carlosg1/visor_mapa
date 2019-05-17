@@ -66,6 +66,11 @@
 		</div>
 
         <div id="map"></div>
-        
+
+        <!-- dialogos -->
+        <div id="dialogo1">
+            <p id="dlgTitulo"></p>
+            <div id="dlgCuerpo"></div>
+        </div>
     </body>
 </html>

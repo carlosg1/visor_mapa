@@ -32,10 +32,37 @@ $(document).ready(function() {
     vw_centros_de_pago  = wmsMcc.getLayer("info_municipal:vw_centros_de_pago");
     vw_dependencias_municipales  = wmsMcc.getLayer("info_municipal:vw_dependencias_municipales");
     
-    
+    // Estadistica y Censo
+    vw_poblacion  = wmsMcc.getLayer("estadistica_y_censo:vw_poblacion");
+    vw_densidad_de_poblacion  = wmsMcc.getLayer("estadistica_y_censo:vw_densidad_de_poblacion");
 
+    // Desarrollo Social Comunitario
+    vw_cic  = wmsMcc.getLayer("desarrollo_comunitario:vw_cic");
+    vw_delegaciones_municipales  = wmsMcc.getLayer("desarrollo_comunitario:vw_delegaciones_municipales");
+    vw_sum  = wmsMcc.getLayer("desarrollo_comunitario:vw_sum");
+    vw_zonas_municipales  = wmsMcc.getLayer("desarrollo_comunitario:vw_zonas_municipales");
 
+    // Salud
+    vw_caps  = wmsMcc.getLayer("salud:vw_caps");
+    vw_saps_municipales  = wmsMcc.getLayer("salud:vw_saps_municipales");
+    vw_centros_de_salud  = wmsMcc.getLayer("salud:vw_centros_de_salud");
+    vw_farmacias  = wmsMcc.getLayer("salud:vw_farmacias");
+    vw_hospitales  = wmsMcc.getLayer("salud:vw_hospitales");
+    vw_areas_programaticas_saps  = wmsMcc.getLayer("salud:vw_areas_programaticas_saps");
 
+    // Transporte
 
+    // Red vial
+    vw_ide_calle  = wmsMcc.getLayer("w_red_vial:vw_ide_calle");
+    vw_ide_calle_por_tipo_calzada  = wmsMcc.getLayer("w_red_vial:vw_ide_calle_por_tipo_calzada");
+
+    // Informacion catastral
+    vw_asentamiento_renabap  = wmsMcc.getLayer("infoCatastral:vw_asentamiento_renabap");
+    vw_cordones  = wmsMcc.getLayer("infoCatastral:vw_cordones");
+    vw_grupo_viviendas_invico  = wmsMcc.getLayer("infoCatastral:vw_asentamiento_renabap");
+    vw_parcelas  = wmsMcc.getLayer("infoCatastral:vw_parcelas");
+    vw_ph_parcelas  = wmsMcc.getLayer("infoCatastral:vw_ph_parcelas");
+    vw_barrios  = wmsMcc.getLayer("infoCatastral:vw_barrios");
+    vw_manzanas  = wmsMcc.getLayer("infoCatastral:vw_manzanas");
 
 });

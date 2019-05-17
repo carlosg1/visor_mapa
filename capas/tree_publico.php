@@ -60,32 +60,32 @@
             </li>
             <li id="infoMunicipal" data-jstree='{"icon": false}'>Informacion Municipal
                 <ul>
-                    <li>Centros de pago</li>
-                    <li>Dependencias Municipales</li>
+                    <li id="vw_centros_de_pago">Centros de pago</li>
+                    <li id="vw_dependencias_municipales">Dependencias Municipales</li>
                 </ul>
             </li>
             <li id="estadisticaCenso" data-jstree='{"icon": false}'>Estadistica y Censo
                 <ul>
-                    <li>Poblaci&oacute;n</li>
-                    <li>Densidad de poblaci&oacute;n</li>
+                    <li id="vw_poblacion">Poblaci&oacute;n</li>
+                    <li id="vw_densidad_de_poblacion">Densidad de poblaci&oacute;n</li>
                 </ul>
             </li>
             <li id="desasocialComunit" data-jstree='{"icon": false}'>Desarrollo social Comunitario
                 <ul>
-                    <li>Centros de integracion comunitario</li>
-                    <li>Delegaciones Municipales</li>
-                    <li>Sal&oacute;n de usos m&uacute;ltiples</li>
-                    <li>Zonas Municipales</li>
+                    <li id="vw_cic">Centros de integracion comunitario</li>
+                    <li id="vw_delegaciones_municipales">Delegaciones Municipales</li>
+                    <li id="vw_sum">Sal&oacute;n de usos m&uacute;ltiples</li>
+                    <li id="vw_zonas_municipales">Zonas Municipales</li>
                 </ul>
             </li>
             <li id="salud" data-jstree='{"icon": false}'>Salud
                 <ul>
-                    <li>C.A.P.S.</li>
-                    <li>S.A.P.S.</li>
-                    <li>Centros de salud</li>
-                    <li>Farmacias</li>
-                    <li>Hospitales</li>
-                    <li>Areas programaticas de salud</li>
+                    <li id="vw_caps">C.A.P.S.</li>
+                    <li id="vw_saps_municipales">S.A.P.S.</li>
+                    <li id="vw_centros_de_salud">Centros de salud</li>
+                    <li id="vw_farmacias">Farmacias</li>
+                    <li id="vw_hospitales">Hospitales</li>
+                    <li id="vw_areas_programaticas_saps">Areas programaticas de salud</li>
                 </ul>
             </li>
             <li id="Transporte" data-jstree='{"opened": false, "icon": false}'>Transporte
@@ -133,22 +133,23 @@
             </li>
             <li id="redVial" data-jstree='{"icon": false}'>Red vial
                 <ul>
-                    <li>Calles</li>
-                    <li>Calles por tipo de calzada</li>
+                    <li id="vw_ide_calle">Calles</li>
+                    <li id="vw_ide_calle_por_tipo_calzada">Calles por tipo de calzada</li>
                 </ul>
             </li>
             <li id="infoCatastral" data-jstree='{"icon": false}'>Informacion catastral
                 <ul>
-                    <li>Asentamientos informales (Re.Na.Ba.P.)</li>
-                    <li>Cordones</li>
-                    <li>Grupos de vivienda In.Vi.Co</li>
-                    <li>Parcelario Catastral</li>
-                    <li>Parcelas PH</li>
-                    <li>Barrios</li>
-                    <li>Manzanas</li>
+                    <li id="vw_asentamiento_renabap">Asentamientos informales (Re.Na.Ba.P.)</li>
+                    <li id="vw_cordones">Cordones</li>
+                    <li id="vw_grupo_viviendas_invico">Grupos de vivienda In.Vi.Co</li>
+                    <li id="vw_barrios">Barrios</li>
+                    <li id="vw_ph_parcelas">Parcelas PH</li>
+                    <li id="vw_parcelas">Parcelario Catastral</li>
+                    <li id="vw_manzanas">Manzanas</li>
                 </ul>
             </li>
 
         </ul>
     </li>
 </ul>
+

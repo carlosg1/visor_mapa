@@ -65,7 +65,8 @@ $(document).ready(function() {
     .on('changed.jstree', function(e, data) {
 
         nodoSeleccionado = data.instance.get_node(data.selected[data.selected.length-1]).id;
-
+console.log(this);
+console.log(data.instance.get_node(nodo_base_anterior));
         if (nodoSeleccionado === nodo_base_anterior) {
             arbolCapaBase.jstree('deselect_all');
             $(this).jstree('select_node', data.instance.get_node(nodo_base_anterior));
@@ -143,6 +144,10 @@ $(document).ready(function() {
             // prende las capas 
             case 'select_node':
                 switch (data.node.id) {
+                    case 'infoCatastral':
+                        // deseleccionar los nodos hijos
+                        break;
+
                     case 'rehabilitacionDesaguesPluviales':
                         map.addLayer(lyr_man_pluv);
                         break;
@@ -181,6 +186,81 @@ $(document).ready(function() {
                         break;
                     case 'vw_edificios_historicos':
                         map.addLayer(vw_edificios_historicos);
+                        break;
+                    case 'vw_centros_de_pago':
+                        map.addLayer(vw_centros_de_pago);
+                        break;
+                    case 'vw_dependencias_municipales':
+                        map.addLayer(vw_dependencias_municipales);
+                        break;
+                    case 'vw_poblacion':
+                        map.addLayer(vw_poblacion);
+                        break;
+                    case 'vw_densidad_de_poblacion':
+                        map.addLayer(vw_densidad_de_poblacion);
+                        break;
+
+                    // Desarrollo Social Comunitario
+                    case 'vw_cic':
+                        map.addLayer(vw_cic);
+                        break;
+                    case 'vw_delegaciones_municipales':
+                        map.addLayer(vw_delegaciones_municipales);
+                        break;
+                    case 'vw_sum':
+                        map.addLayer(vw_sum);
+                        break;
+                    case 'vw_zonas_municipales':
+                        map.addLayer(vw_zonas_municipales);
+                        break;
+
+                    // Salud
+                    case 'vw_caps':
+                        map.addLayer(vw_caps);
+                        break;
+                    case 'vw_saps_municipales':
+                        map.addLayer(vw_saps_municipales);
+                        break;
+                    case 'vw_centros_de_salud':
+                        map.addLayer(vw_centros_de_salud);
+                        break;
+                    case 'vw_farmacias':
+                        map.addLayer(vw_farmacias);
+                        break;
+                    case 'vw_hospitales':
+                        map.addLayer(vw_hospitales);
+                        break;
+                    case 'vw_areas_programaticas_saps':
+                        map.addLayer(vw_areas_programaticas_saps);
+                        break;
+                    case 'vw_ide_calle':
+                        map.addLayer(vw_ide_calle);
+                        break;
+                    case 'vw_ide_calle_por_tipo_calzada':
+                        map.addLayer(vw_ide_calle_por_tipo_calzada);
+                        break;
+
+                    // Informacion catastral
+                    case 'vw_asentamiento_renabap':
+                        map.addLayer(vw_asentamiento_renabap);
+                        break;
+                    case 'vw_cordones':
+                        map.addLayer(vw_cordones);
+                        break;
+                    case 'vw_grupo_viviendas_invico':
+                        map.addLayer(vw_grupo_viviendas_invico);
+                        break;
+                    case 'vw_parcelas':
+                        map.addLayer(vw_parcelas);
+                        break;
+                    case 'vw_ph_parcelas':
+                        map.addLayer(vw_ph_parcelas);
+                        break;
+                    case 'vw_barrios':
+                        map.addLayer(vw_barrios);
+                        break;
+                    case 'vw_manzanas':
+                        map.addLayer(vw_manzanas);
                         break;
                 }
             break;
@@ -228,10 +308,98 @@ $(document).ready(function() {
                     case 'vw_edificios_historicos':
                         vw_edificios_historicos.remove();
                         break;
+                    case 'vw_centros_de_pago':
+                        vw_centros_de_pago.remove();
+                        break;
+                    case 'vw_dependencias_municipales':
+                        vw_dependencias_municipales.remove();
+                        break;
+                    case 'vw_poblacion':
+                    vw_poblacion.remove();
+                        break;
+                    case 'vw_densidad_de_poblacion':
+                    vw_densidad_de_poblacion.remove();
+                        break;
+
+                    // Desarrollo Social Comunitario
+                    case 'vw_cic':
+                    vw_cic.remove();
+                        break;
+                    case 'vw_delegaciones_municipales':
+                    vw_delegaciones_municipales.remove();
+                        break;
+                    case 'vw_sum':
+                    vw_sum.remove();
+                        break;
+                    case 'vw_zonas_municipales':
+                    vw_zonas_municipales.remove();
+                        break;
+
+                    // Salud
+                    case 'vw_caps':
+                    vw_caps.remove();
+                        break;
+                    case 'vw_saps_municipales':
+                    vw_saps_municipales.remove();
+                        break;
+                    case 'vw_centros_de_salud':
+                    vw_centros_de_salud.remove();
+                        break;
+                    case 'vw_farmacias':
+                        vw_farmacias.remove();
+                        break;
+                    case 'vw_hospitales':
+                    vw_hospitales.remove();
+                        break;
+                    case 'vw_areas_programaticas_saps':
+                    vw_areas_programaticas_saps.remove();
+                        break;
+                    case 'vw_ide_calle':
+                    vw_ide_calle.remove();
+                        break;
+                    case 'vw_ide_calle_por_tipo_calzada':
+                    vw_ide_calle_por_tipo_calzada.remove();
+                        break;
+
+                    // Informacion catastral
+                    case 'vw_asentamiento_renabap':
+                        vw_asentamiento_renabap.remove();
+                        break;
+                    case 'vw_cordones':
+                        vw_cordones.remove();
+                        break;
+                    case 'vw_grupo_viviendas_invico':
+                        vw_grupo_viviendas_invico.remove();
+                        break;
+                    case 'vw_parcelas':
+                        vw_parcelas.remove();
+                        break;
+                    case 'vw_ph_parcelas':
+                        vw_ph_parcelas.remove();
+                        break;
+                    case 'vw_barrios':
+                        vw_barrios.remove();
+                        break;
+                    case 'vw_manzanas':
+                        vw_manzanas.remove();
+                        break;
                 }
             break
         }
     });
+
+    // registro eventos
+
+    document.getElementById("infoCatastral").addEventListener('mouseover', function (ev){
+        document.getElementById("dlgTitulo").innerHTML = ev.srcElement.id.split('_')[0];
+
+        document.getElementById("dlgCuerpo").innerHTML = "Cuerpo del mensaje";
+
+        document.getElementById("dialogo1").style.visibility = 'visible';
+
+        console.log('id del elemento: ', ev.srcElement.id.split('_')[0]);
+    }, false);
+
 });
 
 
