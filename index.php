@@ -10,9 +10,9 @@
         <link rel="stylesheet" href="css/leaflet.css">
         <link rel="stylesheet" href="css/Control.OSMGeocoder.css">
         <link rel="stylesheet" href="css/leaflet-measure.css">
-    
+
         <link rel="stylesheet" href="css/estilo.css"> 
-    
+
         <script src="js/leaflet.js"></script>
         <script src="js/leaflet.rotatedMarker.js"></script>
         <script src="js/leaflet.pattern.js"></script>
@@ -33,7 +33,7 @@
 
         <script src="mapa/mapa.js"></script>
         <script src="js/mostrar-infowindow.js"></script>
-        
+
         <script src="js/appmcc.js"></script>
         <script src="capas/publico.js"></script>
        

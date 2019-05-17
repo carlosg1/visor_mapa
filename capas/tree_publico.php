@@ -39,23 +39,23 @@
                 <ul>
                     <li id="redAguaPotable" data-jstree='{"icon": "images/icon/red_agua_potable.png"}'>Red de agua potable</li>
                     <li id="vw_desagues_pluviales" data-jstree='{"icon": "images/icon/desague_pluvial.png"}'>Red de desague pluvial</li>
-                    <li>Red de desague cloacal</li>
-                    <li>Alumbrado p&uacute;blico</li>
-                    <li>Bocas de registro</li>
-                    <li>Centros de distribucion DPEC</li>                    
+                    <li id="red_desague_cloacal">Red de desague cloacal</li>
+                    <li id="vw_alumbrado_publico">Alumbrado p&uacute;blico</li>
+                    <li id="vw_bocas_de_registro">Bocas de registro</li>
+                    <li id="vw_centros_distribuidores_dpec">Centros de distribucion DPEC</li>                    
                 </ul>
             </li>
             <li id="obrasMunicipales" data-jstree='{"icon": false}'>Obras Municipales
                 <ul>
-                    <li>Obra Santa Catalina</li>
+                    <li id="vw_obras_santa_catalina_viviendas">Obra Santa Catalina</li>
                 </ul>
             </li>
             <li id="planeamientoUrbano" data-jstree='{"icon": false}'>Planeamiento urbano
                 <ul>
-                    <li>Distritos C&oacute;digo Planeamiento Urbano</li>
-                    <li>Ejido urbano</li>
-                    <li>Medianas de la ciudad</li>
-                    <li>Edificios del casco historico</li>
+                    <li id="vw_distritos_planeamiento_urbano">Distritos C&oacute;digo Planeamiento Urbano</li>
+                    <li id="vw_ejido_urbano">Ejido urbano</li>
+                    <li id="vw_medianas">Medianas de la ciudad</li>
+                    <li id="vw_edificios_historicos">Edificios del casco historico</li>
                 </ul>
             </li>
             <li id="infoMunicipal" data-jstree='{"icon": false}'>Informacion Municipal

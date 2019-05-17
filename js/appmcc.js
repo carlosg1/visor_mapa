@@ -139,6 +139,8 @@ $(document).ready(function() {
         nodo_pub_selec = data.instance.get_node(data.selected[data.selected.length-1]).id;
 
         switch (data.action) {
+
+            // prende las capas 
             case 'select_node':
                 switch (data.node.id) {
                     case 'rehabilitacionDesaguesPluviales':
@@ -153,9 +155,38 @@ $(document).ready(function() {
                     case 'vw_desagues_pluviales':
                         map.addLayer(vw_desagues_pluviales);
                         break;
+                    case 'red_desague_cloacal':
+                        map.addLayer(vw_red_desague_cloaca);
+                        break;
+                    case 'vw_alumbrado_publico':
+                        map.addLayer(vw_alumbrado_publico);
+                        break;
+                    case 'vw_bocas_de_registro':
+                        map.addLayer(vw_bocas_de_registro);
+                        break;
+                    case 'vw_centros_distribuidores_dpec':
+                        map.addLayer(vw_centros_distribuidores_dpec);
+                        break;
+                    case 'vw_obras_santa_catalina_viviendas':
+                        map.addLayer(vw_obras_santa_catalina_viviendas);
+                        break;
+                    case 'vw_distritos_planeamiento_urbano':
+                        map.addLayer(vw_distritos_planeamiento_urbano);
+                        break;
+                    case 'vw_ejido_urbano':
+                        map.addLayer(vw_ejido_urbano);
+                        break;
+                    case 'vw_medianas':
+                        map.addLayer(vw_medianas);
+                        break;
+                    case 'vw_edificios_historicos':
+                        map.addLayer(vw_edificios_historicos);
+                        break;
                 }
             break;
 
+
+            // apaga las capas
             case 'deselect_node':
                 switch (data.node.id) {
                     case 'rehabilitacionDesaguesPluviales':
@@ -169,6 +200,33 @@ $(document).ready(function() {
                         break;
                     case 'vw_desagues_pluviales':
                         vw_desagues_pluviales.remove();
+                    break;
+                    case 'red_desague_cloacal':
+                        vw_red_desague_cloaca.remove();
+                    break;
+                    case 'vw_alumbrado_publico':
+                        vw_alumbrado_publico.remove();
+                    break;
+                    case 'vw_bocas_de_registro':
+                        vw_bocas_de_registro.remove();
+                    break;
+                    case 'vw_centros_distribuidores_dpec':
+                        vw_centros_distribuidores_dpec.remove();
+                        break;
+                    case 'vw_obras_santa_catalina_viviendas':
+                        vw_obras_santa_catalina_viviendas.remove();
+                        break;
+                    case 'vw_distritos_planeamiento_urbano':
+                        vw_distritos_planeamiento_urbano.remove();
+                        break;
+                    case 'vw_ejido_urbano':
+                        vw_ejido_urbano.remove();
+                        break;
+                    case 'vw_medianas':
+                        vw_medianas.remove();
+                        break;
+                    case 'vw_edificios_historicos':
+                        vw_edificios_historicos.remove();
                         break;
                 }
             break
