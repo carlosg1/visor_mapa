@@ -395,10 +395,12 @@ console.log(data.instance.get_node(nodo_base_anterior));
 
         document.getElementById("dlgCuerpo").innerHTML = "Cuerpo del mensaje";
 
-        document.getElementById("dialogo1").style.visibility = 'visible';
+        //document.getElementById("dialogo1").style.visibility = 'visible';
 
         console.log('id del elemento: ', ev.srcElement.id.split('_')[0]);
     }, false);
+
+
 
 });
 
