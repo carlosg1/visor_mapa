@@ -88,12 +88,12 @@
                     <li id="vw_areas_programaticas_saps">Areas programaticas de salud</li>
                 </ul>
             </li>
-            <li id="Transporte" data-jstree='{"opened": false, "icon": false}'>Transporte
+            <li id="Transporte" data-jstree='{"opened": true, "icon": false}'>Transporte
                 <ul>
-                    <li>Puntos de recarga SUBE</li>
-                    <li>Recorrido Total de Colectivos</li>
-                    <li>Estacionamientos privados</li>
-                    <li>Paradas de colectivo Urbano</li>
+                    <li id="vw_puntos_de_recarga_sube">Puntos de recarga SUBE</li>
+                    <li id="vw_recorrido_total_colectivos_corrientes">Recorrido Total de Colectivos</li>
+                    <li id="vw_estacionamiento_privado">Estacionamientos privados</li>
+                    <li id="vw_paradas_colectivos">Paradas de colectivo Urbano</li>
                     <li id="b1" data-jstree='{"opened": false}'>Recorrido por ramal
                         <ul>
                             <li>Linea 101 B</li>
@@ -123,12 +123,12 @@
                             <li>Linea 106 C Yechoha</li>
                         </ul>
                     </li>
-                    <li>Paradas Chaco - Corrientes - Barranqueras</li>
-                    <li>Recorrido Chaco - Corrientes - Barranqueras</li>
-                    <li>Paradas Chaco - Corrientes - Campus</li>
-                    <li>Recorrido Chaco - Corrientes - Campus</li>
-                    <li>Paradas Chaco - Corrientes - Sarmiento</li>
-                    <li>Recorrido Chaco - Corrientes - Sarmiento</li>
+                    <li id="vw_paradas_barranqueras">Paradas Chaco - Corrientes - Barranqueras</li>
+                    <li id="vw_recorrido_barranqueras">Recorrido Chaco - Corrientes - Barranqueras</li>
+                    <li id="vw_paradas_campus">Paradas Chaco - Corrientes - Campus</li>
+                    <li id="vw_recorrido_campus">Recorrido Chaco - Corrientes - Campus</li>
+                    <li id="vw_paradas_sarmiento">Paradas Chaco - Corrientes - Sarmiento</li>
+                    <li id="vw_recorrido_sarmiento">Recorrido Chaco - Corrientes - Sarmiento</li>
                 </ul>
             </li>
             <li id="redVial" data-jstree='{"icon": false}'>Red vial

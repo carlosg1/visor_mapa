@@ -50,7 +50,33 @@ $(document).ready(function() {
     vw_hospitales  = wmsMcc.getLayer("salud:vw_hospitales");
     vw_areas_programaticas_saps  = wmsMcc.getLayer("salud:vw_areas_programaticas_saps");
 
-    // Transporte
+    /*
+     * Transporte
+     */
+
+    vw_puntos_de_recarga_sube = wmsMcc.getLayer("transporte:vw_puntos_de_recarga_sube");
+    //
+    vw_recorrido_total_colectivos_corrientes = wmsMcc.getLayer("transporte:vw_recorrido_total_colectivos_corrientes");
+    //
+    vw_estacionamiento_privado = wmsMcc.getLayer("transporte:vw_estacionamiento_privado");
+    // paradas de colectivos urbanos
+    vw_paradas_colectivos = wmsMcc.getLayer("transporte:vw_paradas_colectivos");
+    // paradas chaco / corrientes / barranqueras
+    vw_paradas_barranqueras = wmsMcc.getLayer("transporte:vw_paradas_barranqueras");
+    // recorrido chacho / corrientes / barranqueras
+    vw_recorrido_barranqueras = wmsMcc.getLayer("transporte:vw_recorrido_barranqueras");
+    // paradas chacho / corrientes / campus
+    vw_paradas_campus = wmsMcc.getLayer("transporte:vw_paradas_campus");
+    // recorrido chacho / corrientes / campus
+    vw_recorrido_campus = wmsMcc.getLayer("transporte:vw_recorrido_campus");
+    // paradas chacho / corrientes / sarmiento
+    vw_paradas_sarmiento = wmsMcc.getLayer("transporte:vw_paradas_sarmiento");
+    // recorrido chacho / corrientes / sarmiento
+    vw_recorrido_sarmiento = wmsMcc.getLayer("transporte:vw_recorrido_sarmiento");
+
+    /*
+     * Transporte -> Recorrido por ramal 
+     */
 
     // Red vial
     vw_ide_calle  = wmsMcc.getLayer("w_red_vial:vw_ide_calle");

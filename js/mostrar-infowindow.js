@@ -277,7 +277,7 @@ var wms_GIS = L.WMS.Source.extend({
         }
 
         // Areas programaticas salud
-        if(queLayer[0] == "vw_areas_programaticas_saps"){
+        if(queLayer[0] == "vw_areas_program&aacute;ticas_saps"){
           datos1 = '<div><h2>Areas programaticas Salud</h2></div>';
           datos1 += '<span class="prompt1">Zona:</span> ' + datos.features[0].properties['zona'];
           datos1 += '<BR /><BR />';
@@ -340,7 +340,9 @@ var wms_GIS = L.WMS.Source.extend({
 
         } else {
 
-          alert('Atributos desactivados para la capa ' + queLayer[0]);
+          console.log('mostrar-infowindow.js - ', 'falta infowindow() para la capa: ', queLayer[0])
+
+          // alert('Atributos desactivados para la capa ' + queLayer[0]);
 
         }
     } /* ,

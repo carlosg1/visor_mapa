@@ -233,6 +233,46 @@ console.log(data.instance.get_node(nodo_base_anterior));
                     case 'vw_areas_programaticas_saps':
                         map.addLayer(vw_areas_programaticas_saps);
                         break;
+
+                    /*
+                     * Transporte
+                     */
+
+                    case 'vw_puntos_de_recarga_sube':
+                        map.addLayer(vw_puntos_de_recarga_sube);
+                        break;
+                    case 'vw_recorrido_total_colectivos_corrientes':
+                        map.addLayer(vw_recorrido_total_colectivos_corrientes);
+                        break;
+                    case 'vw_estacionamiento_privado':
+                        map.addLayer(vw_estacionamiento_privado);
+                        break;
+                    case 'vw_paradas_colectivos':
+                        map.addLayer(vw_paradas_colectivos);
+                        break;
+                    case 'vw_paradas_barranqueras':
+                        map.addLayer(vw_paradas_barranqueras);
+                        break;
+                    case 'vw_recorrido_barranqueras':
+                        map.addLayer(vw_recorrido_barranqueras);
+                        break;
+                    case 'vw_paradas_campus':
+                        map.addLayer(vw_paradas_campus);
+                        break;
+                    case 'vw_recorrido_campus':
+                        map.addLayer(vw_recorrido_campus);
+                        break;
+                    case 'vw_paradas_sarmiento':
+                        map.addLayer(vw_paradas_sarmiento);
+                        break;
+                    case 'vw_recorrido_sarmiento':
+                        map.addLayer(vw_recorrido_sarmiento);
+                        break;
+
+                    /*
+                     * Red vial
+                     */
+
                     case 'vw_ide_calle':
                         map.addLayer(vw_ide_calle);
                         break;
@@ -349,11 +389,51 @@ console.log(data.instance.get_node(nodo_base_anterior));
                         vw_farmacias.remove();
                         break;
                     case 'vw_hospitales':
-                    vw_hospitales.remove();
+                        vw_hospitales.remove();
                         break;
                     case 'vw_areas_programaticas_saps':
-                    vw_areas_programaticas_saps.remove();
+                        vw_areas_programaticas_saps.remove();
                         break;
+
+                    /*
+                     * Transporte
+                     */
+
+                    case 'vw_puntos_de_recarga_sube':
+                        vw_puntos_de_recarga_sube.remove();
+                        break;
+                    case 'vw_recorrido_total_colectivos_corrientes':
+                        vw_recorrido_total_colectivos_corrientes.remove();
+                        break;
+                    case 'vw_estacionamiento_privado':
+                        vw_estacionamiento_privado.remove();
+                        break;
+                    case 'vw_paradas_colectivos':
+                        vw_paradas_colectivos.remove();
+                        break;
+                    case 'vw_paradas_barranqueras':
+                        vw_paradas_barranqueras.remove();
+                        break;
+                    case 'vw_recorrido_barranqueras':
+                        vw_recorrido_barranqueras.remove();
+                        break;
+                    case 'vw_paradas_campus':
+                        vw_paradas_campus.remove();
+                        break;
+                    case 'vw_recorrido_campus':
+                        vw_recorrido_campus.remove();
+                        break;
+                    case 'vw_paradas_sarmiento':
+                        vw_paradas_sarmiento.remove();
+                        break;
+                    case 'vw_recorrido_sarmiento':
+                        vw_recorrido_sarmiento.remove();
+                        break;
+                    
+                    /*
+                     * Red vial
+                     */
+
                     case 'vw_ide_calle':
                     vw_ide_calle.remove();
                         break;
