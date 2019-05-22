@@ -93,7 +93,7 @@ var wms_GIS = L.WMS.Source.extend({
 
         // Distritos codigo planeamiento urbano
         if(queLayer[0] == "vw_distritos_planeamiento_urbano"){
-          datos1 = '<div><h2>Distritos del C&oacute;digo de Planeamiento Urbano<br />D.P.E.C.</h2></div>';
+          datos1 = '<div><h2>Distritos del C&oacute;digo de Planeamiento Urbano</h2></div>';
           datos1 += '<b>Distrito:</b> ' + datos.features[0].properties['distrito'];
           datos1 += '<BR />' + '<b>F.O.S.:</b> ' + datos.features[0].properties['fos'];
           datos1 += '<BR />' + '<b>F.O.T.:</b> ' + datos.features[0].properties['fot'];
@@ -281,6 +281,24 @@ var wms_GIS = L.WMS.Source.extend({
           datos1 = '<div><h2>Areas programaticas Salud</h2></div>';
           datos1 += '<span class="prompt1">Zona:</span> ' + datos.features[0].properties['zona'];
           datos1 += '<BR /><BR />';
+        }
+
+        /*
+         * Transporte
+         */
+
+        // falta cargar puntos recarga sube
+        if(queLayer[0] == "vw_puntos_de_recarga_sube"){
+          datos1 = '<div><h2>Puntos de recarga SUBE</h2></div>';
+          datos1 += '<b>Terminal:</b> ' + datos.features[0].properties['descripcion'];
+          datos1 += '<BR />' + '<b>Direcci&oacute;n:</b> ' + datos.features[0].properties['direccion'];
+        }
+
+        // recorrido total colectivos
+        if(queLayer[0].substring(0,9) == 'recorrido'){
+          datos1 = '<div><h2>Recorrido ' + datos.features[0].properties['linea_ramal'] + '</h2></div>';
+          datos1 += '<b>Nombre:</b> ' + datos.features[0].properties['recorrido'];
+          datos1 += '<BR />' + '<b>Sentido:</b> ' + datos.features[0].properties['tipo_recorrido'];
         }
     
         /*
