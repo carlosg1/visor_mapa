@@ -65,8 +65,8 @@ $(document).ready(function() {
     .on('changed.jstree', function(e, data) {
 
         nodoSeleccionado = data.instance.get_node(data.selected[data.selected.length-1]).id;
-console.log(this);
-console.log(data.instance.get_node(nodo_base_anterior));
+// console.log(this);
+// console.log(data.instance.get_node(nodo_base_anterior));
         if (nodoSeleccionado === nodo_base_anterior) {
             arbolCapaBase.jstree('deselect_all');
             $(this).jstree('select_node', data.instance.get_node(nodo_base_anterior));

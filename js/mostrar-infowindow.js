@@ -348,8 +348,6 @@ var wms_GIS = L.WMS.Source.extend({
           datos1 += '<b>Nro. Manzana</b>: ' + datos.features[0].properties['nombre_barrio'];
         }
 
-
-
         if (datos1 != undefined) {
 
           datos1 += '<div style="border-top: 1px solid #7f7f7f; padding-top: 7px; margin-top: 7px; font-family: Roboto; font-size: 11px; color: #7f7f7f">DIR. GRAL. DE S.I.G.</div>';
