@@ -13,7 +13,7 @@ $url = '';
 
 foreach($_GET as $clave => $valor){
   $t = strpos($valor, '?') ? '' : '&';
-  $url .= $clave == 'url' ? $valor : $clave . '=' . $valor . $t;
+  $url .= ($clave == 'url') ? $valor : $clave . '=' . $valor . $t;
 }
 
 // elimina el ultimo & (ampersand) de la cadena
