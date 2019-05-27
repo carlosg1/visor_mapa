@@ -27,12 +27,17 @@ curl_setopt($curl, CURLOPT_URL, $url);
 
 curl_setopt($curl, CURLOPT_HEADER, 0);
 
-curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, true);
+
 //curl_setopt($curl, CURLOPT_MUTE, 1);
-curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
-curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/xml'));
+
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+
 curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
-curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
+
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
 $return_data = curl_exec($curl);
 
@@ -40,13 +45,22 @@ $http_status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
 
 curl_close($curl);
 
-$content=$return_data;
+if($http_status != 200) {
+  error_log('CDG - ' . date() . ' - ' . $http_status);
+
+  echo '{"error":"true"}';
+
+  exit;
+}
 
 if ($http_status=="401")
 {
-  $content="error:401";
+  $content="{error:401}";
 }
 
+$content = utf8_encode($return_data);
+
+// $content = json_encode($content);
 
 echo $content;
 
