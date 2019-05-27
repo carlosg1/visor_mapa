@@ -21,7 +21,11 @@ $url = trim($url, '&');
 
 // lee los datos utilizando la libreria curl y
 // devuelve los datos en formato JSON
-$curl=curl_init($url);
+$curl = curl_init();
+
+curl_setopt($curl, CURLOPT_URL, $url);
+
+curl_setopt($curl, CURLOPT_HEADER, 0);
 
 curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 //curl_setopt($curl, CURLOPT_MUTE, 1);
@@ -46,5 +50,4 @@ if ($http_status=="401")
 
 echo $content;
 
-
- ?>
+?>
