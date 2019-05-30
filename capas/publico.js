@@ -14,7 +14,7 @@ $(document).ready(function() {
     // Infraestructura 
     lyr_red_agua_potable = wmsMcc51.getLayer("infraestructura:red_agua_potable");
     vw_desagues_pluviales = wmsMcc51.getLayer("infraestructura:vw_desagues_pluviales");
-    vw_red_desague_cloaca = wmsMcc.getLayer("infra:Red de Desagüe Cloacal");
+    vw_red_desague_cloaca = wmsMcc51.getLayer("infraestructura:vw_red_de_cloaca");
     vw_alumbrado_publico = wmsMcc.getLayer("infra:vw_alumbrado_publico");
     vw_bocas_de_registro = wmsMcc.getLayer("infra:vw_bocas_de_registro");
     vw_centros_distribuidores_dpec = wmsMcc.getLayer("infra:vw_centros_distribuidores_dpec");

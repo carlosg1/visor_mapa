@@ -60,6 +60,15 @@ var wms_GIS = L.WMS.Source.extend({
           datos1 += '<BR />' + '<b>Material:</b> ' + datos.features[0].properties['material'];
         }
 
+        // red desague cloacal
+        
+        if(queLayer[0] == "vw_red_de_cloaca"){
+          datos1 = '<div><h2>Red de desague cloacal</h2></div>';
+          datos1 += '<b>Tipo:</b> ' + datos.features[0].properties['tipo'];
+          datos1 += '<BR />' + '<b>Diametro:</b> ' + datos.features[0].properties['diametro'];
+          datos1 += '<BR />' + '<b>Material:</b> ' + datos.features[0].properties['material'];
+        }
+
         // alumbrado publico
         if(queLayer[0] == "vw_alumbrado_publico"){
           datos1 = '<div><h2>Alumbrado p&uacute;blico</h2></div>';
