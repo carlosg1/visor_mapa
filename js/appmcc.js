@@ -58,6 +58,19 @@ $(document).ready(function() {
         opacity: 1
     });
 
+    // localhost en 192.168.10.51
+    wmsMcc51 = new wms_GIS("http://gis.ciudaddecorrientes.gov.ar:8282/geoserver/wms?", {
+        format: 'image/png',
+        uppercase: true,
+        transparent: true,
+        version: '1.1.1',
+        continuousWorld : true,
+        tiled: true,
+        attribution: "Direccion Gral de GIS",
+        info_format: 'application/json',
+        opacity: 1
+    });
+
     // armo el tree de capas base
     arbolCapaBase = $('#arbolCapaBase').jstree({
         'plugins': ["checkbox", "wholerow"]

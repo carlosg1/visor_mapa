@@ -12,7 +12,7 @@ $(document).ready(function() {
     lyr_man_sumidero = wmsMcc.getLayer("plan_hidrico:vw_mantenimiento_sumideros");
 
     // Infraestructura 
-    lyr_red_agua_potable = wmsMcc.getLayer("infra:Red de Agua de Potable");
+    lyr_red_agua_potable = wmsMcc51.getLayer("infraestructura:red_agua_potable");
     vw_desagues_pluviales = wmsMcc.getLayer("infra:vw_desagues_pluviales");
     vw_red_desague_cloaca = wmsMcc.getLayer("infra:Red de Desagüe Cloacal");
     vw_alumbrado_publico = wmsMcc.getLayer("infra:vw_alumbrado_publico");
