@@ -38,7 +38,18 @@ var wms_GIS = L.WMS.Source.extend({
           if (datos.features[0].properties['fecha_mantenim'] != null) datos1 += datos.features[0].properties['fecha_mantenim'].substring(0,10);
         }
 
-        // infraestructura 
+        // infraestructura //
+        // red agua potable
+        if(queLayer[0] == "red_agua_potable"){
+          datos1 = '<div><h2>Red de agua potable</h2></div>';
+          datos1 += '<b>Nro. Tramo:</b> ' + datos.features[0].properties['num_tramo'];
+          datos1 += '<BR />' + '<b>Tipo:</b> ' + datos.features[0].properties['tipo '];
+          datos1 += '<BR />' + '<b>Material:</b> ' + datos.features[0].properties['material'];
+          datos1 += '<BR />' + '<b>Diametro:</b> ' + datos.features[0].properties['diametro'];
+          datos1 += '<BR />' + '<b>Sentido:</b> ' + datos.features[0].properties['sentido'];
+        }
+
+        // red desague pluvial
         if(queLayer[0] == "vw_desagues_pluviales"){
           datos1 = '<div><h2>Red de desague pluvial</h2></div>';
           datos1 += '<b>Tipo desague:</b> ' + datos.features[0].properties['tipo_desague'];
@@ -49,6 +60,7 @@ var wms_GIS = L.WMS.Source.extend({
           datos1 += '<BR />' + '<b>Material:</b> ' + datos.features[0].properties['material'];
         }
 
+        // alumbrado publico
         if(queLayer[0] == "vw_alumbrado_publico"){
           datos1 = '<div><h2>Alumbrado p&uacute;blico</h2></div>';
           datos1 += '<b>Nro. piquete:</b> ' + datos.features[0].properties['nro_piq'];
