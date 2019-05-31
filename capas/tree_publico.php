@@ -34,6 +34,9 @@
                 </ul>
             </li>
         </ul>
+
+        <!-- Infraestructura -->
+
         <ul>
             <li id="infraestructura" data-jstree='{"icon": false}'>Infraestructura
                 <ul>
@@ -41,8 +44,8 @@
                     <li id="vw_desagues_pluviales" data-jstree='{"icon": "images/icon/desague_pluvial.png"}'>Red de desague pluvial</li>
                     <li id="red_desague_cloacal">Red de desague cloacal</li>
                     <li id="vw_alumbrado_publico">Alumbrado p&uacute;blico</li>
-                    <li id="vw_bocas_de_registro">Bocas de registro</li>
-                    <li id="vw_centros_distribuidores_dpec">Centros de distribucion DPEC</li>                    
+                    <li id="vw_bocas_de_registro" data-jstree='{"icon": "images/icon/bocas-de-registro.png"}'>Bocas de registro</li>
+                    <li id="vw_centros_distribuidores_dpec" data-jstree='{"icon": "images/icon/distribuidores_dpec.png"}'>Centros de distribucion DPEC</li>                    
                 </ul>
             </li>
             <li id="obrasMunicipales" data-jstree='{"icon": false}'>Obras Municipales

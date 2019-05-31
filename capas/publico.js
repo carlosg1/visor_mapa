@@ -15,9 +15,9 @@ $(document).ready(function() {
     lyr_red_agua_potable = wmsMcc51.getLayer("infraestructura:red_agua_potable");
     vw_desagues_pluviales = wmsMcc51.getLayer("infraestructura:vw_desagues_pluviales");
     vw_red_desague_cloaca = wmsMcc51.getLayer("infraestructura:vw_red_de_cloaca");
-    vw_alumbrado_publico = wmsMcc.getLayer("infra:vw_alumbrado_publico");
-    vw_bocas_de_registro = wmsMcc.getLayer("infra:vw_bocas_de_registro");
-    vw_centros_distribuidores_dpec = wmsMcc.getLayer("infra:vw_centros_distribuidores_dpec");
+    vw_alumbrado_publico = wmsMcc51.getLayer("infraestructura:vw_alumbrado_publico");
+    vw_bocas_de_registro = wmsMcc51.getLayer("infraestructura:vw_bocas_de_registro");
+    vw_centros_distribuidores_dpec = wmsMcc51.getLayer("infraestructura:vw_centros_distribuidores_dpec");
 
     // obras municipales
     vw_obras_santa_catalina_viviendas = wmsMcc.getLayer("obras_municipales:vw_obras_santa_catalina_viviendas");
@@ -31,7 +31,7 @@ $(document).ready(function() {
     // Informacion Municipal
     vw_centros_de_pago  = wmsMcc.getLayer("info_municipal:vw_centros_de_pago");
     vw_dependencias_municipales  = wmsMcc.getLayer("info_municipal:vw_dependencias_municipales");
-    
+
     // Estadistica y Censo
     vw_poblacion  = wmsMcc.getLayer("estadistica_y_censo:vw_poblacion");
     vw_densidad_de_poblacion  = wmsMcc.getLayer("estadistica_y_censo:vw_densidad_de_poblacion");
