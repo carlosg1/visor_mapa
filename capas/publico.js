@@ -8,8 +8,8 @@ let lyr_man_pluv, lyr_man_sumidero, lyr_red_agua_potable;
 $(document).ready(function() {
 
     // Plan hidrico
-    lyr_man_pluv = wmsMcc.getLayer("plan_hidrico:vw_mantenimiento_pluviales");
-    lyr_man_sumidero = wmsMcc.getLayer("plan_hidrico:vw_mantenimiento_sumideros");
+    lyr_man_pluv = wmsMcc51.getLayer("plan_hidrico:vw_mantenimiento_pluviales"); // Rehabilitacion de desagues pluviales
+    lyr_man_sumidero = wmsMcc51.getLayer("plan_hidrico:vw_mantenimiento_sumideros"); // Rehabilitacion de sumideros
 
     // Infraestructura 
     lyr_red_agua_potable = wmsMcc51.getLayer("infraestructura:red_agua_potable");
