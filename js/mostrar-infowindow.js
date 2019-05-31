@@ -98,7 +98,7 @@ var wms_GIS = L.WMS.Source.extend({
         // obra santa catalina
         if(queLayer[0] == "vw_obras_santa_catalina_viviendas"){
           datos1 = '<div style="width:558px;"><h2>Obras de vivienda Santa Catalina</h2></div>';
-          datos1 += '<div style="width:558px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/OpP-ZZ71zpg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
+          datos1 += '<div style="width:558px;"><img width="560" height="315" src="images/fotos/casas-santa-catalina.png" border="2" /></div>';
 
           datos1 += '<div style="border-top: 1px solid #7f7f7f; padding-top: 7px; margin-top: 7px; font-family: Roboto; font-size: 11px; color: #7f7f7f">DIR. GRAL. DE S.I.G.</div>';
 
