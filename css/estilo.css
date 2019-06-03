@@ -2,6 +2,18 @@ html, body, #map { width: 100%; height: 100%; padding: 0; margin: 0; }
 #map { cursor: default; }
 #map { z-index: 900; }
 
+.topBanner {
+	display: inline;
+	width: auto;
+	height: auto;
+}
+
+div.topBanner span img {
+	width: 19.31rem;
+	left: 0;
+	top: 0;
+}
+
 #barra {
 	background: #27822d; /* Old browsers */
 	background: -moz-linear-gradient(top, #27822d 2%, #22661e 70%, #1f5120 97%, #2f7c2e 100%); /* FF3.6-15 */

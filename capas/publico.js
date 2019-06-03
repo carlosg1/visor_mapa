@@ -23,10 +23,10 @@ $(document).ready(function() {
     vw_obras_santa_catalina_viviendas = wmsMcc51.getLayer("santa_catalina:vw_obras_santa_catalina_viviendas");
 
     // planeamiento urbano
-    vw_distritos_planeamiento_urbano = wmsMcc.getLayer("planeamiento_urbano:vw_distritos_planeamiento_urbano");
-    vw_ejido_urbano = wmsMcc.getLayer("planeamiento_urbano:vw_ejido_urbano");
-    vw_medianas = wmsMcc.getLayer("planeamiento_urbano:vw_medianas");
-    vw_edificios_historicos = wmsMcc.getLayer("planeamiento_urbano:vw_edificios_historicos");
+    vw_distritos_planeamiento_urbano = wmsMcc51.getLayer("planeamiento_urbano:vw_distritos_planeamiento_urbano");
+    vw_ejido_urbano = wmsMcc51.getLayer("planeamiento_urbano:vw_ejido_urbano_rural");
+    vw_medianas = wmsMcc51.getLayer("planeamiento_urbano:vw_medianas");
+    vw_edificios_historicos = wmsMcc51.getLayer("planeamiento_urbano:vw_edificios_historicos");
 
     // Informacion Municipal
     vw_centros_de_pago  = wmsMcc.getLayer("info_municipal:vw_centros_de_pago");

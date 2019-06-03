@@ -42,6 +42,8 @@
 
     </head>
     <body>
+
+        
         <!-- ARBOL DE CAPAS -->
         <div id="lateral">
 			<div>
@@ -50,6 +52,12 @@
                 </div>
                 <div style="clear:both;"></div>
             </div>
+
+            <div class="topBanner">
+            <span>
+                <img src="images/topBanner.jpg" alt="Municipalidad de Corrientes">
+            </span>
+        </div>
             
 			<!-- contenedor para el arbol -->
             <div id="contenedorArboles">

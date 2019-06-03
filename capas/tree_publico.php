@@ -91,7 +91,7 @@
                     <li id="vw_areas_programaticas_saps">Areas programaticas de salud</li>
                 </ul>
             </li>
-            <li id="Transporte" data-jstree='{"opened": true, "icon": false}'>Transporte
+            <li id="Transporte" data-jstree='{"opened": false, "icon": false}'>Transporte
                 <ul>
                     <li id="vw_puntos_de_recarga_sube">Puntos de recarga SUBE</li>
                     <li id="vw_recorrido_total_colectivos_corrientes">Recorrido Total de Colectivos</li>
