@@ -33,8 +33,8 @@ $(document).ready(function() {
     vw_dependencias_municipales  = wmsMcc51.getLayer("informacion_municipal:vw_dependencias_municipales");
 
     // Estadistica y Censo
-    vw_poblacion  = wmsMcc.getLayer("estadistica_y_censo:vw_poblacion");
-    vw_densidad_de_poblacion  = wmsMcc.getLayer("estadistica_y_censo:vw_densidad_de_poblacion");
+    vw_poblacion  = wmsMcc51.getLayer("estadistica_y_censo:vw_poblacion");
+    vw_densidad_de_poblacion  = wmsMcc51.getLayer("estadistica_y_censo:vw_densidad_de_poblacion");
 
     // Desarrollo Social Comunitario
     vw_cic  = wmsMcc.getLayer("desarrollo_comunitario:vw_cic");
