@@ -29,8 +29,8 @@ $(document).ready(function() {
     vw_edificios_historicos = wmsMcc51.getLayer("planeamiento_urbano:vw_edificios_historicos");
 
     // Informacion Municipal
-    vw_centros_de_pago  = wmsMcc.getLayer("info_municipal:vw_centros_de_pago");
-    vw_dependencias_municipales  = wmsMcc.getLayer("info_municipal:vw_dependencias_municipales");
+    vw_centros_de_pago  = wmsMcc51.getLayer("informacion_municipal:vw_centros_de_pago");
+    vw_dependencias_municipales  = wmsMcc51.getLayer("informacion_municipal:vw_dependencias_municipales");
 
     // Estadistica y Censo
     vw_poblacion  = wmsMcc.getLayer("estadistica_y_censo:vw_poblacion");
