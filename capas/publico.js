@@ -37,10 +37,10 @@ $(document).ready(function() {
     vw_densidad_de_poblacion  = wmsMcc51.getLayer("estadistica_y_censo:vw_densidad_de_poblacion");
 
     // Desarrollo Social Comunitario
-    vw_cic  = wmsMcc.getLayer("desarrollo_comunitario:vw_cic");
-    vw_delegaciones_municipales  = wmsMcc.getLayer("desarrollo_comunitario:vw_delegaciones_municipales");
-    vw_sum  = wmsMcc.getLayer("desarrollo_comunitario:vw_sum");
-    vw_zonas_municipales  = wmsMcc.getLayer("desarrollo_comunitario:vw_zonas_municipales");
+    vw_cic  = wmsMcc51.getLayer("desarrollo_comunitario:vw_cic");
+    vw_delegaciones_municipales  = wmsMcc51.getLayer("desarrollo_comunitario:vw_delegaciones_municipales");
+    vw_sum  = wmsMcc51.getLayer("desarrollo_comunitario:vw_sum");
+    vw_zonas_municipales  = wmsMcc51.getLayer("desarrollo_comunitario:vw_zonas_municipales");
 
     // Salud
     vw_caps  = wmsMcc.getLayer("salud:vw_caps");
