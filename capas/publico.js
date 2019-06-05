@@ -79,8 +79,8 @@ $(document).ready(function() {
      */
 
     // Red vial
-    vw_ide_calle  = wmsMcc51.getLayer("w_red_vial:vw_ide_calle");
-    vw_ide_calle_por_tipo_calzada  = wmsMcc.getLayer("w_red_vial:vw_ide_calle_por_tipo_calzada");
+    vw_ide_calle  = wmsMcc51.getLayer("red_vial:vw_ide_calle");
+    vw_ide_calle_por_tipo_calzada  = wmsMcc.getLayer("red_vial:vw_ide_calle_por_tipo_calzada");
 
     // Informacion catastral
     vw_asentamiento_renabap  = wmsMcc.getLayer("infoCatastral:vw_asentamiento_renabap");

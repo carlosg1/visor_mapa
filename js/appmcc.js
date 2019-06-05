@@ -46,7 +46,7 @@ $(document).ready(function() {
         identify: false,
     });
 
-    wmsMcc = new wms_GIS("http://190.7.30.142:8000/geoserver/wms?", {
+    wmsMcc = new wms_GIS("http://gis.ciudaddecorrientes.gov.ar:8282/geoserver/wms?", {
         format: 'image/png',
         uppercase: true,
         transparent: true,
