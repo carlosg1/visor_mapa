@@ -54,10 +54,10 @@
             </div>
 
             <div class="topBanner">
-            <span>
-                <img src="images/topBanner.jpg" alt="Municipalidad de Corrientes">
-            </span>
-        </div>
+                <span>
+                    <img src="images/topBanner.jpg" alt="Municipalidad de Corrientes">
+                </span>
+            </div>
             
 			<!-- contenedor para el arbol -->
             <div id="contenedorArboles">
@@ -71,7 +71,8 @@
                     <?php include("capas/tree_publico.php"); ?>
 
 				</div>
-			</div>
+            </div>
+            
 		</div>
 
         <div id="map"></div>

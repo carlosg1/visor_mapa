@@ -43,12 +43,12 @@ $(document).ready(function() {
     vw_zonas_municipales  = wmsMcc51.getLayer("desarrollo_comunitario:vw_zonas_municipales");
 
     // Salud
-    vw_caps  = wmsMcc.getLayer("salud:vw_caps");
-    vw_saps_municipales  = wmsMcc.getLayer("salud:vw_saps_municipales");
-    vw_centros_de_salud  = wmsMcc.getLayer("salud:vw_centros_de_salud");
-    vw_farmacias  = wmsMcc.getLayer("salud:vw_farmacias");
-    vw_hospitales  = wmsMcc.getLayer("salud:vw_hospitales");
-    vw_areas_programaticas_saps  = wmsMcc.getLayer("salud:vw_areas_programaticas_saps");
+    vw_caps  = wmsMcc51.getLayer("salud:vw_caps");
+    vw_saps_municipales  = wmsMcc51.getLayer("salud:vw_saps");
+    vw_centros_de_salud  = wmsMcc51.getLayer("salud:vw_centros_de_salud");
+    vw_farmacias  = wmsMcc51.getLayer("salud:vw_farmacias");
+    vw_hospitales  = wmsMcc51.getLayer("salud:vw_hospitales");
+    vw_areas_programaticas_saps  = wmsMcc51.getLayer("salud:vw_areas_programaticas_saps");
 
     /*
      * Transporte
@@ -79,7 +79,7 @@ $(document).ready(function() {
      */
 
     // Red vial
-    vw_ide_calle  = wmsMcc.getLayer("w_red_vial:vw_ide_calle");
+    vw_ide_calle  = wmsMcc51.getLayer("w_red_vial:vw_ide_calle");
     vw_ide_calle_por_tipo_calzada  = wmsMcc.getLayer("w_red_vial:vw_ide_calle_por_tipo_calzada");
 
     // Informacion catastral
