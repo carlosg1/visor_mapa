@@ -309,19 +309,32 @@ var wms_GIS = L.WMS.Source.extend({
          */
 
         // falta cargar puntos recarga sube
-        if(queLayer[0] == "vw_puntos_de_recarga_sube"){
+        if(queLayer[0] == "vw_puntos_recarga_sube"){
           datos1 = '<div><h2>Puntos de recarga SUBE</h2></div>';
           datos1 += '<b>Terminal:</b> ' + datos.features[0].properties['descripcion'];
           datos1 += '<BR />' + '<b>Direcci&oacute;n:</b> ' + datos.features[0].properties['direccion'];
+          datos1 += '<BR />' + '<b>Horario Atenci&oacute;n:</b> ' + datos.features[0].properties['horario_atencion'];
+          datos1 += '<BR />' + '<b>T&eacute;lefono:</b> ' + datos.features[0].properties['totem_digital'];
+          datos1 += '<BR />' + '<b>Responsable:</b> ' + datos.features[0].properties['estado'];
         }
 
         // recorrido total colectivos
-        if(queLayer[0].substring(0,9) == 'recorrido'){
-          datos1 = '<div><h2>Recorrido ' + datos.features[0].properties['linea_ramal'] + '</h2></div>';
-          datos1 += '<b>Nombre:</b> ' + datos.features[0].properties['recorrido'];
-          datos1 += '<BR />' + '<b>Sentido:</b> ' + datos.features[0].properties['tipo_recorrido'];
+        if(queLayer[0] == 'vw_recorrido_total_colectivo'){
+          datos1 = '<div><span style="float:right";><img style="display: inline;" height="36" alt="Estacionamiento Privado" src="images/icon/recorrido-colectivo.png" /></span><h2>Recorrido total de colectivos</h2></div>';
+          datos1 += '<b>Linea:</b> ' + datos.features[0].properties['linea_descrip'];
+          datos1 += '<BR />' + '<b>Nombre:</b> ' + datos.features[0].properties['nombre'];
+          datos1 += '<BR />' + '<b>Ramal:</b> ' + datos.features[0].properties['ramal'];
         }
-    
+
+        // recorrido total colectivos
+        if(queLayer[0] == 'vw_estacionamiento_privado'){
+          datos1 = '<div><span style="float:right";><img style="display: inline;" height="36" alt="Estacionamiento Privado" src="images/icon/estacionamiento-privado.png" /></span><h2>Estacionamiento Privado</h2></div>';
+          datos1 += '<b>Calle:</b> ' + datos.features[0].properties['descripcio'];
+          datos1 += '<BR />' + '<b>Puerta:</b> ' + datos.features[0].properties['puerta'];
+          datos1 += '<BR />' + '<b>Piso:</b> ' + datos.features[0].properties['piso'];
+          datos1 += '<BR />' + '<b>Barrio:</b> ' + datos.features[0].properties['barrio'];
+        }
+
         /*
          * Red vial
          */
@@ -364,11 +377,63 @@ var wms_GIS = L.WMS.Source.extend({
           datos1 += '<b>Nro. Manzana</b>: ' + datos.features[0].properties['CCA'];
         }
 
-        if(queLayer[0] == "vw_asentamiento_renabap"){
-          datos1 = '<div><h2>Asentamientos Re.Na.Ba.P.</h2></div>';
-          datos1 += '<b>Nro. Manzana</b>: ' + datos.features[0].properties['nombre_barrio'];
+        /*
+         * Informacion Catastral
+         */
+        switch(queLayer[0]) {
+          case "vw_asentamiento_renabap":
+              datos1 = '<div><h2>Asentamientos Re.Na.Ba.P.</h2></div>';
+              datos1 += '<b>Nombre asentamiento:</b>: ' + datos.features[0].properties['nombre_barrio'];
+              break;
+
+          case "vw_cordones":
+              datos1 = '<div><h2>Cordones</h2></div>';
+              datos1 += '<b>Estado:</b>: ' + datos.features[0].properties['estado'];
+              break;
+
+          case "vw_grupo_vivienda_invico":
+              datos1 = '<div><h2>Cordones</h2></div>';
+              datos1 += '<b>Grupo:</b>: ' + datos.features[0].properties['descripcion'];
+              break;
+
+          case "vw_barrios_de_la_ciudad":
+              datos1 = '<div><h2>Barrios de la Ciudad</h2></div>';
+              datos1 += '<b>Nombre barrio:</b>: ' + datos.features[0].properties['nombre_barrio'];
+              datos1 += '<BR />' + '<b>Tipo barrio</b>: ' + datos.features[0].properties['tipo_barrio'];
+              datos1 += '<BR />' + '<b>Ordenanza</b>: ' + datos.features[0].properties['numero_ordenanza'];
+              break;
+
+          case "vw_ph_parcelas":
+              datos1 = '<div><h2>PH Parcelas</h2></div>';
+              datos1 += '<b>Partida:</b>: ' + datos.features[0].properties['adrema'];
+              datos1 += '<BR />' + '<b>Cantidad partidas</b>: ' + datos.features[0].properties['cantidad_adremas'];
+              datos1 += '<BR />' + '<b>Mzd - Mzh - letra - lote</b> ';
+              datos1 += '<BR />' + datos.features[0].properties['mzd'] + ' - ' + datos.features[0].properties['mzh'] + ' - ' + datos.features[0].properties['letra'] + ' - ' + datos.features[0].properties['lote'];
+              break;
+
+          case "vw_parcelas":
+              datos1 = '<div><h2>Parcelario Catastral</h2></div>';
+              datos1 += '<b>Partida:</b>: ' + datos.features[0].properties['adrema'];
+              datos1 += '<BR />' + '<b>Mzd - Mzh - letra - lote - lote Al</b> ';
+              datos1 += '<BR />' + (datos.features[0].properties['mzd'] == null ? '' : datos.features[0].properties['mzd']);
+              datos1 += ' - ' + (datos.features[0].properties['mzh'] === null ? '' : datos.features[0].properties['mzh']);
+              datos1 += ' - ' + (datos.features[0].properties['letra'] == null ? '' : datos.features[0].properties['letra']);
+              datos1 += ' - ' + (datos.features[0].properties['lote'] == null ? '' : datos.features[0].properties['lote']);
+              datos1 += ' - ' + (datos.features[0].properties['loteal'] == null ? '' : datos.features[0].properties['loteal']);
+              datos1 += '<BR />' + '<b>Frente / Fondo:</b> ' + datos.features[0].properties['frente'] + ' / ' + datos.features[0].properties['fondo'];
+              datos1 += '<BR />' + '<b>Descripci&oacute;n:</b> ' + datos.features[0].properties['descripcio'];
+              datos1 += '<BR />' + '<b>Puerta:</b> ' + datos.features[0].properties['puerta'] + ' - ' + '<b>Piso: </b>' + datos.features[0].properties['piso'] + ' - <b>Depto: </b>' + datos.features[0].properties['dpto'];
+              datos1 += '<BR />' + '<b>Bald&iacute;o:</b> ' + datos.features[0].properties['baldio'];
+              break;
+
+          case "vw_manzanas_de_la_ciudad":
+              datos1 = '<div><h2>Manzanas</h2></div>';
+              datos1 += '<b>Manzana:</b>: ' + datos.features[0].properties['nombre_manzana'];
+              break;
         }
 
+        
+        // verifico si hay datos que mostrar
         if (datos1 != undefined) {
 
           datos1 += '<div style="border-top: 1px solid #7f7f7f; padding-top: 7px; margin-top: 7px; font-family: Roboto; font-size: 11px; color: #7f7f7f">DIR. GRAL. DE S.I.G.</div>';

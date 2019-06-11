@@ -1,6 +1,6 @@
 /* 
  * capas para el visor publico 
- * Fecha Mod.: 16/05/2019
+ * Fecha Mod.: 06/06/2019
  */
 
 let lyr_man_pluv, lyr_man_sumidero, lyr_red_agua_potable;
@@ -53,24 +53,33 @@ $(document).ready(function() {
     /*
      * Transporte
      */
+    // puntos de recarga tarjeta sube
+    vw_puntos_de_recarga_sube = wmsMcc51.getLayer("transporte:vw_puntos_recarga_sube");
 
-    vw_puntos_de_recarga_sube = wmsMcc.getLayer("transporte:vw_puntos_de_recarga_sube");
-    //
-    vw_recorrido_total_colectivos_corrientes = wmsMcc.getLayer("transporte:vw_recorrido_total_colectivos_corrientes");
-    //
-    vw_estacionamiento_privado = wmsMcc.getLayer("transporte:vw_estacionamiento_privado");
+    // Recorrido total de colectivos
+    vw_recorrido_total_colectivos_corrientes = wmsMcc51.getLayer("transporte:vw_recorrido_total_colectivo");
+
+    // estacionamiento privado
+    vw_estacionamiento_privado = wmsMcc51.getLayer("transporte:vw_estacionamiento_privado");
+
     // paradas de colectivos urbanos
     vw_paradas_colectivos = wmsMcc.getLayer("transporte:vw_paradas_colectivos");
+
     // paradas chaco / corrientes / barranqueras
     vw_paradas_barranqueras = wmsMcc.getLayer("transporte:vw_paradas_barranqueras");
+
     // recorrido chacho / corrientes / barranqueras
     vw_recorrido_barranqueras = wmsMcc.getLayer("transporte:vw_recorrido_barranqueras");
+
     // paradas chacho / corrientes / campus
     vw_paradas_campus = wmsMcc.getLayer("transporte:vw_paradas_campus");
+
     // recorrido chacho / corrientes / campus
     vw_recorrido_campus = wmsMcc.getLayer("transporte:vw_recorrido_campus");
+
     // paradas chacho / corrientes / sarmiento
     vw_paradas_sarmiento = wmsMcc.getLayer("transporte:vw_paradas_sarmiento");
+
     // recorrido chacho / corrientes / sarmiento
     vw_recorrido_sarmiento = wmsMcc.getLayer("transporte:vw_recorrido_sarmiento");
 
@@ -82,13 +91,21 @@ $(document).ready(function() {
     vw_ide_calle  = wmsMcc51.getLayer("red_vial:vw_ide_calle");
     vw_ide_calle_por_tipo_calzada  = wmsMcc51.getLayer("red_vial:vw_ide_calle_por_tipo_calzada");
 
-    // Informacion catastral
-    vw_asentamiento_renabap  = wmsMcc.getLayer("infoCatastral:vw_asentamiento_renabap");
-    vw_cordones  = wmsMcc.getLayer("infoCatastral:vw_cordones");
-    vw_grupo_viviendas_invico  = wmsMcc.getLayer("infoCatastral:vw_asentamiento_renabap");
-    vw_parcelas  = wmsMcc.getLayer("infoCatastral:vw_parcelas");
-    vw_ph_parcelas  = wmsMcc.getLayer("infoCatastral:vw_ph_parcelas");
-    vw_barrios  = wmsMcc.getLayer("infoCatastral:vw_barrios");
-    vw_manzanas  = wmsMcc.getLayer("infoCatastral:vw_manzanas");
+    /*
+     * Informacion catastral
+     */
+    vw_asentamiento_renabap  = wmsMcc51.getLayer("informacion_catastral:vw_asentamiento_renabap");
+
+    vw_cordones  = wmsMcc51.getLayer("informacion_catastral:vw_cordones");
+
+    vw_grupo_viviendas_invico  = wmsMcc51.getLayer("informacion_catastral:vw_grupo_vivienda_invico");
+
+    vw_barrios  = wmsMcc51.getLayer("informacion_catastral:vw_barrios_de_la_ciudad");
+
+    vw_ph_parcelas  = wmsMcc51.getLayer("informacion_catastral:vw_ph_parcelas");
+
+    vw_parcelas  = wmsMcc51.getLayer("informacion_catastral:vw_parcelas");
+
+    vw_manzanas  = wmsMcc51.getLayer("informacion_catastral:vw_manzanas_de_la_ciudad");
 
 });

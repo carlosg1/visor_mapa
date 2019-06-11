@@ -81,6 +81,7 @@
                     <li id="vw_zonas_municipales">Zonas Municipales</li>
                 </ul>
             </li>
+            
             <li id="salud" data-jstree='{"icon": false}'>Salud
                 <ul>
                     <li id="vw_caps">C.A.P.S.</li>
@@ -91,6 +92,7 @@
                     <li id="vw_areas_programaticas_saps">Areas programaticas de salud</li>
                 </ul>
             </li>
+
             <li id="Transporte" data-jstree='{"opened": false, "icon": false}'>Transporte
                 <ul>
                     <li id="vw_puntos_de_recarga_sube">Puntos de recarga SUBE</li>
@@ -134,12 +136,14 @@
                     <li id="vw_recorrido_sarmiento">Recorrido Chaco - Corrientes - Sarmiento</li>
                 </ul>
             </li>
+
             <li id="redVial" data-jstree='{"icon": false}'>Red vial
                 <ul>
                     <li id="vw_ide_calle">Calles</li>
                     <li id="vw_ide_calle_por_tipo_calzada">Calles por tipo de calzada</li>
                 </ul>
             </li>
+
             <li id="infoCatastral" data-jstree='{"icon": false}'>Informacion catastral
                 <ul>
                     <li id="vw_asentamiento_renabap">Asentamientos informales (Re.Na.Ba.P.)</li>
