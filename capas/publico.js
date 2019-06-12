@@ -63,10 +63,10 @@ $(document).ready(function() {
     vw_estacionamiento_privado = wmsMcc51.getLayer("transporte:vw_estacionamiento_privado");
 
     // paradas de colectivos urbanos
-    vw_paradas_colectivos = wmsMcc.getLayer("transporte:vw_paradas_colectivos");
+    vw_paradas_colectivos = wmsMcc51.getLayer("transporte:vw_paradas_colectivos");
 
     // paradas chaco / corrientes / barranqueras
-    vw_paradas_barranqueras = wmsMcc.getLayer("transporte:vw_paradas_barranqueras");
+    vw_paradas_barranqueras = wmsMcc51.getLayer("transporte:vw_paradas_barranqueras");
 
     // recorrido chacho / corrientes / barranqueras
     vw_recorrido_barranqueras = wmsMcc.getLayer("transporte:vw_recorrido_barranqueras");

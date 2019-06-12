@@ -320,19 +320,44 @@ var wms_GIS = L.WMS.Source.extend({
 
         // recorrido total colectivos
         if(queLayer[0] == 'vw_recorrido_total_colectivo'){
-          datos1 = '<div><span style="float:right";><img style="display: inline;" height="36" alt="Estacionamiento Privado" src="images/icon/recorrido-colectivo.png" /></span><h2>Recorrido total de colectivos</h2></div>';
+          datos1 = '<div><span style="float:right";><img style="display: inline;" height="36" alt="Estacionamiento Privado" src="images/icon/recorrido-colectivo.png" /></span><h2>Recorrido todas la l&iacute;neas</h2></div>';
           datos1 += '<b>Linea:</b> ' + datos.features[0].properties['linea_descrip'];
           datos1 += '<BR />' + '<b>Nombre:</b> ' + datos.features[0].properties['nombre'];
           datos1 += '<BR />' + '<b>Ramal:</b> ' + datos.features[0].properties['ramal'];
+          datos1 += '<div style="width:300px;">&nbsp;</div>';
         }
 
-        // recorrido total colectivos
+        // Estacionamiento privado
         if(queLayer[0] == 'vw_estacionamiento_privado'){
           datos1 = '<div><span style="float:right";><img style="display: inline;" height="36" alt="Estacionamiento Privado" src="images/icon/estacionamiento-privado.png" /></span><h2>Estacionamiento Privado</h2></div>';
           datos1 += '<b>Calle:</b> ' + datos.features[0].properties['descripcio'];
           datos1 += '<BR />' + '<b>Puerta:</b> ' + datos.features[0].properties['puerta'];
           datos1 += '<BR />' + '<b>Piso:</b> ' + datos.features[0].properties['piso'];
           datos1 += '<BR />' + '<b>Barrio:</b> ' + datos.features[0].properties['barrio'];
+        }
+
+        // paradas de colectivo
+        if(queLayer[0] == 'vw_paradas_colectivos'){
+          datos1 = '<div><span style="float:right; margin-right: 10px;";><img style="display: inline;" height="36" alt="Estacionamiento Privado" src="images/icon/pin-verde-1.png" /></span><h2>Parada Colectivo</h2></div>';
+          datos1 += '<b>Sentido:</b> ' + datos.features[0].properties['tipo_recorrido'];
+          datos1 += '<BR />' + '<b>Linea / Ramal:</b> ' + datos.features[0].properties['linea_ramal'];
+          datos1 += '<div style="width:300px;">&nbsp;</div>';
+        }
+
+        // paradas Barranqueras
+        if(queLayer[0] == 'vw_paradas_barranqueras'){
+          datos1 = '<div><span style="float:right; margin-right: 10px;";><img style="display: inline;" height="40" alt="Estacionamiento Privado" src="images/icon/pin-parada-colectivo-azul32.png" /></span><h2>Parada Barranqueras</h2></div>';
+          datos1 += '<b>Sentido:</b> ' + datos.features[0].properties['sentido'];
+          datos1 += '<BR />' + '<b>Ubicaci&oacute;n:</b> ' + datos.features[0].properties['ubicacion'];
+          datos1 += '<div style="width:300px;">&nbsp;</div>';
+        }
+
+        // paradas Campus
+        if(queLayer[0] == 'vw_paradas_campus'){
+          datos1 = '<div><span style="float:right; margin-right: 10px;";><img style="display: inline;" height="40" alt="Estacionamiento Privado" src="images/icon/pin-parada-colectivo-verde40.png" /></span><h2>Parada Campus</h2></div>';
+          datos1 += '<b>Sentido:</b> ' + datos.features[0].properties['sentido'];
+          datos1 += '<BR />' + '<b>Ubicaci&oacute;n:</b> ' + datos.features[0].properties['ubicacion'];
+          datos1 += '<div style="width:300px;">&nbsp;</div>';
         }
 
         /*
