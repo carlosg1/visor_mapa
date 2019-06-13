@@ -336,13 +336,43 @@ var wms_GIS = L.WMS.Source.extend({
           datos1 += '<BR />' + '<b>Barrio:</b> ' + datos.features[0].properties['barrio'];
         }
 
-        // paradas de colectivo
+        // paradas de colectivo urbano
         if(queLayer[0] == 'vw_paradas_colectivos'){
           datos1 = '<div><span style="float:right; margin-right: 10px;";><img style="display: inline;" height="36" alt="Estacionamiento Privado" src="images/icon/pin-verde-1.png" /></span><h2>Parada Colectivo</h2></div>';
           datos1 += '<b>Sentido:</b> ' + datos.features[0].properties['tipo_recorrido'];
           datos1 += '<BR />' + '<b>Linea / Ramal:</b> ' + datos.features[0].properties['linea_ramal'];
           datos1 += '<div style="width:300px;">&nbsp;</div>';
         }
+
+        /***
+         * Recorridos por ramal
+         */
+
+         // recorrido ramal 101 B
+         if(queLayer[0] == 'recorrido_ramal_101_B'){
+          datos1 = '<div><span style="float:right; margin-right: 10px;";><img style="display: inline;" height="40" alt="Recorrido Ramal 101 B" src="images/icon/transporte/recorrido-ramal.png" /></span><h2>Recorrido Ramal 101 B</h2></div>';
+          datos1 += '<b>Sentido:</b> ' + datos.features[0].properties['linea_descrip'];
+          datos1 += '<BR />' + '<b>Nombre:</b> ' + datos.features[0].properties['nombre'];
+          datos1 += '<div style="width:300px;">&nbsp;</div>';
+        }
+
+         // recorrido ramal 101 C
+         if(queLayer[0] == 'recorrido_ramal_101_C'){
+          datos1 = '<div><span style="float:right; margin-right: 10px;";><img style="display: inline;" height="40" alt="Recorrido Ramal 101 C" src="images/icon/transporte/recorrido-ramal.png" /></span><h2>Recorrido Ramal 101 C</h2></div>';
+          datos1 += '<b>Sentido:</b> ' + datos.features[0].properties['linea_descrip'];
+          datos1 += '<BR />' + '<b>Nombre:</b> ' + datos.features[0].properties['nombre'];
+          datos1 += '<div style="width:300px;">&nbsp;</div>';
+        }
+
+         // recorrido ramal 102 A
+         if(queLayer[0] == 'recorrido_ramal_102_A'){
+          datos1 = '<div><span style="float:right; margin-right: 10px;";><img style="display: inline;" height="40" alt="Recorrido Ramal 102 A" src="images/icon/transporte/recorrido-ramal.png" /></span><h2>Recorrido Ramal 102 A</h2></div>';
+          datos1 += '<b>Sentido:</b> ' + datos.features[0].properties['linea_descrip'];
+          datos1 += '<BR />' + '<b>Nombre:</b> ' + datos.features[0].properties['nombre'];
+          datos1 += '<div style="width:300px;">&nbsp;</div>';
+        }
+
+
 
         // paradas Barranqueras
         if(queLayer[0] == 'vw_paradas_barranqueras'){
@@ -358,6 +388,37 @@ var wms_GIS = L.WMS.Source.extend({
           datos1 += '<b>Sentido:</b> ' + datos.features[0].properties['sentido'];
           datos1 += '<BR />' + '<b>Ubicaci&oacute;n:</b> ' + datos.features[0].properties['ubicacion'];
           datos1 += '<div style="width:300px;">&nbsp;</div>';
+        }
+
+        // Recorrido barranqueras
+        if(queLayer[0] == 'vw_recorrido_barranqueras'){
+          datos1 = '<div><span style="float:right; margin-right: 10px;";><img style="display: inline;" height="40" alt="Recorrido Barranqueras" src="images/icon/ruta.png" /></span><h2>Recorrido Barranqueras</h2></div>';
+          datos1 += '<b>Sentido:</b> ' + datos.features[0].properties['direccion'];
+          datos1 += '<BR />' + '<b>Nombre:</b> ' + datos.features[0].properties['nombre'];
+          datos1 += '<div style="width:300px;">&nbsp;</div>';
+        }
+
+        // Recorrido Campus
+        if(queLayer[0] == 'vw_recorrido_campus'){
+          datos1 = '<div><span style="float:right; margin-right: 10px;";><img style="display: inline;" height="40" alt="Recorrido Campus" src="images/icon/ruta.png" /></span><h2>Recorrido Campus</h2></div>';
+          datos1 += '<b>Sentido:</b> ' + datos.features[0].properties['direccion'];
+          datos1 += '<BR />' + '<b>Nombre:</b> ' + datos.features[0].properties['nombre'];
+          datos1 += '<div style="width:300px;">&nbsp;</div>';
+        }
+
+        // Paradas Sarmiento
+        if(queLayer[0] == 'vw_paradas_sarmiento'){
+          datos1 = '<div><span style="float:right; margin-right: 10px;";><img style="display: inline;" height="40" alt="Paradas Linea Sarmiento" src="images/icon/parada-colectivo-azul.png" /></span><h2>Paradas L&iacute;nea Sarmiento</h2></div>';
+          datos1 += '<b>Sentido:</b> ' + datos.features[0].properties['sentido'];
+          datos1 += '<BR />' + '<b>Ubicacion:</b> ' + datos.features[0].properties['ubicacion'];
+          datos1 += '<div style="width:300px;">&nbsp;</div>';
+        }
+
+        // Recorrido Sarmiento
+        if(queLayer[0] == 'vw_recorrido_sarmiento'){
+          datos1 = '<div><span style="float:right; margin-right: 10px;";><img style="display: inline;" height="40" alt="Recorrido Linea Sarmiento" src="images/icon/recorrido-sarmiento.jpg" /></span><h2>Recorrido L&iacute;nea <br />Sarmiento</h2></div>';
+          datos1 += '<b>Sentido:</b> ' + datos.features[0].properties['nombre'];
+          datos1 += '<div style="width:350px;">&nbsp;</div>';
         }
 
         /*

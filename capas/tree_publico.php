@@ -101,9 +101,9 @@
                     <li id="vw_paradas_colectivos">Paradas de colectivo Urbano</li>
                     <li id="b1" data-jstree='{"opened": false}'>Recorrido por ramal
                         <ul>
-                            <li>Linea 101 B</li>
-                            <li>Linea 101 C</li>
-                            <li>Linea 102 A</li>
+                            <li id="recorrido_ramal_101_B" data-jstree='{"icon": "images/icon/transporte/recorrido-ramal-101-B.png"}'>Ramal 101 B</li>
+                            <li id="recorrido_ramal_101_C" data-jstree='{"icon": "images/icon/transporte/recorrido-ramal-101-C.png"}'>Linea 101 C</li>
+                            <li id="recorrido_ramal_102_A" data-jstree='{"icon": "images/icon/transporte/recorrido-ramal-102-A.png"}'>Linea 102 A</li>
                             <li>Linea 102 B</li>
                             <li>Linea 102 C</li>
                             <li>Linea 103 A</li>

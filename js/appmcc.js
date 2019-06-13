@@ -254,15 +254,43 @@ $(document).ready(function() {
                     case 'vw_puntos_de_recarga_sube':
                         map.addLayer(vw_puntos_de_recarga_sube);
                         break;
+
                     case 'vw_recorrido_total_colectivos_corrientes':
                         map.addLayer(vw_recorrido_total_colectivos_corrientes);
                         break;
+
                     case 'vw_estacionamiento_privado':
                         map.addLayer(vw_estacionamiento_privado);
                         break;
+
                     case 'vw_paradas_colectivos':
                         map.addLayer(vw_paradas_colectivos);
                         break;
+
+
+                    /**
+                     * Recorrido por ramal
+                     */
+
+                    // recorrido ramal 101 B
+                    case 'recorrido_ramal_101_B':
+                        map.addLayer(recorrido_ramal_101_B);
+                        break;
+
+                    // recorrido ramal 101 B
+                    case 'recorrido_ramal_101_C':
+                        map.addLayer(recorrido_ramal_101_C);
+                        break;
+
+                    // recorrido ramal 102 a
+                    case 'recorrido_ramal_102_A':
+                        map.addLayer(recorrido_ramal_102_A);
+                        break;
+
+
+
+
+
                     case 'vw_paradas_barranqueras':
                         map.addLayer(vw_paradas_barranqueras);
                         break;
@@ -421,9 +449,31 @@ $(document).ready(function() {
                     case 'vw_estacionamiento_privado':
                         vw_estacionamiento_privado.remove();
                         break;
+
                     case 'vw_paradas_colectivos':
                         vw_paradas_colectivos.remove();
                         break;
+
+                    /**
+                     * Recorrido por ramal
+                     */
+
+                    // recorrido ramal 101 B
+                    case 'recorrido_ramal_101_B':
+                        recorrido_ramal_101_B.remove();
+                        break;
+
+                    // recorrido ramal 101 C
+                    case 'recorrido_ramal_101_C':
+                        recorrido_ramal_101_C.remove();
+                        break;
+
+                    // recorrido ramal 102 A
+                    case 'recorrido_ramal_102_A':
+                        recorrido_ramal_102_A.remove();
+                        break;
+
+
                     case 'vw_paradas_barranqueras':
                         vw_paradas_barranqueras.remove();
                         break;

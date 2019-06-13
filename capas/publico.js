@@ -65,23 +65,42 @@ $(document).ready(function() {
     // paradas de colectivos urbanos
     vw_paradas_colectivos = wmsMcc51.getLayer("transporte:vw_paradas_colectivos");
 
+
+
+    /***
+     * Recorridos por ramal
+     */
+
+    // ramal 101 B
+    recorrido_ramal_101_B = wmsMcc51.getLayer("transporte:recorrido_ramal_101_B");
+
+    // ramal 101 C
+    recorrido_ramal_101_C = wmsMcc51.getLayer("transporte:recorrido_ramal_101_C");
+
+    // ramal 102 A
+    recorrido_ramal_102_A = wmsMcc51.getLayer("transporte:recorrido_ramal_102_A");
+
+
+
+
+
     // paradas chaco / corrientes / barranqueras
     vw_paradas_barranqueras = wmsMcc51.getLayer("transporte:vw_paradas_barranqueras");
 
     // recorrido chacho / corrientes / barranqueras
-    vw_recorrido_barranqueras = wmsMcc.getLayer("transporte:vw_recorrido_barranqueras");
+    vw_recorrido_barranqueras = wmsMcc51.getLayer("transporte:vw_recorrido_barranqueras");
 
     // paradas chacho / corrientes / campus
-    vw_paradas_campus = wmsMcc.getLayer("transporte:vw_paradas_campus");
+    vw_paradas_campus = wmsMcc51.getLayer("transporte:vw_paradas_campus");
 
     // recorrido chacho / corrientes / campus
-    vw_recorrido_campus = wmsMcc.getLayer("transporte:vw_recorrido_campus");
+    vw_recorrido_campus = wmsMcc51.getLayer("transporte:vw_recorrido_campus");
 
     // paradas chacho / corrientes / sarmiento
-    vw_paradas_sarmiento = wmsMcc.getLayer("transporte:vw_paradas_sarmiento");
+    vw_paradas_sarmiento = wmsMcc51.getLayer("transporte:vw_paradas_sarmiento");
 
     // recorrido chacho / corrientes / sarmiento
-    vw_recorrido_sarmiento = wmsMcc.getLayer("transporte:vw_recorrido_sarmiento");
+    vw_recorrido_sarmiento = wmsMcc51.getLayer("transporte:vw_recorrido_sarmiento");
 
     /*
      * Transporte -> Recorrido por ramal 
