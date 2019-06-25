@@ -121,17 +121,19 @@
                             <li id="recorrido_ramal_104_C" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=recorrido_ramal_104_C'; ?>"}'>Linea 104 C</li>
                             <li id="recorrido_ramal_104_D" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=recorrido_ramal_104_D'; ?>"}'>Linea 104 D</li>
                             <li id="recorrido_ramal_105_A" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=recorrido_ramal_105_A'; ?>"}'>Linea 105 A</li>
-                            <li>Linea 105 B</li>
-                            <li>Linea 105 C 250 Viv.</li>
-                            <li>Linea 105 C Perichon</li>
-                            <li>Linea 106 A</li>
-                            <li>Linea 106 B</li>
-                            <li>Linea 106 C</li>
-                            <li>Linea 106 D</li>
-                            <li>Linea 108 AB</li>
-                            <li>Linea 108 C</li>
-                            <li>Linea 109 A Lag. Soto</li>
-                            <li>Linea 106 C Yechoha</li>
+                            <li id="recorrido_ramal_105_B" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=recorrido_ramal_105_B'; ?>"}'>Linea 105 B</li>
+                            <li id="recorrido_ramal_105_C_250_viv" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=recorrido_ramal_105_C_250_viv'; ?>"}'>Linea 105 C 250 Viv.</li>
+                            <li id="recorrido_ramal_105_C_perichon" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=recorrido_ramal_105_C_perichon'; ?>"}'>Linea 105 C Perichon</li>
+                            <li id="recorrido_ramal_106_A" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=recorrido_ramal_106_A'; ?>"}'>Linea 106 A</li>
+                            <li id="recorrido_ramal_106_B" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=recorrido_ramal_106_B'; ?>"}'>Linea 106 B</li>
+                            <li id="recorrido_ramal_106_C" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=recorrido_ramal_106_C'; ?>"}'>Linea 106 C</li>
+                            <li id="recorrido_ramal_106_D" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=recorrido_ramal_106_D'; ?>"}'>Linea 106 D</li>
+                            <li id="recorrido_ramal_108_AB" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=recorrido_ramal_108_AB'; ?>"}'>Linea 108 AB</li>
+                            <li id="recorrido_ramal_108_C" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=recorrido_ramal_108_C'; ?>"}'>Linea 108 C</li>
+                            <li id="recorrido_ramal_109_A_Laguna_Soto" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=recorrido_ramal_109_A_Laguna_Soto'; ?>"}'>Linea 109 A - Lag. Soto</li>
+                            <li id="recorrido_ramal_109_B_Yecoha" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=recorrido_ramal_109_B_Yecoha'; ?>"}'>Linea 109 B - Yecoha</li>
+                            
+                            <li id="recorrido_ramal_110_A" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=recorrido_ramal_110_A'; ?>"}'>Linea 110 A</li>
                         </ul>
                     </li>
                     <li id="vw_paradas_barranqueras" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_paradas_barranqueras'; ?>"}'>Paradas Chaco - Corrientes - Barranqueras</li>

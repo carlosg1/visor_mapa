@@ -347,6 +347,66 @@ $(document).ready(function() {
                         map.addLayer(recorrido_ramal_105_A);
                         break;
 
+                    // recorrido ramal 105 B
+                    case 'recorrido_ramal_105_B':
+                        map.addLayer(recorrido_ramal_105_B);
+                        break;
+
+                    // recorrido ramal 105 C 250 viv
+                    case 'recorrido_ramal_105_C_250_viv':
+                        map.addLayer(recorrido_ramal_105_C_250_viv);
+                        break;
+
+                    // recorrido ramal 105 C perichon
+                    case 'recorrido_ramal_105_C_perichon':
+                        map.addLayer(recorrido_ramal_105_C_perichon);
+                        break;
+
+                    // recorrido ramal 106 A
+                    case 'recorrido_ramal_106_A':
+                        map.addLayer(recorrido_ramal_106_A);
+                        break;
+
+                    // recorrido ramal 106 B
+                    case 'recorrido_ramal_106_B':
+                        map.addLayer(recorrido_ramal_106_B);
+                        break;
+
+                    // recorrido ramal 106 C
+                    case 'recorrido_ramal_106_C':
+                        map.addLayer(recorrido_ramal_106_C);
+                        break;
+
+                    // recorrido ramal 106 D
+                    case 'recorrido_ramal_106_D':
+                        map.addLayer(recorrido_ramal_106_D);
+                        break;
+
+                    // recorrido ramal 108 AB
+                    case 'recorrido_ramal_108_AB':
+                        map.addLayer(recorrido_ramal_108_AB);
+                        break;
+
+                    // recorrido ramal 108 C
+                    case 'recorrido_ramal_108_C':
+                        map.addLayer(recorrido_ramal_108_C);
+                        break;
+
+                    // recorrido ramal 109 A laguna soto
+                    case 'recorrido_ramal_109_A_Laguna_Soto':
+                        map.addLayer(recorrido_ramal_109_A_Laguna_Soto);
+                        break;
+
+                    // recorrido ramal 109 B Yecoha
+                    case 'recorrido_ramal_109_B_Yecoha':
+                        map.addLayer(recorrido_ramal_109_B_Yecoha);
+                        break;
+
+                    // recorrido ramal 110 A
+                    case 'recorrido_ramal_110_A':
+                        map.addLayer(recorrido_ramal_110_A);
+                        break;
+
 
 
 
@@ -591,6 +651,70 @@ $(document).ready(function() {
                     // recorrido ramal 105 A
                     case 'recorrido_ramal_105_A':
                         recorrido_ramal_105_A.remove();
+                        break;
+
+                    // recorrido ramal 105 B
+                    case 'recorrido_ramal_105_B':
+                        recorrido_ramal_105_B.remove();
+                        break;
+
+                    // recorrido ramal 105 C 250 viv
+                    case 'recorrido_ramal_105_C_250_viv':
+                        recorrido_ramal_105_C_250_viv.remove();
+                        break;
+
+                    // recorrido ramal 105 C perichon
+                    case 'recorrido_ramal_105_C_perichon':
+                        recorrido_ramal_105_C_perichon.remove();
+                        break;
+
+                    // recorrido ramal 106 A
+                    case 'recorrido_ramal_106_A':
+                        recorrido_ramal_106_A.remove();
+                        break;
+
+                    // recorrido ramal 106 B
+                    case 'recorrido_ramal_106_B':
+                        recorrido_ramal_106_B.remove();
+
+                    // recorrido ramal 106 C
+                    case 'recorrido_ramal_106_C':
+                        recorrido_ramal_106_C.remove();
+                        break;
+
+                    // recorrido ramal 106 D
+                    case 'recorrido_ramal_106_D':
+                        recorrido_ramal_106_D.remove();
+                        break;
+
+                    // recorrido ramal 108 AB
+                    case 'recorrido_ramal_108_AB':
+                        recorrido_ramal_108_AB.remove();
+                        break;
+
+                    // recorrido ramal 108 C
+                    case 'recorrido_ramal_108_C':
+                        recorrido_ramal_108_C.remove();
+                        break;
+
+                    // recorrido ramal 109 A laguna soto
+                    case 'recorrido_ramal_109_A_Laguna_Soto':
+                        recorrido_ramal_109_A_Laguna_Soto.remove();
+                        break;
+
+                    // recorrido ramal 109 A laguna soto
+                    case 'recorrido_ramal_109_A_Laguna_Soto':
+                        recorrido_ramal_109_A_Laguna_Soto.remove();
+                        break;
+
+                    // recorrido ramal 109 B yecoha
+                    case 'recorrido_ramal_109_B_Yecoha':
+                        recorrido_ramal_109_B_Yecoha.remove();
+                        break;
+
+                    // recorrido ramal 110 A
+                    case 'recorrido_ramal_110_A':
+                        recorrido_ramal_110_A.remove();
                         break;
 
 

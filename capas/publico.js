@@ -116,6 +116,42 @@ $(document).ready(function() {
     // ramal 105 A
     recorrido_ramal_105_A = wmsMcc51.getLayer("transporte:recorrido_ramal_105_A");
 
+    // ramal 105 B
+    recorrido_ramal_105_B = wmsMcc51.getLayer("transporte:recorrido_ramal_105_B");
+
+    // ramal 105 C 250 viv
+    recorrido_ramal_105_C_250_viv = wmsMcc51.getLayer("transporte:recorrido_ramal_105_C_250_viv");
+
+    // ramal 105 C perichon
+    recorrido_ramal_105_C_perichon = wmsMcc51.getLayer("transporte:recorrido_ramal_105_C_perichon");
+
+    // ramal 106 A
+    recorrido_ramal_106_A = wmsMcc51.getLayer("transporte:recorrido_ramal_106_A");
+
+    // ramal 106 B
+    recorrido_ramal_106_B = wmsMcc51.getLayer("transporte:recorrido_ramal_106_B");
+
+    // ramal 106 C
+    recorrido_ramal_106_C = wmsMcc51.getLayer("transporte:recorrido_ramal_106_C");
+
+    // ramal 106 D
+    recorrido_ramal_106_D = wmsMcc51.getLayer("transporte:recorrido_ramal_106_D");
+
+    // ramal 108 AB
+    recorrido_ramal_108_AB = wmsMcc51.getLayer("transporte:recorrido_ramal_108_AB");
+
+    // ramal 108 C
+    recorrido_ramal_108_C = wmsMcc51.getLayer("transporte:recorrido_ramal_108_C");
+
+    // ramal 109 A Laguna Soto
+    recorrido_ramal_109_A_Laguna_Soto = wmsMcc51.getLayer("transporte:recorrido_ramal_109_A_Laguna_Soto");
+
+    // ramal 109 B Yecoha
+    recorrido_ramal_109_B_Yecoha = wmsMcc51.getLayer("transporte:recorrido_ramal_109_B_Yecoha");
+
+    // ramal 110 A
+    recorrido_ramal_110_A = wmsMcc51.getLayer("transporte:recorrido_ramal_110_A");
+
 
 
 
