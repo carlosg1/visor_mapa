@@ -80,6 +80,44 @@ $(document).ready(function() {
     // ramal 102 A
     recorrido_ramal_102_A = wmsMcc51.getLayer("transporte:recorrido_ramal_102_A");
 
+    // ramal 102 B
+    recorrido_ramal_102_B = wmsMcc51.getLayer("transporte:recorrido_ramal_102_B");
+
+    // ramal 102 C
+    recorrido_ramal_102_C = wmsMcc51.getLayer("transporte:recorrido_ramal_102_C");
+
+    // ramal 103 A
+    recorrido_ramal_103_A = wmsMcc51.getLayer("transporte:recorrido_ramal_103_A");
+
+    // ramal 103 B
+    recorrido_ramal_103_B = wmsMcc51.getLayer("transporte:recorrido_ramal_103_B");
+
+    // ramal 103 C - Directo
+    recorrido_ramal_103_C_directo = wmsMcc51.getLayer("transporte:recorrido_ramal_103_C_directo");
+
+    // ramal 103 C - Esperanza - Dr. Montaña
+    recorrido_ramal_103_C_esperanza_montania = wmsMcc51.getLayer("transporte:recorrido_ramal_103_C_esperanza_montania");
+
+    // ramal 103 D
+    recorrido_ramal_103_D = wmsMcc51.getLayer("transporte:recorrido_ramal_103_D");
+
+    // ramal 104 B
+    recorrido_ramal_104_A = wmsMcc51.getLayer("transporte:recorrido_ramal_104_A");
+
+    // ramal 104 B
+    recorrido_ramal_104_B = wmsMcc51.getLayer("transporte:recorrido_ramal_104_B");
+
+    // ramal 104 C
+    recorrido_ramal_104_C = wmsMcc51.getLayer("transporte:recorrido_ramal_104_C");
+
+    // ramal 104 D
+    recorrido_ramal_104_D = wmsMcc51.getLayer("transporte:recorrido_ramal_104_D");
+
+    // ramal 105 A
+    recorrido_ramal_105_A = wmsMcc51.getLayer("transporte:recorrido_ramal_105_A");
+
+
+
 
 
 

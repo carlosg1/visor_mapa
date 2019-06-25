@@ -282,10 +282,75 @@ $(document).ready(function() {
                         map.addLayer(recorrido_ramal_101_C);
                         break;
 
-                    // recorrido ramal 102 a
+                    // recorrido ramal 102 A
                     case 'recorrido_ramal_102_A':
                         map.addLayer(recorrido_ramal_102_A);
                         break;
+
+                    // recorrido ramal 102 B
+                    case 'recorrido_ramal_102_B':
+                        map.addLayer(recorrido_ramal_102_B);
+                        break;
+
+                    // recorrido ramal 102 C
+                    case 'recorrido_ramal_102_C':
+                        map.addLayer(recorrido_ramal_102_C);
+                        break;
+
+                    // recorrido ramal 103 A
+                    case 'recorrido_ramal_103_A':
+                        map.addLayer(recorrido_ramal_103_A);
+                        break;
+
+                    // recorrido ramal 103 B
+                    case 'recorrido_ramal_103_B':
+                        map.addLayer(recorrido_ramal_103_B);
+                        break;
+
+                    // recorrido ramal 103 C - Directo
+                    case 'recorrido_ramal_103_C_directo':
+                        map.addLayer(recorrido_ramal_103_C_directo);
+                        break;
+
+                    // recorrido ramal 103 C - Esperanza - Dr. Montaña
+                    case 'recorrido_ramal_103_C_esperanza_montania':
+                        map.addLayer(recorrido_ramal_103_C_esperanza_montania);
+                        break;
+
+                    // recorrido ramal 103 D
+                    case 'recorrido_ramal_103_D':
+                        map.addLayer(recorrido_ramal_103_D);
+                        break;
+
+                    // recorrido ramal 104 A
+                    case 'recorrido_ramal_104_A':
+                        map.addLayer(recorrido_ramal_104_A);
+                        break;
+
+                    // recorrido ramal 104 B
+                    case 'recorrido_ramal_104_B':
+                        map.addLayer(recorrido_ramal_104_B);
+                        break;
+
+                    // recorrido ramal 104 C
+                    case 'recorrido_ramal_104_C':
+                        map.addLayer(recorrido_ramal_104_C);
+                        break;
+
+                    // recorrido ramal 104 D
+                    case 'recorrido_ramal_104_D':
+                        map.addLayer(recorrido_ramal_104_D);
+                        break;
+
+                    // recorrido ramal 105 A
+                    case 'recorrido_ramal_105_A':
+                        map.addLayer(recorrido_ramal_105_A);
+                        break;
+
+
+
+
+
 
 
 
@@ -473,6 +538,69 @@ $(document).ready(function() {
                         recorrido_ramal_102_A.remove();
                         break;
 
+                    // recorrido ramal 102 B
+                    case 'recorrido_ramal_102_B':
+                        recorrido_ramal_102_B.remove();
+                        break;
+
+                    // recorrido ramal 102 C
+                    case 'recorrido_ramal_102_C':
+                        recorrido_ramal_102_C.remove();
+                        break;
+
+                    // recorrido ramal 103 A
+                    case 'recorrido_ramal_103_A':
+                        recorrido_ramal_103_A.remove();
+                        break;
+
+                    // recorrido ramal 103 B
+                    case 'recorrido_ramal_103_B':
+                        recorrido_ramal_103_B.remove();
+                        break;
+
+                    // recorrido ramal 103 B
+                    case 'recorrido_ramal_103_C_directo':
+                        recorrido_ramal_103_C_directo.remove();
+                        break;
+
+                    // recorrido ramal 103 C esperanza - Dr. MOntaña
+                    case 'recorrido_ramal_103_C_esperanza_montania':
+                        recorrido_ramal_103_C_esperanza_montania.remove();
+                        break;
+
+                    // recorrido ramal 103 D
+                    case 'recorrido_ramal_103_D':
+                        recorrido_ramal_103_D.remove();
+                        break;
+
+                    // recorrido ramal 104 B
+                    case 'recorrido_ramal_104_B':
+                        recorrido_ramal_104_B.remove();
+                        break;
+
+                    // recorrido ramal 104 C
+                    case 'recorrido_ramal_104_C':
+                        recorrido_ramal_104_C.remove();
+                        break;
+
+                    // recorrido ramal 104 D
+                    case 'recorrido_ramal_104_D':
+                        recorrido_ramal_104_D.remove();
+                        break;
+
+                    // recorrido ramal 105 A
+                    case 'recorrido_ramal_105_A':
+                        recorrido_ramal_105_A.remove();
+                        break;
+
+
+
+
+
+
+
+
+
 
                     case 'vw_paradas_barranqueras':
                         vw_paradas_barranqueras.remove();
@@ -538,9 +666,9 @@ $(document).ready(function() {
 
         document.getElementById("dlgCuerpo").innerHTML = "Cuerpo del mensaje";
 
-        //document.getElementById("dialogo1").style.visibility = 'visible';
+        // document.getElementById("dialogo1").style.visibility = 'visible';
 
-        console.log('id del elemento: ', ev.srcElement.id.split('_')[0]);
+        // console.log('id del elemento: ', ev.srcElement.id.split('_')[0]);
     }, false);
 
 

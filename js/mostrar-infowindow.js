@@ -365,12 +365,105 @@ var wms_GIS = L.WMS.Source.extend({
         }
 
          // recorrido ramal 102 A
-         if(queLayer[0] == 'recorrido_ramal_102_A'){
+        if(queLayer[0] == 'recorrido_ramal_102_A'){
           datos1 = '<div><span style="float:right; margin-right: 10px;";><img style="display: inline;" height="40" alt="Recorrido Ramal 102 A" src="images/icon/transporte/recorrido-ramal.png" /></span><h2>Recorrido Ramal 102 A</h2></div>';
           datos1 += '<b>Sentido:</b> ' + datos.features[0].properties['linea_descrip'];
           datos1 += '<BR />' + '<b>Nombre:</b> ' + datos.features[0].properties['nombre'];
           datos1 += '<div style="width:300px;">&nbsp;</div>';
         }
+
+        // recorrido ramal 102 B
+        if(queLayer[0] == 'recorrido_ramal_102_B'){
+          datos1 = '<div><span style="float:right; margin-right: 10px;";><img style="display: inline;" height="40" alt="Recorrido Ramal 102 B" src="images/icon/transporte/recorrido-ramal.png" /></span><h2>Recorrido Ramal 102 B</h2></div>';
+          datos1 += '<b>Sentido:</b> ' + datos.features[0].properties['linea_descrip'];
+          datos1 += '<BR />' + '<b>Nombre:</b> ' + datos.features[0].properties['nombre'];
+          datos1 += '<div style="width:300px;">&nbsp;</div>';
+        }
+
+         // recorrido ramal 103 A
+         if(queLayer[0] == 'recorrido_ramal_103_A'){
+          datos1 = '<div><span style="float:right; margin-right: 10px;";><img style="display: inline;" height="40" alt="Recorrido Ramal 103 A" src="images/icon/transporte/recorrido-ramal.png" /></span><h2>Recorrido Ramal 103 A</h2></div>';
+          datos1 += '<b>Sentido:</b> ' + datos.features[0].properties['linea_descrip'];
+          datos1 += '<BR />' + '<b>Nombre:</b> ' + datos.features[0].properties['nombre'];
+          datos1 += '<div style="width:300px;">&nbsp;</div>';
+        }
+
+        // recorrido ramal 103 B
+        if(queLayer[0] == 'recorrido_ramal_103_B'){
+          datos1 = '<div><span style="float:right; margin-right: 10px;";><img style="display: inline;" height="40" alt="Recorrido Ramal 103 B" src="images/icon/transporte/recorrido-ramal.png" /></span><h2>Recorrido Ramal 103 B</h2></div>';
+          datos1 += '<b>Sentido:</b> ' + datos.features[0].properties['linea_descrip'];
+          datos1 += '<BR />' + '<b>Nombre:</b> ' + datos.features[0].properties['nombre'];
+          datos1 += '<div style="width:300px;">&nbsp;</div>';
+        }
+
+        // recorrido ramal 103 C Directo
+        if(queLayer[0] == 'recorrido_ramal_103_C_directo'){
+          datos1 = '<div><span style="float:right; margin-right: 10px;";><img style="display: inline;" height="40" alt="Recorrido Ramal 103 C Directo" src="images/icon/transporte/recorrido-ramal.png" /></span><h2>Recorrido Ramal 103 C Directo</h2></div>';
+          datos1 += '<b>Sentido:</b> ' + datos.features[0].properties['linea_descrip'];
+          datos1 += '<BR />' + '<b>Nombre:</b> ' + datos.features[0].properties['nombre'];
+          datos1 += '<div style="width:300px;">&nbsp;</div>';
+        }
+
+        // recorrido ramal 103 C - Esperanza - Dr. Montaña
+        if(queLayer[0] == 'recorrido_ramal_103_C_esperanza_montania'){
+          datos1 = '<div><span style="float:right; margin-right: 10px;";><img style="display: inline;" height="40" alt="Recorrido Ramal 103 C Esperanza - Dr. Montaña" src="images/icon/transporte/recorrido-ramal.png" /></span><h2>Recorrido Ramal 103 C - Esperanza - Dr. Montaña</h2></div>';
+          datos1 += '<b>Sentido:</b> ' + datos.features[0].properties['linea_descrip'];
+          datos1 += '<BR />' + '<b>Nombre:</b> ' + datos.features[0].properties['nombre'];
+          datos1 += '<div style="width:300px;">&nbsp;</div>';
+        }
+
+        // recorrido ramal 103 D
+        if(queLayer[0] == 'recorrido_ramal_103_D'){
+          datos1 = '<div><span style="float:right; margin-right: 10px;";><img style="display: inline;" height="40" alt="Recorrido Ramal 103 D" src="images/icon/transporte/recorrido-ramal.png" /></span><h2>Recorrido Ramal 103 D</h2></div>';
+          datos1 += '<b>Sentido:</b> ' + datos.features[0].properties['linea_descrip'];
+          datos1 += '<BR />' + '<b>Nombre:</b> ' + datos.features[0].properties['nombre'];
+          datos1 += '<div style="width:300px;">&nbsp;</div>';
+        }
+
+        // recorrido ramal 104 A
+        if(queLayer[0] == 'recorrido_ramal_104_A'){
+          datos1 = '<div><span style="float:right; margin-right: 10px;";><img style="display: inline;" height="40" alt="Recorrido Ramal 104 A" src="images/icon/transporte/recorrido-ramal.png" /></span><h2>Recorrido Ramal 104 A</h2></div>';
+          datos1 += '<b>Sentido:</b> ' + datos.features[0].properties['linea_descrip'];
+          datos1 += '<BR />' + '<b>Nombre:</b> ' + datos.features[0].properties['nombre'];
+          datos1 += '<div style="width:300px;">&nbsp;</div>';
+        }
+
+        // recorrido ramal 104 B
+        if(queLayer[0] == 'recorrido_ramal_104_B'){
+          datos1 = '<div><span style="float:right; margin-right: 10px;";><img style="display: inline;" height="40" alt="Recorrido Ramal 104 B" src="images/icon/transporte/recorrido-ramal.png" /></span><h2>Recorrido Ramal 104 B</h2></div>';
+          datos1 += '<b>Sentido:</b> ' + datos.features[0].properties['linea_descrip'];
+          datos1 += '<BR />' + '<b>Nombre:</b> ' + datos.features[0].properties['nombre'];
+          datos1 += '<div style="width:300px;">&nbsp;</div>';
+        }
+
+        // recorrido ramal 104 C
+        if(queLayer[0] == 'recorrido_ramal_104_C'){
+          datos1 = '<div><span style="float:right; margin-right: 10px;";><img style="display: inline;" height="40" alt="Recorrido Ramal 104 C" src="images/icon/transporte/recorrido-ramal.png" /></span><h2>Recorrido Ramal 104 C</h2></div>';
+          datos1 += '<b>Sentido:</b> ' + datos.features[0].properties['linea_descrip'];
+          datos1 += '<BR />' + '<b>Nombre:</b> ' + datos.features[0].properties['nombre'];
+          datos1 += '<div style="width:300px;">&nbsp;</div>';
+        }
+
+        // recorrido ramal 104 D
+        if(queLayer[0] == 'recorrido_ramal_104_D'){
+          datos1 = '<div><span style="float:right; margin-right: 10px;";><img style="display: inline;" height="40" alt="Recorrido Ramal 104 D" src="images/icon/transporte/recorrido-ramal.png" /></span><h2>Recorrido Ramal 104 D</h2></div>';
+          datos1 += '<b>Sentido:</b> ' + datos.features[0].properties['linea_descrip'];
+          datos1 += '<BR />' + '<b>Nombre:</b> ' + datos.features[0].properties['nombre'];
+          datos1 += '<div style="width:300px;">&nbsp;</div>';
+        }
+
+        // recorrido ramal 105 A
+        if(queLayer[0] == 'recorrido_ramal_105_A'){
+          datos1 = '<div><span style="float:right; margin-right: 10px;";><img style="display: inline;" height="40" alt="Recorrido Ramal 105 A" src="images/icon/transporte/recorrido-ramal.png" /></span><h2>Recorrido Ramal 105 A</h2></div>';
+          datos1 += '<b>Sentido:</b> ' + datos.features[0].properties['linea_descrip'];
+          datos1 += '<BR />' + '<b>Nombre:</b> ' + datos.features[0].properties['nombre'];
+          datos1 += '<div style="width:300px;">&nbsp;</div>';
+        }
+
+        
+
+
+
 
 
 
