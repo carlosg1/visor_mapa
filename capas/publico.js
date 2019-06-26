@@ -152,11 +152,11 @@ $(document).ready(function() {
     // ramal 110 A
     recorrido_ramal_110_A = wmsMcc51.getLayer("transporte:recorrido_ramal_110_A");
 
+    // ramal 110 B
+    recorrido_ramal_110_B = wmsMcc51.getLayer("transporte:recorrido_ramal_110_B");
 
-
-
-
-
+    // ramal 110 B
+    recorrido_ramal_110_C_sta_catalina = wmsMcc51.getLayer("transporte:recorrido_ramal_110_C_sta_catalina");
 
     // paradas chaco / corrientes / barranqueras
     vw_paradas_barranqueras = wmsMcc51.getLayer("transporte:vw_paradas_barranqueras");

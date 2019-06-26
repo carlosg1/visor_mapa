@@ -548,6 +548,22 @@ var wms_GIS = L.WMS.Source.extend({
           datos1 += '<div style="width:300px;">&nbsp;</div>';
         }
 
+        // recorrido ramal 110 B
+        if(queLayer[0] == 'recorrido_ramal_110_B'){
+          datos1 = '<div><span style="float:right; margin-right: 10px;";><img style="display: inline;" height="40" alt="Recorrido Ramal 110 B" src="images/icon/transporte/recorrido-ramal.png" /></span><h2>Recorrido Ramal 110 B</h2></div>';
+          datos1 += '<b>Sentido:</b> ' + datos.features[0].properties['linea_descrip'];
+          datos1 += '<BR />' + '<b>Nombre:</b> ' + datos.features[0].properties['nombre'];
+          datos1 += '<div style="width:300px;">&nbsp;</div>';
+        }
+
+        // recorrido ramal 110 C
+        if(queLayer[0] == 'recorrido_ramal_110_C_sta_catalina'){
+          datos1 = '<div><span style="float:right; margin-right: 10px;";><img style="display: inline;" height="40" alt="Recorrido Ramal 110 C Sta. Catalina" src="images/icon/transporte/recorrido-ramal.png" /></span><h2>Recorrido Ramal 110 C Sta. Catalina</h2></div>';
+          datos1 += '<b>Sentido:</b> ' + datos.features[0].properties['linea_descrip'];
+          datos1 += '<BR />' + '<b>Nombre:</b> ' + datos.features[0].properties['nombre'];
+          datos1 += '<div style="width:300px;">&nbsp;</div>';
+        }
+
 
 
 

@@ -134,6 +134,8 @@
                             <li id="recorrido_ramal_109_B_Yecoha" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=recorrido_ramal_109_B_Yecoha'; ?>"}'>Linea 109 B - Yecoha</li>
                             
                             <li id="recorrido_ramal_110_A" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=recorrido_ramal_110_A'; ?>"}'>Linea 110 A</li>
+                            <li id="recorrido_ramal_110_B" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=recorrido_ramal_110_B'; ?>"}'>Linea 110 B</li>
+                            <li id="recorrido_ramal_110_C_sta_catalina" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=recorrido_ramal_110_C_sta_catalina'; ?>"}'>Linea 110 C sta. Catalina</li>
                         </ul>
                     </li>
                     <li id="vw_paradas_barranqueras" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_paradas_barranqueras'; ?>"}'>Paradas Chaco - Corrientes - Barranqueras</li>

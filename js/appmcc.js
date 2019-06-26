@@ -407,14 +407,15 @@ $(document).ready(function() {
                         map.addLayer(recorrido_ramal_110_A);
                         break;
 
+                    // recorrido ramal 110 B
+                    case 'recorrido_ramal_110_B':
+                        map.addLayer(recorrido_ramal_110_B);
+                        break;
 
-
-
-
-
-
-
-
+                    // recorrido ramal 110 C Sta Catalina
+                    case 'recorrido_ramal_110_C_sta_catalina':
+                        map.addLayer(recorrido_ramal_110_C_sta_catalina);
+                        break;
 
                     case 'vw_paradas_barranqueras':
                         map.addLayer(vw_paradas_barranqueras);
@@ -717,14 +718,14 @@ $(document).ready(function() {
                         recorrido_ramal_110_A.remove();
                         break;
 
+                    // recorrido ramal 110 B
+                    case 'recorrido_ramal_110_B':
+                        recorrido_ramal_110_B.remove();
+                        break;
 
-
-
-
-
-
-
-
+                    // recorrido ramal 110 C Sta Catalina
+                    case 'recorrido_ramal_110_C_sta_catalina':
+                        recorrido_ramal_110_C_sta_catalina.remove();
 
                     case 'vw_paradas_barranqueras':
                         vw_paradas_barranqueras.remove();
