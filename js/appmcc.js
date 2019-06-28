@@ -176,9 +176,15 @@ $(document).ready(function() {
                     case 'red_desague_cloacal':
                         map.addLayer(vw_red_desague_cloaca);
                         break;
+
+                    case 'vw_alumbrado_publico_led':
+                        map.addLayer(vw_alumbrado_publico_led);
+                        break;
+
                     case 'vw_alumbrado_publico':
                         map.addLayer(vw_alumbrado_publico);
                         break;
+
                     case 'vw_bocas_de_registro':
                         map.addLayer(vw_bocas_de_registro);
                         break;
@@ -446,9 +452,14 @@ $(document).ready(function() {
                      * Red vial
                      */
 
+                    case 'vw_alturas_calles':
+                        map.addLayer(vw_alturas_calles);
+                        break;
+
                     case 'vw_ide_calle':
                         map.addLayer(vw_ide_calle);
                         break;
+
                     case 'vw_ide_calle_por_tipo_calzada':
                         map.addLayer(vw_ide_calle_por_tipo_calzada);
                         break;
@@ -507,6 +518,10 @@ $(document).ready(function() {
 
                     case 'red_desague_cloacal':
                         vw_red_desague_cloaca.remove();
+                    break;
+
+                    case 'vw_alumbrado_publico_led':
+                        vw_alumbrado_publico_led.remove();
                     break;
 
                     case 'vw_alumbrado_publico':
@@ -786,9 +801,13 @@ $(document).ready(function() {
                      * Red vial
                      */
 
+                    case 'vw_alturas_calles':
+                        vw_alturas_calles.remove();
+                        break;
                     case 'vw_ide_calle':
                     vw_ide_calle.remove();
                         break;
+
                     case 'vw_ide_calle_por_tipo_calzada':
                     vw_ide_calle_por_tipo_calzada.remove();
                         break;

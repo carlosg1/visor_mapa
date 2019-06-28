@@ -48,6 +48,7 @@
                     <li id="redAguaPotable" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=red_agua_potable&WS=infraestructura'; ?>"}'>Red de agua potable</li>
                     <li id="vw_desagues_pluviales" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_desagues_pluviales&WS=infraestructura'; ?>"}'>Red de desague pluvial</li>
                     <li id="red_desague_cloacal" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_red_de_cloaca&WS=infraestructura'; ?>"}'>Red de desague cloacal</li>
+                    <li id="vw_alumbrado_publico_led" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_alumbrado_publico_led&WS=infraestructura'; ?>"}'>Instalaci&oacute;n luminaria LED</li>
                     <li id="vw_alumbrado_publico" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_alumbrado_publico&WS=infraestructura'; ?>"}'>Alumbrado p&uacute;blico</li>
                     <li id="vw_bocas_de_registro" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_bocas_de_registro&WS=infraestructura'; ?>"}'>Bocas de registro</li>
                     <li id="vw_centros_distribuidores_dpec" data-jstree='{"icon": "images/icon/distribuidores_dpec.png"}'>Centros de distribucion DPEC</li>                    
@@ -155,6 +156,7 @@
 
             <li id="redVial" data-jstree='{"icon": "images/icon/folder-1-16.png"}'>Red vial
                 <ul>
+                    <li id="vw_alturas_calles">Altura de calle</li>
                     <li id="vw_ide_calle">Calles</li>
                     <li id="vw_ide_calle_por_tipo_calzada">Calles por tipo de calzada</li>
                 </ul>

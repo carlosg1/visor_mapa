@@ -73,12 +73,20 @@ var wms_GIS = L.WMS.Source.extend({
         }
 
         // red desague cloacal
-        
+
         if(queLayer[0] == "vw_red_de_cloaca"){
           datos1 = '<div><h2>Red de desague cloacal</h2></div>';
-          datos1 += '<b>Tipo:</b> ' + datos.features[0].properties['tipo'];
-          datos1 += '<BR />' + '<b>Diametro:</b> ' + datos.features[0].properties['diametro'];
-          datos1 += '<BR />' + '<b>Material:</b> ' + datos.features[0].properties['material'];
+          datos1 += '<b>Tipo:</b> ' + nvl(datos.features[0].properties['tipo']);
+          datos1 += '<BR />' + '<b>Diametro:</b> ' + nvl(datos.features[0].properties['diametro']);
+          datos1 += '<BR />' + '<b>Material:</b> ' + nvl(datos.features[0].properties['material']);
+        }
+
+        // alumbrado publico
+        if(queLayer[0] == "vw_alumbrado_publico_led"){
+          datos1 = '<div><h2>Instalaci&oacute;n Luminaria LED</h2></div>';
+          datos1 += '<b>Nro. piquete:</b> ' + nvl(datos.features[0].properties['nro_piq']);
+          datos1 += '<BR />' + '<b>Nomenclador:</b> ' + nvl(datos.features[0].properties['nomenclador']);
+          datos1 += '<div style="width: 300px;">&nbsp</div>';
         }
 
         // alumbrado publico

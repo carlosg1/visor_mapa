@@ -15,6 +15,7 @@ $(document).ready(function() {
     lyr_red_agua_potable = wmsMcc51.getLayer("infraestructura:red_agua_potable");
     vw_desagues_pluviales = wmsMcc51.getLayer("infraestructura:vw_desagues_pluviales");
     vw_red_desague_cloaca = wmsMcc51.getLayer("infraestructura:vw_red_de_cloaca");
+    vw_alumbrado_publico_led = wmsMcc51.getLayer("infraestructura:vw_alumbrado_publico_led");
     vw_alumbrado_publico = wmsMcc51.getLayer("infraestructura:vw_alumbrado_publico");
     vw_bocas_de_registro = wmsMcc51.getLayer("infraestructura:vw_bocas_de_registro");
     vw_centros_distribuidores_dpec = wmsMcc51.getLayer("infraestructura:vw_centros_distribuidores_dpec");
@@ -182,7 +183,11 @@ $(document).ready(function() {
      */
 
     // Red vial
+    
+    vw_alturas_calles  = wmsMcc51.getLayer("red_vial:vw_alturas_calles");
+
     vw_ide_calle  = wmsMcc51.getLayer("red_vial:vw_ide_calle");
+
     vw_ide_calle_por_tipo_calzada  = wmsMcc51.getLayer("red_vial:vw_ide_calle_por_tipo_calzada");
 
     /*
