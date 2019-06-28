@@ -8,12 +8,11 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
 
         <link rel="stylesheet" href="css/leaflet.css">
-        <link rel="stylesheet" href="css/qgis2web.css">
         <link rel="stylesheet" href="css/Control.OSMGeocoder.css">
         <link rel="stylesheet" href="css/leaflet-measure.css">
-    
+
         <link rel="stylesheet" href="css/estilo.css"> 
-        
+
         <script src="js/leaflet.js"></script>
         <script src="js/leaflet.rotatedMarker.js"></script>
         <script src="js/leaflet.pattern.js"></script>
@@ -26,11 +25,14 @@
         <script src="js/Control.OSMGeocoder.js"></script>
         <script src="js/leaflet-measure.js"></script>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+        <!-- script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
 
+
+        <script src="mapa/mapa.js"></script>
         <script src="js/mostrar-infowindow.js"></script>
 
         <script src="js/appmcc.js"></script>
@@ -40,6 +42,8 @@
 
     </head>
     <body>
+
+        
         <!-- ARBOL DE CAPAS -->
         <div id="lateral">
 			<div>
@@ -47,6 +51,12 @@
                     <span><img src="images/collapse-arrow.png" border="0" width="12" height="12" /></span>
                 </div>
                 <div style="clear:both;"></div>
+            </div>
+
+            <div class="topBanner">
+                <span>
+                    <img src="images/topBanner.jpg" alt="Municipalidad de Corrientes">
+                </span>
             </div>
             
 			<!-- contenedor para el arbol -->
@@ -61,12 +71,16 @@
                     <?php include("capas/tree_publico.php"); ?>
 
 				</div>
-			</div>
+            </div>
+            
 		</div>
 
         <div id="map"></div>
 
-       
-
+        <!-- dialogos -->
+        <div id="dialogo1">
+            <p id="dlgTitulo"></p>
+            <div id="dlgCuerpo"></div>
+        </div>
     </body>
 </html>
