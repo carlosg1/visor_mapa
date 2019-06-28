@@ -20,7 +20,8 @@ $(document).ready(function() {
     vw_centros_distribuidores_dpec = wmsMcc51.getLayer("infraestructura:vw_centros_distribuidores_dpec");
 
     // obras municipales
-    vw_obras_santa_catalina_viviendas = wmsMcc51.getLayer("santa_catalina:vw_obras_santa_catalina_viviendas");
+    vw_obras_de_bacheo = wmsMcc51.getLayer("obras_municipales:vw_obras_de_bacheo");
+    vw_obras_santa_catalina_viviendas = wmsMcc51.getLayer("obras_municipales:vw_obras_santa_catalina_viviendas");
 
     // planeamiento urbano
     vw_distritos_planeamiento_urbano = wmsMcc51.getLayer("planeamiento_urbano:vw_distritos_planeamiento_urbano");

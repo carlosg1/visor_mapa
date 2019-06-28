@@ -53,11 +53,14 @@
                     <li id="vw_centros_distribuidores_dpec" data-jstree='{"icon": "images/icon/distribuidores_dpec.png"}'>Centros de distribucion DPEC</li>                    
                 </ul>
             </li>
+
             <li id="obrasMunicipales" data-jstree='{"icon": "images/icon/folder-1-16.png"}'>Obras Municipales
                 <ul>
+                    <li id="vw_obras_de_bacheo" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_obras_de_bacheo&WS=obras_municipales'; ?>"}'>Obras de bacheo</li>
                     <li id="vw_obras_santa_catalina_viviendas">Obra Santa Catalina</li>
                 </ul>
             </li>
+
             <li id="planeamientoUrbano" data-jstree='{"icon": "images/icon/folder-1-16.png"}'>Planeamiento urbano
                 <ul>
                     <li id="vw_distritos_planeamiento_urbano">Distritos C&oacute;digo Planeamiento Urbano</li>
@@ -66,18 +69,21 @@
                     <li id="vw_edificios_historicos">Edificios del casco historico</li>
                 </ul>
             </li>
+
             <li id="infoMunicipal" data-jstree='{"icon": "images/icon/folder-1-16.png"}'>Informacion Municipal
                 <ul>
                     <li id="vw_centros_de_pago">Centros de pago</li>
                     <li id="vw_dependencias_municipales">Dependencias Municipales</li>
                 </ul>
             </li>
+
             <li id="estadisticaCenso" data-jstree='{"icon": "images/icon/folder-1-16.png"}'>Estadistica y Censo
                 <ul>
                     <li id="vw_poblacion">Poblaci&oacute;n</li>
                     <li id="vw_densidad_de_poblacion">Densidad de poblaci&oacute;n</li>
                 </ul>
             </li>
+
             <li id="desasocialComunit" data-jstree='{"icon": "images/icon/folder-1-16.png"}'>Desarrollo social Comunitario
                 <ul>
                     <li id="vw_cic">Centros de integracion comunitario</li>
@@ -86,7 +92,7 @@
                     <li id="vw_zonas_municipales">Zonas Municipales</li>
                 </ul>
             </li>
-            
+
             <li id="salud" data-jstree='{"icon": "images/icon/folder-1-16.png"}'>Salud
                 <ul>
                     <li id="vw_caps">C.A.P.S.</li>

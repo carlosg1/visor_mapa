@@ -2,6 +2,18 @@
  * Extiendo la clase L.WMS.source
  */
 
+function nvl(p) {
+  
+  if ( p === null ) {
+
+    return '';
+
+  }
+
+  return p;
+
+}
+
 var wms_GIS = L.WMS.Source.extend({
 
     'showFeatureInfo': function(latlng, info) {
@@ -556,6 +568,15 @@ var wms_GIS = L.WMS.Source.extend({
           datos1 += '<div style="width:300px;">&nbsp;</div>';
         }
 
+        // obras de bacheo
+        if(queLayer[0] == 'vw_obras_de_bacheo'){
+          datos1 = '<div><span style="float:right; margin-right: 10px;";><img style="display: inline;" height="40" alt="Obras de Bacheo" src="images/icon/bandera_roja.png" /></span><h2>Obras de bacheo</h2></div>';
+          datos1 += '<b>Estado:</b> ' + nvl(datos.features[0].properties['estado']);
+          datos1 += '<BR />' + '<b>Ubicaci&oacute;n:</b> ' + nvl(datos.features[0].properties['ubicacion']);
+          datos1 += '<BR />' + '<b>Descrip.:</b> ' + nvl(datos.features[0].properties['descripcion']);
+          datos1 += '<div style="width:300px;">&nbsp;</div>';
+        }
+
         // recorrido ramal 110 C
         if(queLayer[0] == 'recorrido_ramal_110_C_sta_catalina'){
           datos1 = '<div><span style="float:right; margin-right: 10px;";><img style="display: inline;" height="40" alt="Recorrido Ramal 110 C Sta. Catalina" src="images/icon/transporte/recorrido-ramal.png" /></span><h2>Recorrido Ramal 110 C Sta. Catalina</h2></div>';
@@ -563,13 +584,6 @@ var wms_GIS = L.WMS.Source.extend({
           datos1 += '<BR />' + '<b>Nombre:</b> ' + datos.features[0].properties['nombre'];
           datos1 += '<div style="width:300px;">&nbsp;</div>';
         }
-
-
-
-
-
-
-
 
         // paradas Barranqueras
         if(queLayer[0] == 'vw_paradas_barranqueras'){

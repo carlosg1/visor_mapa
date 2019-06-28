@@ -185,9 +185,15 @@ $(document).ready(function() {
                     case 'vw_centros_distribuidores_dpec':
                         map.addLayer(vw_centros_distribuidores_dpec);
                         break;
+
+                    case 'vw_obras_de_bacheo':
+                        map.addLayer(vw_obras_de_bacheo);
+                        break;
+
                     case 'vw_obras_santa_catalina_viviendas':
                         map.addLayer(vw_obras_santa_catalina_viviendas);
                         break;
+
                     case 'vw_distritos_planeamiento_urbano':
                         map.addLayer(vw_distritos_planeamiento_urbano);
                         break;
@@ -447,7 +453,9 @@ $(document).ready(function() {
                         map.addLayer(vw_ide_calle_por_tipo_calzada);
                         break;
 
-                    // Informacion catastral
+                    /***
+                     * Informacion catastral
+                     */ 
                     case 'vw_asentamiento_renabap':
                         map.addLayer(vw_asentamiento_renabap);
                         break;
@@ -472,58 +480,83 @@ $(document).ready(function() {
                 }
             break;
 
+            /***
+             * 
+             * apaga las capas
+             * 
+             ***/
 
-            // apaga las capas
+
             case 'deselect_node':
                 switch (data.node.id) {
                     case 'rehabilitacionDesaguesPluviales':
                         lyr_man_pluv.remove();
                         break;
+
                     case 'rehabilitacionSumideros':
                         lyr_man_sumidero.remove();
                         break;
+
                     case 'redAguaPotable':
                         lyr_red_agua_potable.remove();
                         break;
+
                     case 'vw_desagues_pluviales':
                         vw_desagues_pluviales.remove();
                     break;
+
                     case 'red_desague_cloacal':
                         vw_red_desague_cloaca.remove();
                     break;
+
                     case 'vw_alumbrado_publico':
                         vw_alumbrado_publico.remove();
                     break;
+
                     case 'vw_bocas_de_registro':
                         vw_bocas_de_registro.remove();
                     break;
+
                     case 'vw_centros_distribuidores_dpec':
                         vw_centros_distribuidores_dpec.remove();
                         break;
+
+                    case 'vw_obras_de_bacheo':
+                        vw_obras_de_bacheo.remove();
+                        break;
+
                     case 'vw_obras_santa_catalina_viviendas':
                         vw_obras_santa_catalina_viviendas.remove();
                         break;
+
                     case 'vw_distritos_planeamiento_urbano':
                         vw_distritos_planeamiento_urbano.remove();
                         break;
+
                     case 'vw_ejido_urbano':
                         vw_ejido_urbano.remove();
                         break;
+
                     case 'vw_medianas':
                         vw_medianas.remove();
                         break;
+
                     case 'vw_edificios_historicos':
                         vw_edificios_historicos.remove();
                         break;
+
                     case 'vw_centros_de_pago':
                         vw_centros_de_pago.remove();
                         break;
+
                     case 'vw_dependencias_municipales':
                         vw_dependencias_municipales.remove();
                         break;
+
                     case 'vw_poblacion':
                     vw_poblacion.remove();
                         break;
+
                     case 'vw_densidad_de_poblacion':
                     vw_densidad_de_poblacion.remove();
                         break;
@@ -532,12 +565,15 @@ $(document).ready(function() {
                     case 'vw_cic':
                     vw_cic.remove();
                         break;
+
                     case 'vw_delegaciones_municipales':
                     vw_delegaciones_municipales.remove();
                         break;
+
                     case 'vw_sum':
                     vw_sum.remove();
                         break;
+
                     case 'vw_zonas_municipales':
                     vw_zonas_municipales.remove();
                         break;
