@@ -9,7 +9,7 @@ $layer = $_REQUEST['LAYER'];
 
 $ws = array_key_exists("WS", $_REQUEST) ? $_REQUEST['WS'] : "transporte";
 
-$url = "http://192.168.10.51:8282/geoserver/$ws/wms?REQUEST=GetLegendGraphic&VERSION=1.1.1&FORMAT=image/png&WIDTH=16&HEIGHT=16&TRANSPARENT=true&LAYER=" . $layer;
+$url = "http://localhost:8282/geoserver/$ws/wms?REQUEST=GetLegendGraphic&VERSION=1.1.1&FORMAT=image/png&WIDTH=16&HEIGHT=16&TRANSPARENT=true&LAYER=" . $layer;
 
 $curl = curl_init();
 
