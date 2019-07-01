@@ -2,7 +2,7 @@
 
 /**
  * Devuelve el grafico (legend graphic) de una capa, 
- * haciendo un request a la api de geoserver
+ * haciendo un request a la api rest de geoserver
  */
 
 $layer = $_REQUEST['LAYER'];
@@ -73,8 +73,6 @@ if($ancho > 20){
 
     // hacer transparente el color de fondo seleccionado
     // imagecolortransparent($img2, $blanco);
-
-
 
     header('Content-Type: image/png');
 
