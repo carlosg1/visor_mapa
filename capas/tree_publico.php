@@ -3,7 +3,7 @@
  *
  * Dev.: Lic Carlos Garcia - carlosgctes@gmail.com 
  * Uso: para agregar una capa a la rama de informacion publica 
- * agregar una entrada <li> al archivo publico.php
+ * agregar una entrada <li> al archivo tree_publico.php
  * 
  * 
  */
@@ -46,18 +46,25 @@
             <li id="infraestructura" data-jstree='{"icon": "images/icon/folder-1-16.png"}'>Infraestructura
                 <ul>
                     <li id="redAguaPotable" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=red_agua_potable&WS=infraestructura'; ?>"}'>Red de agua potable</li>
+
                     <li id="vw_desagues_pluviales" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_desagues_pluviales&WS=infraestructura'; ?>"}'>Red de desague pluvial</li>
+                    
                     <li id="red_desague_cloacal" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_red_de_cloaca&WS=infraestructura'; ?>"}'>Red de desague cloacal</li>
-                    <li id="vw_alumbrado_publico_led" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_alumbrado_publico_led&WS=infraestructura'; ?>"}'>Instalaci&oacute;n luminaria LED</li>
+                    
                     <li id="vw_alumbrado_publico" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_alumbrado_publico&WS=infraestructura'; ?>"}'>Alumbrado p&uacute;blico</li>
+                    
                     <li id="vw_bocas_de_registro" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_bocas_de_registro&WS=infraestructura'; ?>"}'>Bocas de registro</li>
+                   
                     <li id="vw_centros_distribuidores_dpec" data-jstree='{"icon": "images/icon/distribuidores_dpec.png"}'>Centros de distribucion DPEC</li>                    
                 </ul>
             </li>
 
-            <li id="obrasMunicipales" data-jstree='{"icon": "images/icon/folder-1-16.png"}'>Obras Municipales
+            <li id="obrasMunicipales" data-jstree='{"icon": "images/icon/folder-1-16.png"}'>Obras
                 <ul>
+                    <li id="vw_alumbrado_publico_led" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_alumbrado_publico_led&WS=infraestructura'; ?>"}'>Instalaci&oacute;n luminaria LED</li>
+                    
                     <li id="vw_obras_de_bacheo" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_obras_de_bacheo&WS=obras_municipales'; ?>"}'>Obras de bacheo</li>
+                    
                     <li id="vw_obras_santa_catalina_viviendas">Obra Santa Catalina</li>
                 </ul>
             </li>
@@ -65,8 +72,11 @@
             <li id="planeamientoUrbano" data-jstree='{"icon": "images/icon/folder-1-16.png"}'>Planeamiento urbano
                 <ul>
                     <li id="vw_distritos_planeamiento_urbano">Distritos C&oacute;digo Planeamiento Urbano</li>
+                    
                     <li id="vw_ejido_urbano">Ejido urbano</li>
+                    
                     <li id="vw_medianas">Medianas de la ciudad</li>
+                    
                     <li id="vw_edificios_historicos">Edificios del casco historico</li>
                 </ul>
             </li>
