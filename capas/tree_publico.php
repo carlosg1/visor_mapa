@@ -18,7 +18,9 @@
 
 <ul>
     <li id="arbolCapasMcc" data-jstree='{"opened": true, "icon": false}'>
-        <b>Informacion Geogr&aacute;fica</b>
+
+        <b>Informaci&oacute;n Geogr&aacute;fica</b>
+
         <ul>
             <li id="planHidrico" data-jstree='{"icon": "images/icon/folder-1-16.png"}'>Plan h&iacute;drico
                 <ul>
