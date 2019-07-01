@@ -118,9 +118,13 @@
             <li id="Transporte" data-jstree='{"opened": false, "icon": "images/icon/folder-1-16.png"}'>Transporte
                 <ul>
                     <li id="vw_puntos_de_recarga_sube" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_puntos_recarga_sube'; ?>"}'>Puntos de recarga SUBE</li>
+                    
                     <li id="vw_recorrido_total_colectivos_corrientes" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_recorrido_total_colectivo'; ?>"}'>Recorrido Total de Colectivos</li>
+                    
                     <li id="vw_estacionamiento_privado" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_estacionamiento_privado'; ?>"}'>Estacionamientos privados</li>
+                    
                     <li id="vw_paradas_colectivos" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_paradas_colectivos'; ?>"}'>Paradas de colectivo Urbano</li>
+                    
                     <li id="b1" data-jstree='{"opened": false, "icon": "images/icon/folder-1-16.png"}'>Recorrido por ramal
                         <ul>
                             <li id="recorrido_ramal_101_B" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=recorrido_ramal_101_B'; ?>"}'>Ramal 101 B</li>

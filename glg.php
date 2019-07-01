@@ -7,9 +7,24 @@
 
 $layer = $_REQUEST['LAYER'];
 
+$ruta_legend = 'images/legend/';
+
+// si el archivo legend ya existe devuelvo ese archivo, sino
+// crea el archivo, lo graba para futuras consultas y 
+// devuelve el legend recien creado
+// aca suponemos que existe la ruta: images/legend
+
+if(file_exists($ruta_legend . $layer . '.png')){
+
+    echo imagepng($ruta_legend . $layer . '.png');
+
+    exit;
+
+}
+
 $ws = array_key_exists("WS", $_REQUEST) ? $_REQUEST['WS'] : "transporte";
 
-$url = "http://localhost:8282/geoserver/$ws/wms?REQUEST=GetLegendGraphic&VERSION=1.1.1&FORMAT=image/png&WIDTH=16&HEIGHT=16&TRANSPARENT=true&LAYER=" . $layer;
+$url = "http://192.168.10.51:8282/geoserver/$ws/wms?REQUEST=GetLegendGraphic&VERSION=1.1.1&FORMAT=image/png&WIDTH=16&HEIGHT=16&TRANSPARENT=true&LAYER=" . $layer;
 
 $curl = curl_init();
 
@@ -74,6 +89,12 @@ if($ancho > 20){
     // hacer transparente el color de fondo seleccionado
     // imagecolortransparent($img2, $blanco);
 
+    $fp = fopen($ruta_legend . $layer . '.png', 'w');
+
+    fwrite($fp, $imagen);
+
+    fclose($fp);
+
     header('Content-Type: image/png');
 
     echo imagepng($img2);
@@ -85,6 +106,12 @@ if($ancho > 20){
 
     // hacer transparente el fondo blanco
     imagecolortransparent($img, $blanco);
+
+    $fp = fopen($ruta_legend . $layer . '.png', 'w');
+
+    fwrite($fp, $imagen);
+
+    fclose($fp);
 
     header('Content-Type: image/png');
 
