@@ -65,7 +65,7 @@
                     
                     <li id="vw_obras_de_bacheo" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_obras_de_bacheo&WS=obras_municipales'; ?>"}'>Obras de bacheo</li>
                     
-                    <li id="vw_obras_santa_catalina_viviendas">Obra Santa Catalina</li>
+                    <li id="vw_obras_santa_catalina_viviendas" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_obras_santa_catalina_viviendas&WS=obras_municipales'; ?>"}'>Obra Santa Catalina</li>
                 </ul>
             </li>
 
