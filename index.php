@@ -31,7 +31,6 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
 
-
         <script src="mapa/mapa.js"></script>
         <script src="js/mostrar-infowindow.js"></script>
 
@@ -43,39 +42,52 @@
     </head>
     <body>
 
-        
+        <div id="map"></div>
+
+        <div id="contenedor-hamburguesa">
+            <div id="botonmax">
+                <div id="botonmax-simple" style="text-align: left;">
+                    <div id="botonmax-simple-root botonmax-activo">
+                        <div class="cajabusqueda-caja-contenedor">
+                            <button id="btn-abrir" class="icono-hamburgesa"> </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- ARBOL DE CAPAS -->
         <div id="lateral">
-			<div>
+            <!-- div style="display: block;" -->
                 <div id="contraer">
+                    <button id="btn-contraer" class="sprite-arrow"> </button>
+                    <!--
                     <span><img src="images/collapse-arrow.png" border="0" width="12" height="12" /></span>
+                    -->
                 </div>
-                <div style="clear:both;"></div>
-            </div>
+            <!-- /div -->
 
             <div class="topBanner">
                 <span>
                     <img src="images/topBanner.jpg" alt="Municipalidad de Corrientes">
                 </span>
             </div>
-            
-			<!-- contenedor para el arbol -->
+
+            <!-- contenedor para el arbol -->
             <div id="contenedorArboles">
                 <div id="arbolCapaBase">
-                     <!-- incluyo capas base --> 
-                     <?php include("capas/tree_capa_base.php"); ?>
+                        <!-- incluyo capas base --> 
+                        <?php include("capas/tree_capa_base.php"); ?>
                 </div>
 
-				<div id="arbolMCC">
+                <div id="arbolMCC">
                     <!-- arbol de capa publico -->
                     <?php include("capas/tree_publico.php"); ?>
 
-				</div>
+                </div>
             </div>
-            
-		</div>
 
-        <div id="map"></div>
+        </div>
 
         <!-- dialogos -->
         <div id="dialogo1">

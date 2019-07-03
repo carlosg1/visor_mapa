@@ -7,10 +7,11 @@
 let map = undefined;
 
 $(document).ready(function() {
+
     $('#map').height('100%');
 
     map = L.map('map', {
-        zoomControl:true,
+        zoomControl: true,
         inertia: true,
         maxZoom:18,
         minZoom:1,
@@ -18,6 +19,8 @@ $(document).ready(function() {
         center: [-27.48483,-58.81393],
         zoom: 18
     });
+
+    map.zoomControl.setPosition('topright');
 
     map.fitBounds([[-27.45664518742547, -58.763208389282234],[-27.504312737195168, -58.87899398803712]]);
 

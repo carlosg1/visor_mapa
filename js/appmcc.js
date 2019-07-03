@@ -26,7 +26,7 @@ $(document).ready(function() {
         opacity: 1.0
     });
 
-// no funciona el enlace wms de bing
+    // no funciona el enlace wms de bing
     overlay_OSMStandard = L.tileLayer('http://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         opacity: 1.0
     });
@@ -78,8 +78,7 @@ $(document).ready(function() {
     .on('changed.jstree', function(e, data) {
 
         nodoSeleccionado = data.instance.get_node(data.selected[data.selected.length-1]).id;
-// console.log(this);
-// console.log(data.instance.get_node(nodo_base_anterior));
+
         if (nodoSeleccionado === nodo_base_anterior) {
             arbolCapaBase.jstree('deselect_all');
             $(this).jstree('select_node', data.instance.get_node(nodo_base_anterior));
@@ -842,16 +841,32 @@ $(document).ready(function() {
     // registro eventos
 
     document.getElementById("infoCatastral").addEventListener('mouseover', function (ev){
+
         document.getElementById("dlgTitulo").innerHTML = ev.srcElement.id.split('_')[0];
 
         document.getElementById("dlgCuerpo").innerHTML = "Cuerpo del mensaje";
 
-        // document.getElementById("dialogo1").style.visibility = 'visible';
-
-        // console.log('id del elemento: ', ev.srcElement.id.split('_')[0]);
     }, false);
 
+    // contraer el panel lateral
+    document.getElementById("btn-contraer").addEventListener('click', function(ev){
+        /*
+        var p=$('#lateral').css('left', 0);
 
+        for(x = 0; x > -322; x--){
+            
+            p.css('left', x);
+
+            for(y = 0; y < 1000; y++){
+            }
+
+        }
+        */
+
+       $('#lateral').animate({left: 7}, 400, function(){
+        $('#lateral').animate({left: -400}, 600);
+       });
+    }, false);
 
 });
 
