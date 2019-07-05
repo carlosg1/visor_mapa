@@ -41,7 +41,7 @@ div.topBanner span img {
 	transition-duration: 200ms;
 	transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 	*/
-} 
+}
 .botonmax-simple-root.botonmax-activo {
 	display: block;
 }
@@ -57,7 +57,7 @@ div.topBanner span img {
 	-webkit-box-shadow: 5px 5px 15px 0px rgba(99,99,99,1);
 	-moz-box-shadow: 5px 5px 15px 0px rgba(99,99,99,1);
 	box-shadow: 5px 5px 15px 0px rgba(99,99,99,1);
-} 
+}
 .icono-hamburgesa {
 	display: block;
 	background: url(../images/g/quantum_menu-v2-1x.png) 0 0;
