@@ -26,7 +26,9 @@
         <script src="js/leaflet-measure.js"></script>
 
         <!-- script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script -->
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/humanity/jquery-ui.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
@@ -44,6 +46,7 @@
 
         <div id="map"></div>
 
+        <!-- menu hamburguesa --> 
         <div id="contenedor-hamburguesa">
             <div id="botonmax">
                 <div id="botonmax-simple" style="text-align: left;">
@@ -53,6 +56,23 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- caja de busqueda --> 
+        <div id="busca-contenedor">
+            <div id="busca-root">
+                <form id="frmBusca">
+                    <input type="text" id="input-busqueda" autocomplete="off" placeholder="Buscar en GIS MCC">
+                </form>
+
+                <div id="lupa-busca-contenedor">
+                    <button id="lupa-busca-boton"></button>
+                    
+                    
+                </div>
+
+                <span id="busca-separador"></span>
             </div>
         </div>
 
@@ -90,6 +110,9 @@
         </div>
 
         <!-- dialogos -->
+        <!-- mensaje que no se encontro ningun elemento -->
+        <div id="msg-no-encontre"><p>La busqueda no arrojó ningun resultado. <br /> Por favor, intente de nuevo con otra busqueda.</p></div>
+
         <div id="dialogo1">
             <p id="dlgTitulo"></p>
             <div id="dlgCuerpo"></div>

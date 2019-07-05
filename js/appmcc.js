@@ -5,6 +5,7 @@ let overlay_OSMStandard;
 let overlay_CapabaseGIS, wmsMcc;
 let arbolCapaBase = arbolMCC = nodo_base_anterior = nodoSeleccionado = undefined;
 let nodo_pub_selec, nodo_pub_anterior = undefined;
+let capas = Array();
 
 $(document).ready(function() {
 
@@ -838,6 +839,9 @@ $(document).ready(function() {
         }
     });
 
+    // funciones
+    
+
     // registro eventos
 
     document.getElementById("infoCatastral").addEventListener('mouseover', function (ev){
@@ -850,23 +854,79 @@ $(document).ready(function() {
 
     // contraer el panel lateral
     document.getElementById("btn-contraer").addEventListener('click', function(ev){
-        /*
-        var p=$('#lateral').css('left', 0);
-
-        for(x = 0; x > -322; x--){
-            
-            p.css('left', x);
-
-            for(y = 0; y < 1000; y++){
-            }
-
-        }
-        */
 
        $('#lateral').animate({left: 7}, 400, function(){
-        $('#lateral').animate({left: -400}, 600);
+
+        $('#lateral').animate({left: -400}, 400);
+
        });
     }, false);
+
+    document.getElementById("btn-abrir").addEventListener('click', function(ev){
+
+        $('#lateral').animate({left: 9}, 400, function(){
+
+            $('#lateral').animate({left: 0}, 400);
+
+        });
+    }, false);
+
+    document.getElementById("frmBusca").addEventListener('keyup', function(ev){
+
+        if (ev.keyCode === 13) {
+            
+            ev.preventDefault();
+            
+            document.getElementById("lupa-busca-boton").click();
+
+          }
+
+        // $('#lupa-busca-boton').click();
+
+    });
+
+    
+
+
+    $('#msg-no-encontre').dialog({autoOpen:false});
+
+    $('#lupa-busca-boton').click(function(){
+
+        if( $('#input-busqueda').val() === '' ) return false;
+
+        $.ajax( "busca_calle.php", {
+            data: 'nombre_calle=' + document.getElementById('input-busqueda').value,
+            method: 'POST',
+            success: function(response){
+
+                if (response == '-1') {
+                    
+                    $("#msg-no-encontre").dialog({
+                        modal: true,
+                        escapeClose: false,
+                        showClose: false,
+                        title: "Aviso!!",
+                        width: 450,
+                        buttons: {
+                            Ok: function() { $(this).dialog("close"); }
+                        }
+                    }).css('zIndex', 1050);
+
+                    return false;
+                }
+
+                var myStyle = {
+                    "color": "#ff7800",
+                    "weight": 5,
+                    "opacity": 0.65
+                };
+               
+                capas.push(L.geoJSON(JSON.parse(response), {style: myStyle}).addTo(map));
+                
+            }
+        });
+
+    });
 
 });
 
