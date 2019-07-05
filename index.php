@@ -63,7 +63,7 @@
         <div id="busca-contenedor">
             <div id="busca-root">
                 <form id="frmBusca">
-                    <input type="text" id="input-busqueda" autocomplete="off" placeholder="Buscar en GIS MCC">
+                    <input type="text" id="input-busqueda" autocomplete="off" placeholder="Buscar calle, ej: Mendoza">
                 </form>
 
                 <div id="lupa-busca-contenedor">
