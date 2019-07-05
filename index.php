@@ -61,19 +61,33 @@
 
         <!-- caja de busqueda --> 
         <div id="busca-contenedor">
+            
+
             <div id="busca-root">
                 <form id="frmBusca">
-                    <input type="text" id="input-busqueda" autocomplete="off" placeholder="Buscar calle, ej: Mendoza">
+                    <input type="search" id="input-busqueda" autocomplete="off" placeholder="Buscar calle, ej: Mendoza">
                 </form>
 
                 <div id="lupa-busca-contenedor">
                     <button id="lupa-busca-boton"></button>
-                    
-                    
                 </div>
 
                 <span id="busca-separador"></span>
             </div>
+            
+            
+        </div>
+
+        <!-- opciones y resultado de la busqueda -->
+        <div id="opci-contenedor">
+            <div id="opci-menu">
+                <button id="opci-opci-boton"></button>
+                
+            </div>
+
+            <span style="position:absolute; left: 65px; top: 15px;">Selecciona opciones de busqueda</span>
+
+            <div style="display: block; border-top: solid 2px #6c6c6c; height: 300px; margin-top: 7px; opacity: 0.7;"></div>
         </div>
 
         <!-- ARBOL DE CAPAS -->
