@@ -9,7 +9,7 @@
 
 try{
 
-	$conPdoPg = new PDO('pgsql:host=190.7.30.142;port=5432;dbname=gis', 'pm_lectura', '_mUN.Ctes$gIS');
+	$conPdoPg = new PDO('pgsql:host=192.168.10.51;port=5432;dbname=gis', 'pm_lectura', '_mUN.Ctes$gIS');
 
 }
 
