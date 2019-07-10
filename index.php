@@ -26,7 +26,9 @@
         <script src="js/leaflet-measure.js"></script>
 
         <!-- script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script -->
-        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/humanity/jquery-ui.css">
+        <!-- link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/humanity/jquery-ui.css" -->
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
@@ -82,12 +84,37 @@
         <div id="opci-contenedor">
             <div id="opci-menu">
                 <button id="opci-opci-boton"></button>
-                
             </div>
 
-            <span style="position:absolute; left: 65px; top: 15px;">Selecciona opciones de busqueda</span>
+            <span class="opci-contenedor_opci-texto">M&aacute;s opciones</span>
 
-            <div style="display: block; border-top: solid 2px #6c6c6c; height: 300px; margin-top: 7px; opacity: 0.7;"></div>
+            <div class="opci-contenedor__opciones opci-contenedor_checkbox">
+
+               <div class="widget" id="botones_opcion">
+
+                    <fieldset>
+
+                        <legend> Seleccion&aacute; un bot&oacute;n </legend>
+                        
+                        <label for="opciones_busca-calle">Calle</label>
+                        <input type="radio" name="opciones_busca-radio" id="opciones_busca-calle" class="opci-contenedor__opciones_radio">
+
+                        <label for="opciones_busca-barrio">Barrio</label>
+                        <input type="radio" name="opciones_busca-radio" id="opciones_busca-barrio" class="opci-contenedor__opciones_radio">
+
+                        <label for="opciones_busca-partidainmo">Partida inmob.</label>
+                        <input type="radio" name="opciones_busca-radio" id="opciones_busca-partidainmo" class="opci-contenedor__opciones_radio">
+
+                        
+
+                        <label for="opciones_busca-depmunicipal">Dep. Municipal</label>
+                        <input type="radio" name="opciones_busca-radio" id="opciones_busca-depmunicipal" class="opci-contenedor__opciones_radio">
+
+                    </fieldset>
+
+                </div>
+
+            </div>
         </div>
 
         <!-- ARBOL DE CAPAS -->

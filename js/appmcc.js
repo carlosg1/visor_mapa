@@ -839,7 +839,13 @@ $(document).ready(function() {
         }
     });
 
-    // funciones
+    // definicion de elemantos
+
+    $("#botones_opcion").buttonset();
+
+    $(".opci-contenedor__opciones_radio").checkboxradio({
+        icon: false
+    });
     
 
     // registro eventos
@@ -884,9 +890,6 @@ $(document).ready(function() {
         // $('#lupa-busca-boton').click();
 
     });
-
-    
-
 
     $('#msg-no-encontre').dialog({autoOpen:false});
 

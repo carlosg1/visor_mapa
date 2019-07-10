@@ -161,6 +161,21 @@ div.topBanner span img {
 	border-left: 2px solid rgb(0,0,0,0.2);
 	height: 28px;
 }
+.opci-contenedor_opci-texto {
+	position:absolute; 
+	left: 65px; 
+	top: 15px;
+}
+.opci-contenedor_checkbox {
+	display: block; 
+	border-top: solid 2px #6c6c6c; 
+	height: 300px; 
+	margin-top: 7px; 
+	opacity: 0.7;
+}
+.opci-contenedor__opciones_radio {
+	padding-bottom: 5px;
+}
 #lateral {
 	display: block;
 	position: absolute;
