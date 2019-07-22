@@ -53,7 +53,7 @@ div.topBanner span img {
 	top: 0;
 	left: 0;
 	border-radius: 5px;
-	opacity: 0.8;
+	opacity: 0.9;
 	-webkit-box-shadow: 5px 5px 15px 0px rgba(99,99,99,1);
 	-moz-box-shadow: 5px 5px 15px 0px rgba(99,99,99,1);
 	box-shadow: 5px 5px 15px 0px rgba(99,99,99,1);
@@ -70,7 +70,7 @@ div.topBanner span img {
 }
 #busca-contenedor {
 	background: #fff;
-	opacity: 0.8;
+	opacity: 0.9;
 	position: absolute;
 	right: 60px;
 	top: 10px;
@@ -86,8 +86,9 @@ div.topBanner span img {
 	box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.35);
 }
 #opci-contenedor {
+	height: 0;
 	background: #fff;
-	opacity: 0.7;
+	opacity: 0;
 	position: absolute;
 	right: 63px;
 	top: 54px;
@@ -144,13 +145,30 @@ div.topBanner span img {
 	cursor: pointer;
 	/* background-size: 72px 24px; */
 }
+.busca-root_borrar-busqueda {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 50px;
+	padding: 12px;
+	visibility: hidden;
+}
+.busca-root_borra-busqueda_boton {
+	cursor: pointer;
+	border: 0;
+	display: block;
+	width: 24px;
+	height: 24px;
+	background: no-repeat url(../images/g/clear-1x-20150504.png) 0px 0px;
+	visibility: inherit;
+}
 #opci-opci-boton {
 	border: 0;
 	display: block;
 	padding: 12px;
 	width: 24px;
 	height: 24px;
-	background: no-repeat url(../images/g/common-406d6ec8eac5ef7b949e320de0f099ff.png) 0px -78px;
+	background: no-repeat url(../images/g/expand_less_gm_blue_20dp.png) 0px 0px;
 	cursor: pointer;
 }
 #opci-opci-boton::after {
@@ -168,14 +186,16 @@ div.topBanner span img {
 }
 .opci-contenedor_checkbox {
 	display: block; 
-	border-top: solid 2px #6c6c6c; 
-	height: 300px; 
+	/* border-top: solid 2px #6c6c6c; */
+	height: 105px; 
 	margin-top: 7px; 
-	opacity: 0.7;
+	opacity: inherit;
 }
 .opci-contenedor__opciones_radio {
 	padding-bottom: 5px;
+	opacity: inherit;
 }
+#msg-no-encontre { z-index: 2000; }
 #lateral {
 	display: block;
 	position: absolute;
@@ -286,4 +306,33 @@ div.topBanner span img {
 	font-size: 16pt;
 	color: blue;
 	font-weight: bold;
+}
+.obj-no-encontre {
+	display: block;
+	background: #f9b4b4;
+	opacity: 0;
+	position: absolute;
+	left: 350px;
+	top: 15px;
+	width: 286px;
+	visibility: visible; 
+	z-index: 2000;
+	text-align: center;
+	border-radius: 18px;
+	-moz-border-radius: 18px;
+	-webkit-border-radius: 18px;
+	-webkit-box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.52);
+	-moz-box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.52);
+	box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.52);
+}
+.x-cierre {
+	position: absolute;
+	right: 13px;
+	top: 2px;
+}
+.x-cierre #x-cierre-btn {
+	font-weight: bold;
+	color: #424242;
+	cursor: pointer;
+	text-decoration: none;
 }

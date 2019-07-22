@@ -6,6 +6,12 @@ let overlay_CapabaseGIS, wmsMcc;
 let arbolCapaBase = arbolMCC = nodo_base_anterior = nodoSeleccionado = undefined;
 let nodo_pub_selec, nodo_pub_anterior = undefined;
 let capas = Array();
+let apagarCapaBarrio = false;
+
+// variable que controla que se va a buscar
+// segun si se selecciono o no, algunas opciones
+// extras
+let queBusca = undefined;
 
 $(document).ready(function() {
 
@@ -841,6 +847,7 @@ $(document).ready(function() {
 
     // definicion de elemantos
 
+    // $("#botones_opcion").buttonset();
     $("#botones_opcion").buttonset();
 
     $(".opci-contenedor__opciones_radio").checkboxradio({
@@ -880,40 +887,76 @@ $(document).ready(function() {
     document.getElementById("frmBusca").addEventListener('keyup', function(ev){
 
         if (ev.keyCode === 13) {
-            
+
             ev.preventDefault();
-            
+
             document.getElementById("lupa-busca-boton").click();
 
-          }
-
-        // $('#lupa-busca-boton').click();
+        }
 
     });
 
-    $('#msg-no-encontre').dialog({autoOpen:false});
+    $('#msg-no-encontre').dialog({ 
+        autoOpen: false,
+        title: 'Aviso!!'
+    });
 
+    // expande opciones de busqueda
+    $("#input-busqueda").focus(function (){ 
+        $("#opci-contenedor").animate({height: 130, opacity: 0.85}, 400);
+    });
+
+    // contrae opciones de busqueda
+    $("#opci-opci-boton").click(function (){
+        $("#opci-contenedor").animate({height: 0, opacity: 0}, 400);
+    })
+
+    $("#x-cierre-btn").click(function (){
+
+        $(".obj-no-encontre").animate({opacity: 0}, 400);
+
+    });
+
+    // boton de busqueda
     $('#lupa-busca-boton').click(function(){
 
         if( $('#input-busqueda').val() === '' ) return false;
 
-        $.ajax( "busca_calle.php", {
-            data: 'nombre_calle=' + document.getElementById('input-busqueda').value,
+        if ( $("#botones_opcion input[name=opciones_busca-radio]:radio").is(':checked') ) {
+
+            queBusca = $("input:radio[name=opciones_busca-radio]:checked").val();
+
+            /*
+            if (queBusca === "dependencia municipal") {
+
+                $("#obj-no-encontre_cuerpo").html("Esta opcion estar&aacute; disponible en breve...");
+
+                $(".obj-no-encontre").animate({opacity: 0.8}, 400, function(){ $(".obj-no-encontre").effect('pulsate')});
+
+                return false;
+
+            }
+            */
+
+        } else {
+
+            queBusca = "Calle";
+
+        }
+
+        $.ajax( "rec_elem.php", {
+
+            data: 'nombre_calle=' + document.getElementById('input-busqueda').value + "&a=" + queBusca,
+
             method: 'POST',
+
             success: function(response){
 
                 if (response == '-1') {
                     
-                    $("#msg-no-encontre").dialog({
-                        modal: true,
-                        escapeClose: false,
-                        showClose: false,
-                        title: "Aviso!!",
-                        width: 450,
-                        buttons: {
-                            Ok: function() { $(this).dialog("close"); }
-                        }
-                    }).css('zIndex', 1050);
+                    $("#obj-no-encontre_cuerpo").html("La busqueda no di&oacute; ning&uacute;n resultado");
+
+                    $(".obj-no-encontre").animate({opacity: 0.8}, 400, function(){ $(".obj-no-encontre").effect('pulsate')});
 
                     return false;
                 }
@@ -924,13 +967,43 @@ $(document).ready(function() {
                     "opacity": 0.65
                 };
                
-                capas.push(L.geoJSON(JSON.parse(response), {style: myStyle}).addTo(map));
-                
+                capas.push(L.geoJSON(JSON.parse(response), {
+                    style: myStyle
+                }).addTo(map));
+
+                if (queBusca === "Barrio") {
+                    
+                    vw_barrios.addTo(map);
+
+                    apagarCapaBarrio = true; // para cuando se limpie la busqueda.
+
+                }
+
+                $(".busca-root_borrar-busqueda").css('visibility', 'visible');
+
             }
         });
 
     });
 
-});
+    $('.busca-root_borra-busqueda_boton').click(function(e) {
 
+        capas.forEach(function(item, index){
+
+            item.remove();
+
+        });
+
+        $("#input-busqueda").val("");
+
+        capas = [];
+
+        if (queBusca === "Barrio") {
+
+            map.removeLayer(vw_barrios);
+
+        }
+    });
+
+});
 
