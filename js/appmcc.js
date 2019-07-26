@@ -961,6 +961,11 @@ $(document).ready(function() {
                     return false;
                 }
 
+                // estoy por ver si es punto
+
+
+                // fin de ver si es punto
+
                 var myStyle = {
                     "color": "#ff7800",
                     "weight": 5,
