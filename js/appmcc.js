@@ -41,8 +41,13 @@ $(document).ready(function() {
     overlay_BingMap = L.tileLayer('http://ecn.dynamic.t0.tiles.virtualearth.net/comp/CompositionHandler/?mkt=en-us&it=G,VE,BX,L,LA&shading=hill', {
         opacity: 1.0
     });
-
-    overlay_CapabaseGIS = L.WMS.layer("http://190.7.30.142:8000/geoserver/wms?version=1.1.1&", "Capa_Base", {
+/*
+    overlay_capa_base = L.tileLayer('http://192.168.10.51:8282/geoserver/capa_base_mcc/wms', "capa_base", {
+        opacity: 1.0
+    });
+*/
+    overlay_CapabaseGIS = L.WMS.layer("http://192.168.10.51:8282/geoserver/wms?version=1.1.1&", 'capa_base_mcc:capa_base', {
+        layer: 'capa_base_mcc:capa_base',
         format: 'image/png',
         uppercase: true,
         transparent: true,
@@ -52,7 +57,11 @@ $(document).ready(function() {
         opacity: 1,
         identify: false,
     });
+/*
+    baseMap = { overlay_CapabaseGIS };
 
+    L.control.layers(baseMap).addTo(map);
+*/
     wmsMcc = new wms_GIS("http://gis.ciudaddecorrientes.gov.ar:8282/geoserver/wms?", {
         format: 'image/png',
         uppercase: true,

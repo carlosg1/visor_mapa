@@ -5,6 +5,7 @@
 // fecha mod.: 16/05/2019
 //
 let map = undefined;
+let baseMap = undefined;
 
 $(document).ready(function() {
 

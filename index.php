@@ -81,7 +81,6 @@
                 </div>
             </div>
             
-            
         </div>
 
         <!-- opciones y resultado de la busqueda -->
