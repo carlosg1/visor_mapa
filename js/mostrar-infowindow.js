@@ -217,6 +217,14 @@ var wms_GIS = L.WMS.Source.extend({
           datos1 += '<BR />' + '<span class="prompt1">Direcci&oacute;n:</span> ' + datos.features[0].properties['direccion'];
         }
 
+        // link Dependencias municipales
+        if(queLayer[0] == "vwlnk_dependencias_municipales"){
+          datos1 = '<div><h2>Dependencias municipales</h2></div>';
+          datos1 += '<span class="prompt1">Instituci&oacute;n:</span> ' + datos.features[0].properties['descripcion'];
+          // datos1 += '<BR />' + '<span class="prompt1">Tipo:</span> ' + datos.features[0].properties['tipo'];
+          datos1 += '<BR />' + '<span class="prompt1">Direcci&oacute;n:</span> ' + datos.features[0].properties['domicilio'];
+        }
+
         /*
          * Estadistica y censo
          */
