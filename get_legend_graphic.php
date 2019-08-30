@@ -7,7 +7,7 @@
 
 $layer = $_REQUEST['LAYER'];
 
-$url = "http://192.168.10.51:8282/geoserver/transporte/wms?REQUEST=GetLegendGraphic&VERSION=1.1.1&FORMAT=image/png&WIDTH=16&HEIGHT=16&TRANSPARENT=true&LAYER=" . $layer;
+$url = "http://190.7.30.142:8282/geoserver/transporte/wms?REQUEST=GetLegendGraphic&VERSION=1.1.1&FORMAT=image/png&WIDTH=16&HEIGHT=16&TRANSPARENT=true&LAYER=" . $layer;
 
 $curl = curl_init();
 

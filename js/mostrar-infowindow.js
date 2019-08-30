@@ -1,5 +1,10 @@
-/*
+/**
+ * 
  * Extiendo la clase L.WMS.source
+ * Actualizado: 21/08/2019
+ * Developer: Lic. Carlos Garcia
+ * Contacto: carlosgctes@gmail.com
+ * 
  */
 
 function nvl(p) {
@@ -51,6 +56,7 @@ var wms_GIS = L.WMS.Source.extend({
         }
 
         // infraestructura //
+
         // red agua potable
         if(queLayer[0] == "red_agua_potable"){
           datos1 = '<div><h2>Red de agua potable</h2></div>';
@@ -73,12 +79,26 @@ var wms_GIS = L.WMS.Source.extend({
         }
 
         // red desague cloacal
-
         if(queLayer[0] == "vw_red_de_cloaca"){
           datos1 = '<div><h2>Red de desague cloacal</h2></div>';
           datos1 += '<b>Tipo:</b> ' + nvl(datos.features[0].properties['tipo']);
           datos1 += '<BR />' + '<b>Diametro:</b> ' + nvl(datos.features[0].properties['diametro']);
           datos1 += '<BR />' + '<b>Material:</b> ' + nvl(datos.features[0].properties['material']);
+        }
+
+        // cloaca social
+        if(queLayer[0] == "vw_cloaca_social"){
+          datos1 = '<div><h2>Cloaca Social</h2></div>';
+          datos1 += '<b>Estado:</b> ' + '<span style="font-family: Arial; font-size: 1rem;">' + nvl(datos.features[0].properties['estado']) + '</span>';
+          datos1 += '<BR />' + '<b>Fondo:</b> ' + nvl(datos.features[0].properties['fondo']);
+          datos1 += '<BR />' + '<b>Fecha ejecucion:</b> ' + nvl(datos.features[0].properties['fecha_ejecucion']);
+          datos1 += '<div style="width:300px;">' + nvl(datos.features[0].properties['observacion']) + '</div>';
+        }
+
+        // intervencion en plazas
+        if(queLayer[0] == "vw_intervencion_en_plazas"){
+          datos1 = '<div><h2>Intervenci&oacute;n en plazas</h2></div>';
+          datos1 += '<BR />' + '<b>Intervencion:</b> ' + nvl(datos.features[0].properties['interven']);
         }
 
         // alumbrado publico
@@ -587,7 +607,7 @@ var wms_GIS = L.WMS.Source.extend({
         // obras de bacheo
         if(queLayer[0] == 'vw_obras_de_bacheo'){
           datos1 = '<div><span style="float:right; margin-right: 10px;";><img style="display: inline;" height="40" alt="Obras de Bacheo" src="images/icon/bandera_roja.png" /></span><h2>Obras de bacheo</h2></div>';
-          datos1 += '<b>Estado:</b> ' + nvl(datos.features[0].properties['estado']);
+          datos1 += '<b>Estado:</b> ' + nvl(datos.features[0].properties['avance']);
           datos1 += '<BR />' + '<b>Ubicaci&oacute;n:</b> ' + nvl(datos.features[0].properties['ubicacion']);
           datos1 += '<BR />' + '<b>Descrip.:</b> ' + nvl(datos.features[0].properties['descripcion']);
           datos1 += '<div style="width:300px;">&nbsp;</div>';

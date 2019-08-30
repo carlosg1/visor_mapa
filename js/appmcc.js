@@ -1,3 +1,10 @@
+/**
+ * 
+ * actualizado: 21/08/2019
+ * Developer: Lic. Carlos Garcia
+ * Contacto: carlosgctes@gmail.com
+ *  
+ */ 
 let hash,measureControl;
 let overlay_GooglecnSatellite, overlay_GoogleRoad, overlay_GoogleTraffic;
 let overlay_BingMap, overlay_BingSatellite;
@@ -42,23 +49,7 @@ $(document).ready(function() {
         opacity: 1.0
     });
 
-/*
-    overlay_CapabaseGIS = L.WMS.layer("http://192.168.10.51:8282/geoserver/wms?version=1.1.1&", 'capa_base_mcc:capa_base', {
-        layer: 'capa_base_mcc:capa_base',
-        format: 'image/png',
-        isBaseMap: true,
-        uppercase: true,
-        transparent: true,
-        continuousWorld : true,
-        tiled: true,
-        info_format: 'text/html',
-        opacity: 1,
-        identify: false,
-        isBack: true
-    });
-*/
-
-    overlay_CapabaseGIS = L.tileLayer.wms('http://192.168.10.51:8282/geoserver/wms',{
+    overlay_CapabaseGIS = L.tileLayer.wms('http://190.7.30.142:8282/geoserver/wms',{
         layers:'capa_base_mcc:capa_base', 
         format: 'image/png', 
         transparent: true,
@@ -80,7 +71,21 @@ $(document).ready(function() {
 
     // armo el tree de capas base
     arbolCapaBase = $('#arbolCapaBase').jstree({
-        'plugins': ["checkbox", "wholerow"]
+
+        "core": {
+            "multiple": false,
+            "animation": 0,
+            "string": {
+                'Loading ...' : 'Cargando ...'
+            }
+        },
+
+        "checkbox" : {
+            "keep_selected_style" : false
+        },
+
+        "plugins": ["checkbox", "wholerow"]
+
     })
     .on('changed.jstree', function(e, data) {
 
@@ -179,8 +184,22 @@ $(document).ready(function() {
                     case 'vw_desagues_pluviales':
                         map.addLayer(vw_desagues_pluviales);
                         break;
+
                     case 'red_desague_cloacal':
                         map.addLayer(vw_red_desague_cloaca);
+                        break;
+
+                    case 'vw_cloaca_social':
+                        map.addLayer(vw_cloaca_social);
+                        // map.fitBounds([[-27.540468433268224, -58.865776062011726],[-27.46883054884205, -58.74681472778321]]);
+                        break;
+
+                    case 'vw_intervencion_en_plazas':
+                        map.addLayer(vw_intervencion_en_plazas);
+                        break;
+
+                    case 'vw_instal_canio_acceso_domicilio':
+                        map.addLayer(vw_instal_canio_acceso_domicilio);
                         break;
 
                     case 'vw_alumbrado_publico_led':
@@ -200,10 +219,16 @@ $(document).ready(function() {
 
                     case 'vw_obras_de_bacheo':
                         map.addLayer(vw_obras_de_bacheo);
+                        // $(".ref-bacheo").css('visibility', 'visible'); 
                         break;
 
                     case 'vw_obras_santa_catalina_viviendas':
                         map.addLayer(vw_obras_santa_catalina_viviendas);
+                        break;
+                        
+                    case 'vw_instalacion_canios_cruce_calle':
+                        map.addLayer(vw_instalacion_canios_cruce_calle);
+                        map.fitBounds([[-27.50484564427456, -58.86611938476563],[-27.433184575621027, -58.750419616699226]]);
                         break;
 
                     case 'vw_distritos_planeamiento_urbano':
@@ -526,6 +551,18 @@ $(document).ready(function() {
                         vw_red_desague_cloaca.remove();
                     break;
 
+                    case 'vw_cloaca_social':
+                        vw_cloaca_social.remove();
+                    break;
+
+                    case 'vw_intervencion_en_plazas':
+                        vw_intervencion_en_plazas.remove();
+                    break;
+
+                    case 'vw_instal_canio_acceso_domicilio':
+                        vw_instal_canio_acceso_domicilio.remove();
+                    break;
+
                     case 'vw_alumbrado_publico_led':
                         vw_alumbrado_publico_led.remove();
                     break;
@@ -543,11 +580,16 @@ $(document).ready(function() {
                         break;
 
                     case 'vw_obras_de_bacheo':
-                        vw_obras_de_bacheo.remove();
+                            // $(".ref-bacheo").css('visibility', 'hidden');
+                            vw_obras_de_bacheo.remove();
                         break;
 
                     case 'vw_obras_santa_catalina_viviendas':
                         vw_obras_santa_catalina_viviendas.remove();
+                        break;
+
+                    case 'vw_instalacion_canios_cruce_calle':
+                            vw_instalacion_canios_cruce_calle.remove();
                         break;
 
                     case 'vw_distritos_planeamiento_urbano':

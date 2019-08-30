@@ -1,4 +1,6 @@
-<!doctype html>
+<?php 
+mb_internal_encoding("UTF-8");
+?><!doctype html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -165,6 +167,11 @@
         <div id="dialogo1">
             <p id="dlgTitulo"></p>
             <div id="dlgCuerpo"></div>
+        </div>
+
+        <!-- Referencias -->
+        <div class="ref-bacheo">
+            <img src="images/ref/referencias-bacheo.png" alt="">
         </div>
     </body>
 </html>

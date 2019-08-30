@@ -1,10 +1,9 @@
 <?php 
 /*
- *
- * Dev.: Lic Carlos Garcia - carlosgctes@gmail.com 
+ * Actualizado: 23/08/2019
+ * Developer: Lic Carlos Garcia - carlosgctes@gmail.com 
  * Uso: para agregar una capa a la rama de informacion publica 
  * agregar una entrada <li> al archivo tree_publico.php
- * 
  * 
  */
 
@@ -61,13 +60,24 @@
                 </ul>
             </li>
 
+            <!-- Obras Municipales --> 
+
             <li id="obrasMunicipales" data-jstree='{"icon": "images/icon/folder-1-16.png"}'>Obras
                 <ul>
-                    <li id="vw_alumbrado_publico_led" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_alumbrado_publico_led&WS=infraestructura'; ?>"}'>Instalaci&oacute;n luminaria LED</li>
+
+                    <li id="vw_cloaca_social" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_cloaca_social&WS=infraestructura'; ?>"}'>Instalaci&oacute;n Cloaca social</li>
+
+                    <li id="vw_instal_canio_acceso_domicilio" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_instal_canio_acceso_domicilio&WS=obras_municipales'; ?>"}'>Instalaci&oacute;n Acceso Domicilio</li>
                     
+                    <li id="vw_intervencion_en_plazas" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_intervencion_en_plazas&WS=obras_municipales'; ?>"}'>Intervenci&oacute;n en plazas</li>
+
                     <li id="vw_obras_de_bacheo" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_obras_de_bacheo&WS=obras_municipales'; ?>"}'>Obras de bacheo</li>
-                    
+
+                    <li id="vw_alumbrado_publico_led" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_alumbrado_publico_led&WS=infraestructura'; ?>"}'>Instalaci&oacute;n luminaria LED</li>
+
                     <li id="vw_obras_santa_catalina_viviendas" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_obras_santa_catalina_viviendas&WS=obras_municipales'; ?>"}'>Obra Santa Catalina</li>
+
+                    <li id="vw_instalacion_canios_cruce_calle" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_instalacion_canios_cruce_calle&WS=obras_municipales'; ?>"}'>Instalaci&oacute;n Caños</li>
                 </ul>
             </li>
 
