@@ -19,6 +19,10 @@ function nvl(p) {
 
 }
 
+function formatoFecha(f){
+  return (f === "" ? "" : (f.substr(8, 2) + '/' + f.substr(5, 2) + '/' + f.substr(0, 4)));
+}
+
 var wms_GIS = L.WMS.Source.extend({
 
     'showFeatureInfo': function(latlng, info) {
@@ -34,6 +38,18 @@ var wms_GIS = L.WMS.Source.extend({
 
         /* que layer */
         var queLayer = datos.features[0].id.split('.');
+
+        // recoleccion diferenciada
+        if(queLayer[0] == "vw_recoleccion_diferenciada"){
+          datos1 = '<div><h2>Recolecci&oacute;n diferenciada</h2></div>';
+          datos1 += '<b>Barrio:</b> ' + datos.features[0].properties['nombre_barrio'];
+        }
+
+        // puntos verdes
+        if(queLayer[0] == "vw_puntos_verdes"){
+          datos1 = '<div><h2>Puntos Verdes</h2></div>';
+          datos1 += '<b>Barrio:</b> ' + nvl(datos.features[0].properties['ubicacion']);
+        }
 
         // plan hidrico
         if(queLayer[0] == "vw_mantenimiento_pluviales"){
@@ -91,8 +107,15 @@ var wms_GIS = L.WMS.Source.extend({
           datos1 = '<div><h2>Cloaca Social</h2></div>';
           datos1 += '<b>Estado:</b> ' + '<span style="font-family: Arial; font-size: 1rem;">' + nvl(datos.features[0].properties['estado']) + '</span>';
           datos1 += '<BR />' + '<b>Fondo:</b> ' + nvl(datos.features[0].properties['fondo']);
-          datos1 += '<BR />' + '<b>Fecha ejecucion:</b> ' + nvl(datos.features[0].properties['fecha_ejecucion']);
+          datos1 += '<BR />' + '<b>Fecha ejecucion:</b> ' + formatoFecha(nvl(datos.features[0].properties['fecha_ejecucion']));
           datos1 += '<div style="width:300px;">' + nvl(datos.features[0].properties['observacion']) + '</div>';
+        }
+
+        // Instalacion caños de acceso domiciliario
+        if(queLayer[0] == "vw_instal_canio_acceso_domicilio"){
+          datos1 = '<div><h2>Caños Acceso Domicilio</h2></div>';
+          datos1 += '<b>Fecha inst.:</b> ' + formatoFecha(nvl(datos.features[0].properties['fecha_instalacion']));
+          datos1 += '<BR />' + '<b>Diametro:</b> ' + nvl(datos.features[0].properties['diametro']);
         }
 
         // intervencion en plazas

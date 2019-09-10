@@ -254,6 +254,7 @@ div.topBanner span img {
 /* #arbolCapasMcc .jstree-children .jstree-anchor .jstree-checkbox { display: none; } */ /* saca todos los checkbox, no me sirve */
 
 /* saca los checkbox */
+#ambienteDesa_anchor > i.jstree-checkbox { display:none; }
 #planHidrico_anchor > i.jstree-checkbox { display:none; }
 #infraestructura_anchor i.jstree-checkbox { display:none; }
 #obrasMunicipales_anchor > i.jstree-checkbox { display:none; }
@@ -265,9 +266,16 @@ div.topBanner span img {
 #Transporte_anchor > i.jstree-checkbox { display:none; }
 #redVial_anchor > i.jstree-checkbox { display:none; }
 #infoCatastral_anchor > i.jstree-checkbox { display:none; }
+
+/* ambiente */
+#recDif_juan_vera_anchor { height: 32px; }
+#recDif_juan_vera_anchor > i.jstree-icon  { display:none; }
+#recDif_juan_vera_anchor > i.jstree-checkbox  { display:none; }
+#recDif_Moli_punta_anchor > i.jstree-checkbox { display:none; }
+
+/* plan hidrico */
 #desagueLimpio_anchor > i.jstree-checkbox, #desaguePendiente_anchor > i.jstree-checkbox { display:none; }
 #sumideroLimpio_anchor > i.jstree-checkbox, #sumideroPendiente_anchor > i.jstree-checkbox { display:none; }
-
 
 /* #arbolCapasMcc_anchor i.jstree-children .jstree-node { padding-left: 1px; } */
 

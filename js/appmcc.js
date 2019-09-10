@@ -168,13 +168,23 @@ $(document).ready(function() {
             // prende las capas 
             case 'select_node':
                 switch (data.node.id) {
+
                     case 'infoCatastral':
                         // deseleccionar los nodos hijos
+                        break;
+
+                    case 'vw_recoleccion_diferenciada':
+                        map.addLayer(vw_recoleccion_diferenciada);
+                        break;
+
+                    case 'vw_puntos_verdes':
+                        map.addLayer(vw_puntos_verdes);
                         break;
 
                     case 'rehabilitacionDesaguesPluviales':
                         map.addLayer(lyr_man_pluv);
                         break;
+
                     case 'rehabilitacionSumideros':
                         map.addLayer(lyr_man_sumidero);
                         break;
@@ -522,15 +532,23 @@ $(document).ready(function() {
                 }
             break;
 
-            /***
+            /*****************************************************************************************
              * 
              * apaga las capas
              * 
-             ***/
-
+             ********************************************************************************************/
 
             case 'deselect_node':
                 switch (data.node.id) {
+
+                    case 'vw_recoleccion_diferenciada':
+                        vw_recoleccion_diferenciada.remove();
+                        break;
+
+                    case 'vw_puntos_verdes':
+                        vw_puntos_verdes.remove();
+                        break;
+
                     case 'rehabilitacionDesaguesPluviales':
                         lyr_man_pluv.remove();
                         break;

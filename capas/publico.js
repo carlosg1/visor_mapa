@@ -7,6 +7,10 @@ let lyr_man_pluv, lyr_man_sumidero, lyr_red_agua_potable;
 
 $(document).ready(function() {
 
+    // Ambiente
+    vw_recoleccion_diferenciada = wmsMcc51.getLayer("ambiente:vw_recoleccion_diferenciada");
+    vw_puntos_verdes = wmsMcc51.getLayer("ambiente:vw_puntos_verdes");
+
     // Plan hidrico
     lyr_man_pluv = wmsMcc51.getLayer("plan_hidrico:vw_mantenimiento_pluviales"); // Rehabilitacion de desagues pluviales
     lyr_man_sumidero = wmsMcc51.getLayer("plan_hidrico:vw_mantenimiento_sumideros"); // Rehabilitacion de sumideros
@@ -22,7 +26,7 @@ $(document).ready(function() {
 
     // obras municipales
     vw_cloaca_social = wmsMcc51.getLayer("infraestructura:vw_cloaca_social");
-    vw_cloaca_social = wmsMcc51.getLayer("obras_municipales:vw_instal_canio_acceso_domicilio");
+    vw_instal_canio_acceso_domicilio = wmsMcc51.getLayer("obras_municipales:vw_instal_canio_acceso_domicilio");
     vw_intervencion_en_plazas = wmsMcc51.getLayer("obras_municipales:vw_intervencion_en_plazas");
     vw_obras_de_bacheo = wmsMcc51.getLayer("obras_municipales:vw_obras_de_bacheo");
     vw_obras_santa_catalina_viviendas = wmsMcc51.getLayer("obras_municipales:vw_obras_santa_catalina_viviendas");

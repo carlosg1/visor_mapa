@@ -20,6 +20,28 @@
 
         <b>Informaci&oacute;n Geogr&aacute;fica</b>
 
+        <!-- Ambiente -->
+
+        <ul>
+            <li id="ambienteDesa" data-jstree='{"icon": "images/icon/folder-1-16.png"}'>Ambiente y Desarrollo Sustentable
+                <ul>
+                    <li id="vw_recoleccion_diferenciada" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_recoleccion_diferenciada&WS=ambiente'; ?>"}'>Recoleccion Diferenciada
+                        <ul>
+                            <li id="recDif_juan_vera">
+                                <span>
+                                    <img src="legend/recoleccion-diferenciada.png" alt="Categoria recolecci&oacute;n deferenciada">
+                                </span>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li id="vw_puntos_verdes" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_puntos_verdes&WS=ambiente'; ?>"}'>Puntos Verdes</li>
+                </ul>
+            </li>
+        </ul>
+
+        <!-- Infraestructura -->
+
         <ul>
             <li id="planHidrico" data-jstree='{"icon": "images/icon/folder-1-16.png"}'>Plan h&iacute;drico
                 <ul>
@@ -135,7 +157,7 @@
                     
                     <li id="vw_estacionamiento_privado" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_estacionamiento_privado'; ?>"}'>Estacionamientos privados</li>
                     
-                    <li id="vw_paradas_colectivos" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_paradas_colectivos'; ?>"}'>Paradas de colectivo Urbano</li>
+                    <li id="vw_paradas_colectivos" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_paradas_colectivos&WS=transporte'; ?>"}'>Paradas de colectivo Urbano</li>
                     
                     <li id="b1" data-jstree='{"opened": false, "icon": "images/icon/folder-1-16.png"}'>Recorrido por ramal
                         <ul>
