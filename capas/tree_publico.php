@@ -202,11 +202,13 @@
                 </ul>
             </li>
 
+            <!-- Red vial -->
+
             <li id="redVial" data-jstree='{"icon": "images/icon/folder-1-16.png"}'>Red vial
                 <ul>
-                    <li id="vw_alturas_calles">Altura de calle</li>
-                    <li id="vw_ide_calle">Calles</li>
-                    <li id="vw_ide_calle_por_tipo_calzada">Calles por tipo de calzada</li>
+                    <li id="vw_alturas_calles" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_alturas_calles&WS=red_vial'; ?>"}'>Altura de calle</li>
+                    <li id="vw_ide_calle" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_ide_calle&WS=red_vial'; ?>"}'>Calles</li>
+                    <li id="vw_ide_calle_por_tipo_calzada" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_ide_calle_por_tipo_calzada&WS=red_vial'; ?>"}'>Calles por tipo de calzada</li>
                 </ul>
             </li>
 
