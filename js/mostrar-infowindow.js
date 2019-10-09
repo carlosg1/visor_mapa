@@ -224,7 +224,7 @@ var wms_GIS = L.WMS.Source.extend({
         }
 
         // Edificios del casco historico 
-        if(queLayer[0] == "vw_edificios_historicos"){
+        if(queLayer[0] == "vw_edificios_historicos") {
           datos1 = '<div><h2>Edificios del Casco Hist&oacute;rico</h2></div>';
           datos1 += '<span class="prompt1">Adrema:</span> ' + datos.features[0].properties['adrema'];
           datos1 += '<BR />' + '<span class="prompt1">Manzana:</span> ' + datos.features[0].properties['mzd'];
@@ -232,9 +232,12 @@ var wms_GIS = L.WMS.Source.extend({
           datos1 += '<BR />' + '<span class="prompt1">Calle:</span> ' + datos.features[0].properties['calle'];
           datos1 += '<BR />' + '<span class="prompt1">Altura:</span> ' + datos.features[0].properties['altura'];
           datos1 += '<BR />';
-          datos1 += '<BR />' + '<span class="titulo1">Informaci&oacute;n relacionada</span>';
-          datos1 += '<br />' + '<a id="lnk-distrito" target="_blank" href="http://gis.ciudaddecorrientes.gob.ar/idemcc/images/fotos/catalogo_edificios_historicos/' + datos.features[0].properties['catalogo'] + '.pdf">pdf ' + datos.features[0].properties['catalogo'] + '</a>';
-          
+
+          if(datos.features[0].properties['catalogo'] != null) {
+            datos1 += '<BR />' + '<span class="titulo1">Informaci&oacute;n relacionada</span>';
+            datos1 += '<br />' + '<a id="lnk-distrito" target="_blank" href="http://gis.ciudaddecorrientes.gob.ar/idemcc/images/fotos/catalogo_edificios_historicos/' + datos.features[0].properties['catalogo'] + '.pdf">pdf ' + datos.features[0].properties['catalogo'] + '</a>';
+          }
+
           if (datos.features[0].properties['foto_num'] != null) {
             datos1 += '<div style="width:300px;height:164px;border: #666 solid 2px;"><img border="0" width="300" height="164" src="http://gis.ciudaddecorrientes.gob.ar/idemcc/images/fotos/fotos_edificios_historicos/' + datos.features[0].properties['foto_num'] + ' .png" /></div>';
           }
