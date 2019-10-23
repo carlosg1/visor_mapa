@@ -91,15 +91,15 @@ $(document).ready(function() {
 
         nodoSeleccionado = data.instance.get_node(data.selected[data.selected.length-1]).id;
 
-        if (nodoSeleccionado === nodo_base_anterior) {
+/*        if (nodoSeleccionado === nodo_base_anterior) {
             arbolCapaBase.jstree('deselect_all');
             $(this).jstree('select_node', data.instance.get_node(nodo_base_anterior));
             return false;
         }
-
+*/
         switch (data.action) {
             case 'ready':
-               map.addLayer(overlay_CapabaseGIS);
+                map.addLayer(overlay_CapabaseGIS);
                 nodo_base_anterior = data.selected[0];
                 return  true;
                 break;

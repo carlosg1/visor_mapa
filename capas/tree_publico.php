@@ -40,7 +40,7 @@
             </li>
         </ul>
 
-        <!-- Infraestructura -->
+        <!-- Plan hidrico -->
 
         <ul>
             <li id="planHidrico" data-jstree='{"icon": "images/icon/folder-1-16.png"}'>Plan h&iacute;drico
@@ -103,6 +103,8 @@
                 </ul>
             </li>
 
+            <!-- Planeamiento Urbano -->
+
             <li id="planeamientoUrbano" data-jstree='{"icon": "images/icon/folder-1-16.png"}'>Planeamiento urbano
                 <ul>
                     <li id="vw_distritos_planeamiento_urbano">Distritos C&oacute;digo Planeamiento Urbano</li>
@@ -111,7 +113,7 @@
                     
                     <li id="vw_medianas">Medianas de la ciudad</li>
                     
-                    <li id="vw_edificios_historicos">Edificios del casco historico</li>
+                    <li id="vw_edificios_historicos">Inmuebles de valor patrimonial</li>
                 </ul>
             </li>
 
@@ -128,6 +130,8 @@
                     <li id="vw_densidad_de_poblacion">Densidad de poblaci&oacute;n</li>
                 </ul>
             </li>
+
+            <!-- Desarrollo Social Comunitario -->
 
             <li id="desasocialComunit" data-jstree='{"icon": "images/icon/folder-1-16.png"}'>Desarrollo social Comunitario
                 <ul>

@@ -223,9 +223,9 @@ var wms_GIS = L.WMS.Source.extend({
           }
         }
 
-        // Edificios del casco historico 
+        // Inmuebles de valor patrimonial
         if(queLayer[0] == "vw_edificios_historicos") {
-          datos1 = '<div><h2>Edificios del Casco Hist&oacute;rico</h2></div>';
+          datos1 = '<div><h2>Inmuebles de valor patrimonial</h2></div>';
           datos1 += '<span class="prompt1">Adrema:</span> ' + datos.features[0].properties['adrema'];
           datos1 += '<BR />' + '<span class="prompt1">Manzana:</span> ' + datos.features[0].properties['mzd'];
           datos1 += '<BR />' + '<span class="prompt1">Lote:</span> ' + datos.features[0].properties['lote'];
