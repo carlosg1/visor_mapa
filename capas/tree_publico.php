@@ -1,6 +1,6 @@
 <?php 
 /*
- * Actualizado: 23/08/2019
+ * Actualizado: 29/10/2019
  * Developer: Lic Carlos Garcia - carlosgctes@gmail.com 
  * Uso: para agregar una capa a la rama de informacion publica 
  * agregar una entrada <li> al archivo tree_publico.php
@@ -150,6 +150,12 @@
                     <li id="vw_farmacias">Farmacias</li>
                     <li id="vw_hospitales">Hospitales</li>
                     <li id="vw_areas_programaticas_saps">Areas programaticas de salud</li>
+                </ul>
+            </li>
+
+            <li id="transito" data-jstree='{"opened": false, "icon": "images/icon/folder-1-16.png"}'>Tr&aacute;nsito
+                <ul>
+                    <li id="vw_espacios_reservados" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_espacios_reservados&WS=transito'; ?>"}'>Espacio reservado</li>
                 </ul>
             </li>
 

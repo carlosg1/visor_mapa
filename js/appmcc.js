@@ -300,6 +300,13 @@ $(document).ready(function() {
                         map.addLayer(vw_areas_programaticas_saps);
                         break;
 
+                    /**
+                     * Transito
+                     */
+                    case 'vw_espacios_reservados':
+                        map.addLayer(vw_espacios_reservados);
+                        break;
+
                     /*
                      * Transporte
                      */
@@ -677,6 +684,13 @@ $(document).ready(function() {
                         break;
                     case 'vw_areas_programaticas_saps':
                         vw_areas_programaticas_saps.remove();
+                        break;
+
+                    /**
+                     * Transito
+                     */
+                    case 'vw_espacios_reservados':
+                        vw_espacios_reservados.remove();
                         break;
 
                     /*

@@ -1,6 +1,6 @@
 /* 
  * capas para el visor publico 
- * Fecha Mod.: 06/06/2019
+ * Fecha Mod.: 29/10/2019
  */
 
 let lyr_man_pluv, lyr_man_sumidero, lyr_red_agua_potable;
@@ -41,7 +41,7 @@ $(document).ready(function() {
     // Informacion Municipal
     vw_centros_de_pago  = wmsMcc51.getLayer("informacion_municipal:vw_centros_de_pago");
     // vw_dependencias_municipales  = wmsMcc51.getLayer("informacion_municipal:vw_dependencias_municipales");
-    vw_dependencias_municipales  = wmsMcc51.getLayer("informacion_municipal:vwlnk_dependencias_municipales");
+    vw_dependencias_municipales  = wmsMcc51.getLayer("informacion_municipal:vw_dependencias_municipales");
 
     // Estadistica y Censo
     vw_poblacion  = wmsMcc51.getLayer("estadistica_y_censo:vw_poblacion");
@@ -61,6 +61,12 @@ $(document).ready(function() {
     vw_hospitales  = wmsMcc51.getLayer("salud:vw_hospitales");
     vw_areas_programaticas_saps  = wmsMcc51.getLayer("salud:vw_areas_programaticas_saps");
 
+    /**
+    * Transito
+    */
+    // estacionamiento  reservado
+    vw_espacios_reservados = wmsMcc51.getLayer("transito:vw_espacios_reservados");
+
     /*
      * Transporte
      */
@@ -75,8 +81,6 @@ $(document).ready(function() {
 
     // paradas de colectivos urbanos
     vw_paradas_colectivos = wmsMcc51.getLayer("transporte:vw_paradas_colectivos");
-
-
 
     /***
      * Recorridos por ramal
