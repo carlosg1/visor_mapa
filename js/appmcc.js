@@ -300,16 +300,13 @@ $(document).ready(function() {
                         map.addLayer(vw_areas_programaticas_saps);
                         break;
 
-                    /**
-                     * Transito
-                     */
-                    case 'vw_espacios_reservados':
-                        map.addLayer(vw_espacios_reservados);
-                        break;
-
                     /*
                      * Transporte
                      */
+
+                    case 'vw_estacionamiento_medido':
+                        map.addLayer(vw_estacionamiento_medido);
+                        break;
 
                     case 'vw_puntos_de_recarga_sube':
                         map.addLayer(vw_puntos_de_recarga_sube);
@@ -686,16 +683,13 @@ $(document).ready(function() {
                         vw_areas_programaticas_saps.remove();
                         break;
 
-                    /**
-                     * Transito
-                     */
-                    case 'vw_espacios_reservados':
-                        vw_espacios_reservados.remove();
-                        break;
-
                     /*
                      * Transporte
                      */
+
+                    case 'vw_estacionamiento_medido':
+                        vw_estacionamiento_medido.remove();
+                        break;
 
                     case 'vw_puntos_de_recarga_sube':
                         vw_puntos_de_recarga_sube.remove();

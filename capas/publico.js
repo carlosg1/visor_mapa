@@ -61,15 +61,13 @@ $(document).ready(function() {
     vw_hospitales  = wmsMcc51.getLayer("salud:vw_hospitales");
     vw_areas_programaticas_saps  = wmsMcc51.getLayer("salud:vw_areas_programaticas_saps");
 
-    /**
-    * Transito
-    */
-    // estacionamiento  reservado
-    vw_espacios_reservados = wmsMcc51.getLayer("transito:vw_espacios_reservados");
-
     /*
      * Transporte
      */
+
+     // estacionamiento  medido
+     vw_estacionamiento_medido = wmsMcc51.getLayer("transporte:vw_estacionamiento_medido");
+
     // puntos de recarga tarjeta sube
     vw_puntos_de_recarga_sube = wmsMcc51.getLayer("transporte:vw_puntos_recarga_sube");
 

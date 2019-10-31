@@ -153,14 +153,10 @@
                 </ul>
             </li>
 
-            <li id="transito" data-jstree='{"opened": false, "icon": "images/icon/folder-1-16.png"}'>Tr&aacute;nsito
-                <ul>
-                    <li id="vw_espacios_reservados" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_espacios_reservados&WS=transito'; ?>"}'>Espacio reservado</li>
-                </ul>
-            </li>
-
             <li id="Transporte" data-jstree='{"opened": false, "icon": "images/icon/folder-1-16.png"}'>Transporte
                 <ul>
+                    <li id="vw_estacionamiento_medido" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_estacionamiento_medido&WS=transporte'; ?>"}'>Estacionamiento med&iacute;do</li>
+
                     <li id="vw_puntos_de_recarga_sube" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_puntos_recarga_sube'; ?>"}'>Puntos de recarga SUBE</li>
                     
                     <li id="vw_recorrido_total_colectivos_corrientes" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_recorrido_total_colectivo'; ?>"}'>Recorrido Total de Colectivos</li>
