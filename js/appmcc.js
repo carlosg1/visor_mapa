@@ -1,9 +1,9 @@
 /**
  * 
- * actualizado: 21/08/2019
+ * actualizado: 11/02/2020
  * Developer: Lic. Carlos Garcia
  * Contacto: carlosgctes@gmail.com
- *  
+ * 
  */ 
 let hash,measureControl;
 let overlay_GooglecnSatellite, overlay_GoogleRoad, overlay_GoogleTraffic;
@@ -70,6 +70,9 @@ $(document).ready(function() {
     });
 
     // armo el tree de capas base
+    // $.jstree.defaults.core.themes.variant = "large"; // configuracion global 
+    $.jstree.defaults.checkbox.keep_selected_style = true 
+
     arbolCapaBase = $('#arbolCapaBase').jstree({
 
         "core": {
@@ -81,13 +84,15 @@ $(document).ready(function() {
         },
 
         "checkbox" : {
-            "keep_selected_style" : false
+            "keep_selected_style" : true
         },
 
         "plugins": ["checkbox", "wholerow"]
 
     })
     .on('changed.jstree', function(e, data) {
+        // console.log('e == ', e);
+        // console.log('data == ', data);
 
         nodoSeleccionado = data.instance.get_node(data.selected[data.selected.length-1]).id;
 
@@ -161,6 +166,10 @@ $(document).ready(function() {
     arbolMCC = $('#arbolMCC').jstree({
         'plugins': ["wholerow", "checkbox"]
     }).on('changed.jstree', function(e, data) {
+        // console.log('e == ', e);
+        // console.log('data == ', data);
+        // console.log('data.node.children.length == ', data.node.children.length);
+        
         nodo_pub_selec = data.instance.get_node(data.selected[data.selected.length-1]).id;
 
         switch (data.action) {
@@ -223,8 +232,13 @@ $(document).ready(function() {
                     case 'vw_bocas_de_registro':
                         map.addLayer(vw_bocas_de_registro);
                         break;
+                        
                     case 'vw_centros_distribuidores_dpec':
                         map.addLayer(vw_centros_distribuidores_dpec);
+                        break;
+
+                    case 'vw_puntos_wifi':
+                        map.addLayer(vw_puntos_wifi);
                         break;
 
                     case 'vw_obras_de_bacheo':
@@ -299,14 +313,31 @@ $(document).ready(function() {
                     case 'vw_areas_programaticas_saps':
                         map.addLayer(vw_areas_programaticas_saps);
                         break;
-
-                    /*
-                     * Transporte
+                    
+                    /**
+                     * Corredor vial
                      */
+                    // carga y descarga
+                    case 'vw_corredor_vial_carga_descarga':
+                        map.addLayer(vw_corredor_vial_carga_descarga);
+                        break;
+
+                    case 'vw_corredor_vial_prohibido_estacionar':
+                        map.addLayer(vw_corredor_vial_prohibido_estacionar);
+                        break;
+
+                    // estacionamiento moto
+                    case 'vw_estacionamiento_moto':
+                        map.addLayer(vw_estacionamiento_moto);
+                        break;
 
                     case 'vw_estacionamiento_medido':
                         map.addLayer(vw_estacionamiento_medido);
                         break;
+
+                    /*
+                     * Transporte
+                     */    
 
                     case 'vw_puntos_de_recarga_sube':
                         map.addLayer(vw_puntos_de_recarga_sube);
@@ -601,6 +632,10 @@ $(document).ready(function() {
                         vw_centros_distribuidores_dpec.remove();
                         break;
 
+                    case 'vw_puntos_wifi':
+                        vw_puntos_wifi.remove();
+                        break;
+
                     case 'vw_obras_de_bacheo':
                             // $(".ref-bacheo").css('visibility', 'hidden');
                             vw_obras_de_bacheo.remove();
@@ -683,13 +718,29 @@ $(document).ready(function() {
                         vw_areas_programaticas_saps.remove();
                         break;
 
-                    /*
-                     * Transporte
+                    /**
+                     * Corredor Vial
                      */
+                    // carga y descarga
+                    case 'vw_corredor_vial_carga_descarga':
+                        vw_corredor_vial_carga_descarga.remove();
+                        break;
+                    
+                    case 'vw_corredor_vial_prohibido_estacionar':
+                        vw_corredor_vial_prohibido_estacionar.remove();
+                        break;
+                    
+                    case 'vw_estacionamiento_moto':
+                        vw_estacionamiento_moto.remove();
+                        break;
 
                     case 'vw_estacionamiento_medido':
                         vw_estacionamiento_medido.remove();
                         break;
+
+                     /*
+                     * Transporte
+                     */   
 
                     case 'vw_puntos_de_recarga_sube':
                         vw_puntos_de_recarga_sube.remove();
@@ -1039,13 +1090,13 @@ $(document).ready(function() {
                     "weight": 5,
                     "opacity": 0.65
                 };
-               
+
                 capas.push(L.geoJSON(JSON.parse(response), {
                     style: myStyle
                 }).addTo(map));
 
                 if (queBusca === "Barrio") {
-                    
+
                     vw_barrios.addTo(map);
 
                     apagarCapaBarrio = true; // para cuando se limpie la busqueda.

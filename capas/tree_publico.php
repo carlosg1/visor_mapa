@@ -79,6 +79,8 @@
                     <li id="vw_bocas_de_registro" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_bocas_de_registro&WS=infraestructura'; ?>"}'>Bocas de registro</li>
                    
                     <li id="vw_centros_distribuidores_dpec" data-jstree='{"icon": "images/icon/distribuidores_dpec.png"}'>Centros de distribucion DPEC</li>                    
+                    
+                    <li id="vw_puntos_wifi" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_puntos_wifi&WS=infraestructura'; ?>"}'>Puntos WiFi</li>                    
                 </ul>
             </li>
 
@@ -153,8 +155,18 @@
                 </ul>
             </li>
 
+            <li id="corredor_vial" data-jstree='{"icon": "images/icon/folder-1-16.png"}'>Corredor vial
+                <ul>
+                    <li id="vw_corredor_vial_carga_descarga" data-jstree='{"opened": false, "icon": "<?php echo 'glg.php?LAYER=vw_corredor_vial_carga_descarga&WS=corredor_vial'; ?>"}'>Carga y Descarga</li>
+                    
+                    <li id="vw_corredor_vial_prohibido_estacionar" data-jstree='{"opened": false, "icon": "<?php echo 'glg.php?LAYER=vw_corredor_vial_prohibido_estacionar&WS=corredor_vial'; ?>"}'>Prohibici&oacute;n de estacionar</li>
+                </ul>
+            </li>
+
             <li id="Transporte" data-jstree='{"opened": false, "icon": "images/icon/folder-1-16.png"}'>Transporte
                 <ul>
+                    <li id="vw_estacionamiento_moto" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_estacionamiento_moto&WS=transporte'; ?>"}'>Estacionamiento para motos</li>
+
                     <li id="vw_estacionamiento_medido" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_estacionamiento_medido&WS=transporte'; ?>"}'>Estacionamiento med&iacute;do</li>
 
                     <li id="vw_puntos_de_recarga_sube" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_puntos_recarga_sube'; ?>"}'>Puntos de recarga SUBE</li>

@@ -23,6 +23,7 @@ $(document).ready(function() {
     vw_alumbrado_publico = wmsMcc51.getLayer("infraestructura:vw_alumbrado_publico");
     vw_bocas_de_registro = wmsMcc51.getLayer("infraestructura:vw_bocas_de_registro");
     vw_centros_distribuidores_dpec = wmsMcc51.getLayer("infraestructura:vw_centros_distribuidores_dpec");
+    vw_puntos_wifi = wmsMcc51.getLayer("infraestructura:vw_puntos_wifi");
 
     // obras municipales
     vw_cloaca_social = wmsMcc51.getLayer("infraestructura:vw_cloaca_social");
@@ -64,6 +65,9 @@ $(document).ready(function() {
     /*
      * Transporte
      */
+
+     // estacionamiento  medido
+     vw_estacionamiento_moto = wmsMcc51.getLayer("transporte:vw_estacionamiento_moto");
 
      // estacionamiento  medido
      vw_estacionamiento_medido = wmsMcc51.getLayer("transporte:vw_estacionamiento_medido");
@@ -189,12 +193,15 @@ $(document).ready(function() {
     // recorrido chacho / corrientes / sarmiento
     vw_recorrido_sarmiento = wmsMcc51.getLayer("transporte:vw_recorrido_sarmiento");
 
-    /*
-     * Transporte -> Recorrido por ramal 
+    /**
+     * Corredor Vial
      */
+    vw_corredor_vial_carga_descarga = wmsMcc51.getLayer("corredor_vial:vw_corredor_vial_carga_descarga");
+
+    vw_corredor_vial_prohibido_estacionar = wmsMcc51.getLayer("corredor_vial:vw_corredor_vial_prohibido_estacionar");
 
     // Red vial
-    
+
     vw_alturas_calles  = wmsMcc51.getLayer("red_vial:vw_alturas_calles");
 
     vw_ide_calle  = wmsMcc51.getLayer("red_vial:vw_ide_calle");
@@ -204,6 +211,7 @@ $(document).ready(function() {
     /*
      * Informacion catastral
      */
+
     vw_asentamiento_renabap  = wmsMcc51.getLayer("informacion_catastral:vw_asentamiento_renabap");
 
     vw_cordones  = wmsMcc51.getLayer("informacion_catastral:vw_cordones");

@@ -157,6 +157,14 @@ var wms_GIS = L.WMS.Source.extend({
           datos1 += '<b>No hay datos para mostrar</b> ';
         }
 
+        // puntos wifi
+        if(queLayer[0] == "vw_puntos_wifi"){
+          datos1 = '<div><h2>Puntos WiFi</h2></div>';
+          datos1 += '<b>Identificaci&oacute;n:</b> ' + datos.features[0].properties['id'];
+          datos1 += '<br/><b>Ubicaci&oacute;n:</b> ' + datos.features[0].properties['lugar'];
+          datos1 += '<div style="width:300px;">&nbsp;</div>';
+        }
+
         // Obras municipales //
         // obra santa catalina
         if(queLayer[0] == "vw_obras_santa_catalina_viviendas"){
@@ -378,9 +386,37 @@ var wms_GIS = L.WMS.Source.extend({
           datos1 += '<BR /><BR />';
         }
 
-        /*
-         * Transporte
+        /**
+         * Corredor vial
          */
+        // carga y descarga
+        if(queLayer[0] == "vw_corredor_vial_carga_descarga"){
+          datos1 = '<div><h2>Areas de carga y descarga</h2></div>';
+          datos1 += '<span class="prompt1">Ubicaci&oacute;n:</span> ' + datos.features[0].properties['ubicacion'];
+          datos1 += '<br><span class="prompt1">Descripc&oacute;n:</span> ' + datos.features[0].properties['descripcion'];
+          datos1 += '<div style="width:300px;">&nbsp;</div>';
+          datos1 += '<BR /><BR />';
+        }
+
+        // Prohibicion de estacionar
+        if(queLayer[0] == "vw_corredor_vial_prohibido_estacionar"){
+          datos1 = '<div><h2>Prohibido estacionar</h2></div>';
+          datos1 += '<span class="prompt1">Ubicaci&oacute;n:</span> ' + datos.features[0].properties['ubicacion'];
+          datos1 += '<br><br><span class="prompt1">Descripc&oacute;n:</span> ' + datos.features[0].properties['descripcion'];
+          datos1 += '<div style="width:300px;">&nbsp;</div>';
+          datos1 += '<BR /><BR />';
+        }
+        
+
+        // estacionamiento para motos
+        if(queLayer[0] == 'vw_estacionamiento_moto'){
+          datos1 = '<div><span style="float:right";>';
+          datos1 += '<img style="display: inline;" height="46" alt="Estacionamiento para motos" src="images/icon/estacionamiento_moto1.png" />';
+          datos1 += '</span><h2>Estacionamiento para motos</h2></div>';
+          datos1 += '<b>Ubicaci&oacute;n:</b> ' + datos.features[0].properties['ubicacion'];
+          datos1 += '<BR />' + '<b>Descripci&oacute;n:</b> ' + datos.features[0].properties['descripcion'];
+          datos1 += '<div style="width:300px;">&nbsp;</div>';
+        }
 
         // estacionamiento medido
         if(queLayer[0] == 'vw_estacionamiento_medido'){
@@ -389,10 +425,8 @@ var wms_GIS = L.WMS.Source.extend({
           datos1 += '</span><h2>Estacionamiento medido</h2></div>';
           datos1 += '<b>Calle:</b> ' + datos.features[0].properties['calle'];
           datos1 += '<BR />' + '<b>Altura:</b> ' + datos.features[0].properties['altura'];
-          datos1 += '<BR />' + '<b>Instituci&oacute;n:</b> ' + nvl(datos.features[0].properties['institucion']);
-          datos1 += '<BR />' + '<b>Permisionario:</b> ' + nvl(datos.features[0].properties['permisionario']);
-          datos1 += '<BR />' + '<b>Lugares disponibles:</b> ' + nvl(datos.features[0].properties['lugares_disponibles']);
-          datos1 += '<BR />' + '<b>Garage (mts):</b> ' + nvl(datos.features[0].properties['garage']);
+          datos1 += '<BR />' + '<b>Institucion:</b> ' + nvl(datos.features[0].properties['institucion']);
+          datos1 += '<BR />' + '<b>Garage:</b> ' + nvl(datos.features[0].properties['garage']);
           datos1 += '<BR />' + '<b>Espacio reservado Moto (mts):</b> ' + nvl(datos.features[0].properties['espacio_reservado_moto']);
           datos1 += '<BR />' + '<b>Giro de colectivos (mts):</b> ' + nvl(datos.features[0].properties['giro_transporte']);
           datos1 += '<BR />' + '<b>Carga y Descarga (mts):</b> ' + nvl(datos.features[0].properties['carga_descarga']);
@@ -400,6 +434,10 @@ var wms_GIS = L.WMS.Source.extend({
           datos1 += '<BR />' + '<b>Parada transporte publico (mts):</b> ' + nvl(datos.features[0].properties['parada_transporte']);
           datos1 += '<div style="width:300px;">&nbsp;</div>';
         }
+
+        /*
+         * Transporte
+         */
 
         // falta cargar puntos recarga sube
         if(queLayer[0] == "vw_puntos_recarga_sube"){

@@ -7,7 +7,7 @@
  *   con esa marca se en que tabla de la base de datos tiene que buscar.
  * 
  * Desarrollo: Lic. Carlos Garcia - carlosgctes[@]gmail[.]com"
- * Fecha Modif.: 11/07/2019
+ * Fecha Modif.: 09/02/2020
  */
 
 require_once('conPDO1921681051.php');
@@ -47,6 +47,7 @@ switch($que_busca){
         }
 
         while( $reg_calle = $rst_calle->fetchObject()){
+
             if($c > 0) { 
 
                 $ret .= ',';
@@ -56,6 +57,7 @@ switch($que_busca){
             $ret .=  $reg_calle->geometry;
 
             $c++;
+            
         }
         
     break;
