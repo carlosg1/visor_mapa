@@ -14,6 +14,7 @@ let arbolCapaBase = arbolMCC = nodo_base_anterior = nodoSeleccionado = undefined
 let nodo_pub_selec, nodo_pub_anterior = undefined;
 let capas = Array();
 let apagarCapaBarrio = false;
+let selectfeature = undefined;
 
 // variable que controla que se va a buscar
 // segun si se selecciono o no, algunas opciones
@@ -21,6 +22,9 @@ let apagarCapaBarrio = false;
 let queBusca = undefined;
 
 $(document).ready(function() {
+
+    // funcionalidad de seleccion de features dibujando un area
+    // selectfeature = map.selectAreaFeature.disable();
 
     // incompatibilidad con navegadores
     if (L.Browser.ielt9) {

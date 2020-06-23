@@ -26,6 +26,7 @@ mb_internal_encoding("UTF-8");
         <script src="js/leaflet.wms.js"></script>
         <script src="js/Control.OSMGeocoder.js"></script>
         <script src="js/leaflet-measure.js"></script>
+        <script src="js/Leaflet.SelectAreaFeature.js"></script>
 
         <!-- script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script -->
         <!-- link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/humanity/jquery-ui.css" -->
