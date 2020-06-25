@@ -14,7 +14,6 @@ let arbolCapaBase = arbolMCC = nodo_base_anterior = nodoSeleccionado = undefined
 let nodo_pub_selec, nodo_pub_anterior = undefined;
 let capas = Array();
 let apagarCapaBarrio = false;
-let selectfeature = undefined;
 
 // variable que controla que se va a buscar
 // segun si se selecciono o no, algunas opciones
@@ -22,9 +21,6 @@ let selectfeature = undefined;
 let queBusca = undefined;
 
 $(document).ready(function() {
-
-    // funcionalidad de seleccion de features dibujando un area
-    // selectfeature = map.selectAreaFeature.disable();
 
     // incompatibilidad con navegadores
     if (L.Browser.ielt9) {
@@ -990,13 +986,16 @@ $(document).ready(function() {
 
     // contraer el panel lateral
     document.getElementById("btn-contraer").addEventListener('click', function(ev){
-
-       $('#lateral').animate({left: 7}, 400, function(){
-
-        $('#lateral').animate({left: -400}, 400);
-
-       });
+       contraerBarraLateral();
     }, false);
+
+    function contraerBarraLateral(){
+        $('#lateral').animate({left: 7}, 400, function(){
+
+            $('#lateral').animate({left: -400}, 400);
+    
+        });
+    }
 
     document.getElementById("btn-abrir").addEventListener('click', function(ev){
 
@@ -1007,19 +1006,19 @@ $(document).ready(function() {
         });
     }, false);
 
-    document.getElementById("frmBusca").addEventListener('keyup', function(ev){
+    // document.getElementById("frmBusca").addEventListener('keyup', function(ev){
 
-        if (ev.keyCode === 13) {
+    //     if (ev.keyCode === 13) {
 
-            ev.preventDefault();
+    //         ev.preventDefault();
 
-            document.getElementById("lupa-busca-boton").click();
+    //         document.getElementById("lupa-busca-boton").click();
 
-        }
+    //     }
 
-    });
+    // });
 
-    $('#msg-no-encontre').dialog({ 
+    $('#c').dialog({ 
         autoOpen: false,
         title: 'Aviso!!'
     });
@@ -1040,98 +1039,115 @@ $(document).ready(function() {
 
     });
 
-    // boton de busqueda
-    $('#lupa-busca-boton').click(function(){
 
-        if( $('#input-busqueda').val() === '' ) return false;
-
-        if ( $("#botones_opcion input[name=opciones_busca-radio]:radio").is(':checked') ) {
-
-            queBusca = $("input:radio[name=opciones_busca-radio]:checked").val();
-
-            /*
-            if (queBusca === "dependencia municipal") {
-
-                $("#obj-no-encontre_cuerpo").html("Esta opcion estar&aacute; disponible en breve...");
-
-                $(".obj-no-encontre").animate({opacity: 0.8}, 400, function(){ $(".obj-no-encontre").effect('pulsate')});
-
-                return false;
-
-            }
-            */
-
-        } else {
-
-            queBusca = "Calle";
-
-        }
-
-        $.ajax( "rec_elem.php", {
-
-            data: 'nombre_calle=' + document.getElementById('input-busqueda').value + "&a=" + queBusca,
-
-            method: 'POST',
-
-            success: function(response){
-
-                if (response == '-1') {
-                    
-                    $("#obj-no-encontre_cuerpo").html("La busqueda no di&oacute; ning&uacute;n resultado");
-
-                    $(".obj-no-encontre").animate({opacity: 0.8}, 400, function(){ $(".obj-no-encontre").effect('pulsate')});
-
-                    return false;
-                }
-
-                // estoy por ver si es punto
-
-
-                // fin de ver si es punto
-
-                var myStyle = {
-                    "color": "#ff7800",
-                    "weight": 5,
-                    "opacity": 0.65
-                };
-
-                capas.push(L.geoJSON(JSON.parse(response), {
-                    style: myStyle
-                }).addTo(map));
-
-                if (queBusca === "Barrio") {
-
-                    vw_barrios.addTo(map);
-
-                    apagarCapaBarrio = true; // para cuando se limpie la busqueda.
-
-                }
-
-                $(".busca-root_borrar-busqueda").css('visibility', 'visible');
-
-            }
-        });
-
+    // ----------------- AGREGADO POR NAHUEL EL K-PO, EL NINJA, EL MASTER, EL ULTRAMEGA MEGA HYPER DUPER SENIOR DEVELOPER
+    $("input[type='radio']").checkboxradio({
+        icon: false
     });
 
-    $('.busca-root_borra-busqueda_boton').click(function(e) {
+    var inputBusqueda = document.getElementById('input-busqueda');
+    var lupa = document.getElementById('lupa');
+    var opciones = document.getElementById('opciones');
+    var cerrarOpciones = document.getElementById('cerrarOpciones'); 
+    inputBusqueda.addEventListener('click', () => {
+        if (opciones.classList.contains('oculto')) mostrarOpciones(opciones);
+    });
 
-        capas.forEach(function(item, index){
+    cerrarOpciones.addEventListener('click', () => {ocultarOpciones(opciones);}); //cierra el menu de opciones
 
+    inputBusqueda.addEventListener('keyup', (e) => {
+        if (e.keyCode == 13) {
+            e.preventDefault();
+            buscar(inputBusqueda.value);
+        }
+    });
+
+    lupa.addEventListener('click', () => {
+        buscar(inputBusqueda.value);
+    });
+
+    function mostrarOpciones(opciones) {
+        opciones.classList.remove('oculto');
+        opciones.style.opacity = 1;
+        opciones.style.height = 'auto';
+        opciones.style.marginBottom = '15px';
+    }
+
+    function ocultarOpciones(opciones) {
+        opciones.classList.add('oculto');
+        opciones.style.opacity = 0;
+        opciones.style.height = '0px';
+    }
+
+    function buscar(value) {
+        document.getElementById('msg-no-encontre').textContent = '';
+        document.getElementsByClassName('obj-no-encontre')[0].style.opacity = '0';
+
+        if($(window).width() <= 576) contraerBarraLateral();
+        if (value === '') return false;
+        else {
+            queBusca = document.querySelector('input[name="opciones_busca-radio"]:checked').value;
+
+            $.ajax("rec_elem.php", {
+
+                data: 'nombre_calle=' + value + "&a=" + queBusca,
+                method: 'POST',
+                success: function(response) {
+
+                    if (response == '-1') {
+
+                        $("#obj-no-encontre_cuerpo").html("La busqueda no di&oacute; ning&uacute;n resultado");
+
+                        $(".obj-no-encontre").animate({
+                            opacity: 0.8
+                        }, 400, function() {
+                            $(".obj-no-encontre").effect('pulsate')
+                        });
+
+                        return false;
+                    }
+
+                    // estoy por ver si es punto
+
+
+                    // fin de ver si es punto
+
+                    var myStyle = {
+                        "color": "#ff7800",
+                        "weight": 5,
+                        "opacity": 0.65
+                    };
+
+                    capas.push(L.geoJSON(JSON.parse(response), {
+                        style: myStyle
+                    }).addTo(map));
+
+                    if (queBusca === "Barrio") {
+                        vw_barrios.addTo(map);
+                        apagarCapaBarrio = true; // para cuando se limpie la busqueda.
+                    }
+
+                    $("#busca-root_borrar-busqueda").css('display', 'flex');
+
+                }
+            });
+        };
+    }
+
+    $('#busca-root_borrar-busqueda').click(function(e) {
+
+        capas.forEach(function(item, index) {
             item.remove();
-
         });
 
         $("#input-busqueda").val("");
+        this.style.display = 'none';
 
         capas = [];
 
         if (queBusca === "Barrio") {
-
             map.removeLayer(vw_barrios);
-
         }
     });
-
 });
 

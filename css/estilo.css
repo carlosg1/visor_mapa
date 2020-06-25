@@ -324,7 +324,7 @@ div.topBanner span img {
 	position: absolute;
 	left: 350px;
 	top: 15px;
-	width: 286px;
+	width: 310px;
 	visibility: visible; 
 	z-index: 2000;
 	text-align: center;
@@ -338,7 +338,7 @@ div.topBanner span img {
 .x-cierre {
 	position: absolute;
 	right: 13px;
-	top: 2px;
+	top: 0px;
 }
 .x-cierre #x-cierre-btn {
 	font-weight: bold;
@@ -363,4 +363,23 @@ div.topBanner span img {
 	-webkit-box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.52);
 	-moz-box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.52);
 	box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.52);
+}
+
+@media (max-width: 576px) {
+    .obj-no-encontre{
+        left: 25px;
+        top: 150px;
+    }
+}
+
+#cerrarOpciones{
+    margin-bottom: 10px;
+    cursor: pointer;
+    width: 20px;
+    height: 18px;
+    border-radius: 50px;
+}
+
+#cerrarOpciones:hover{
+    background-color: #b4b1b1;
 }
