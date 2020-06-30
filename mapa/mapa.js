@@ -5,6 +5,7 @@
 //
 let map = undefined;
 let baseMap = undefined;
+let visor = undefined;
 
 $(document).ready(function() {
 
@@ -50,6 +51,18 @@ $(document).ready(function() {
         map.attributionControl.getContainer().innerHTML = a + 'Coord.: [' + event.latlng.lat + ', ' + event.latlng.lng + ']';
 
     }, true);
+
+    map.on('click', function (e) {
+        if (e.originalEvent.target.id != 'boton-mapillary' && e.originalEvent.target.id != 'boton-google') {
+            visor = mostrarModal(e); //Esta función esta definida en el archivo modal.js
+            
+            if(visor.streetViewDataProviders == undefined){
+                window.addEventListener("resize", function(){visor.resize();});
+            }
+            
+            this.invalidateSize(true);
+        }
+    });
 
 });
 

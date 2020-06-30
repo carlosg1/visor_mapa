@@ -18,6 +18,10 @@ mb_internal_encoding("UTF-8");
 
     <link rel="stylesheet" href="css/estilo.css">
 
+    <!--MAPILLARY-->
+    <link href='https://unpkg.com/mapillary-js@2.20.0/dist/mapillary.min.css' rel='stylesheet' />
+    <script src='https://unpkg.com/mapillary-js@2.20.0/dist/mapillary.min.js'></script>
+
     <script src="js/leaflet.js"></script>
     <script src="js/leaflet.rotatedMarker.js"></script>
     <script src="js/leaflet.pattern.js"></script>
@@ -50,6 +54,8 @@ mb_internal_encoding("UTF-8");
     <script src="js/appmcc.js"></script>
     <script src="capas/publico.js"></script>
 
+    
+
     <title>Visor de mapa Municipalidad de Corrientes</title>
 
     <style>
@@ -72,6 +78,18 @@ mb_internal_encoding("UTF-8");
 
     <div id="map"></div>
 
+    <div id="mly-container" class="col-md-12 col-sm-12" style="height: 50vh;padding:0; display: none;">
+        <i class="fa fa-times-circle close" aria-hidden="true"></i>
+        <div id="mly"></div>
+    </div>
+    <div id="pano-container" class="col-md-12 col-sm-12" style="height: 50vh;padding:0;display: none;">
+        <div id="pano" style="width: 100%;"></div>
+    </div>
+
+    <link rel="stylesheet" href="css/mapillary.css">
+    <script src="js/funciones-mapillary.js"></script>
+    <script src="js/modal.js"></script>
+
     <!-- menu hamburguesa -->
     <div id="contenedor-hamburguesa">
         <div id="botonmax">
@@ -84,62 +102,6 @@ mb_internal_encoding("UTF-8");
             </div>
         </div>
     </div>
-
-    <!-- caja de busqueda -->
-    <!-- <div id="busca-contenedor">
-
-        <div id="busca-root">
-            <form id="frmBusca">
-                <input type="text" id="input-busqueda" autocomplete="off" placeholder="Buscar calle, ej: Mendoza">
-            </form>
-
-            <div id="lupa-busca-contenedor">
-                <button id="lupa-busca-boton"></button>
-            </div>
-
-            <span id="busca-separador"></span>
-
-            <div class="busca-root_borrar-busqueda">
-                <button class="busca-root_borra-busqueda_boton" tooltip="Borrar búsqueda"></button>
-            </div>
-        </div>
-
-    </div> -->
-
-    <!-- opciones y resultado de la busqueda -->
-    <!-- <div id="opci-contenedor">
-        <div id="opci-menu">
-            <button id="opci-opci-boton"></button>
-        </div>
-
-        <span class="opci-contenedor_opci-texto">M&aacute;s opciones</span>
-
-        <div class="opci-contenedor__opciones opci-contenedor_checkbox">
-
-            <div class="widget" id="botones_opcion">
-
-                <fieldset>
-
-                    <legend> Seleccion&aacute; un bot&oacute;n </legend>
-
-                    <label for="opciones_busca-calle">Calle</label>
-                    <input type="radio" name="opciones_busca-radio" id="opciones_busca-calle" class="opci-contenedor__opciones_radio" value="Calle">
-
-                    <label for="opciones_busca-barrio">Barrio</label>
-                    <input type="radio" name="opciones_busca-radio" id="opciones_busca-barrio" class="opci-contenedor__opciones_radio" value="Barrio">
-
-                    <label for="opciones_busca-partidainmo">Partida inmob.</label>
-                    <input type="radio" name="opciones_busca-radio" id="opciones_busca-partidainmo" class="opci-contenedor__opciones_radio" value="partida inmo">
-
-                    <label for="opciones_busca-depmunicipal">Dep. Municipal</label>
-                    <input type="radio" name="opciones_busca-radio" id="opciones_busca-depmunicipal" class="opci-contenedor__opciones_radio" value="dependencia municipal">
-
-                </fieldset>
-
-            </div>
-
-        </div>
-    </div> -->
 
     <!-- ARBOL DE CAPAS -->
     <div id="lateral">
@@ -226,6 +188,8 @@ mb_internal_encoding("UTF-8");
     <div class="ref-bacheo">
         <img src="images/ref/referencias-bacheo.png" alt="">
     </div>
+
+
 
 </body>
 

@@ -195,7 +195,10 @@ div.topBanner span img {
 	padding-bottom: 5px;
 	opacity: inherit;
 }
-#msg-no-encontre { z-index: 2000; }
+#msg-no-encontre { 
+	z-index: 2000; 
+	display:none; 
+}
 #lateral {
 	display: block;
 	position: absolute;
