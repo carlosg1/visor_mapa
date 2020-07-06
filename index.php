@@ -22,6 +22,9 @@ mb_internal_encoding("UTF-8");
     <link href='https://unpkg.com/mapillary-js@2.20.0/dist/mapillary.min.css' rel='stylesheet' />
     <script src='https://unpkg.com/mapillary-js@2.20.0/dist/mapillary.min.js'></script>
 
+    <!-- Street View API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZIv_HnJ9bRjwc3Yju-9dhy4Nmr3vmoBo"></script>
+
     <script src="js/leaflet.js"></script>
     <script src="js/leaflet.rotatedMarker.js"></script>
     <script src="js/leaflet.pattern.js"></script>
@@ -33,6 +36,8 @@ mb_internal_encoding("UTF-8");
     <script src="js/leaflet.wms.js"></script>
     <script src="js/Control.OSMGeocoder.js"></script>
     <script src="js/leaflet-measure.js"></script>
+    <!-- <script src="js/Leaflet.VectorGrid.js"></script> -->
+    <script src="https://unpkg.com/leaflet.vectorgrid@latest/dist/Leaflet.VectorGrid.bundled.js""></script>
 
     <!-- script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script -->
     <!-- link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/humanity/jquery-ui.css" -->
@@ -78,16 +83,21 @@ mb_internal_encoding("UTF-8");
 
     <div id="map"></div>
 
-    <div id="mly-container" class="col-md-12 col-sm-12" style="height: 50vh;padding:0; display: none;">
+    <div id="mly-container" class="col-md-12 col-sm-12" style="height: 49vh;padding:0; display: none;">
         <i class="fa fa-times-circle close" aria-hidden="true"></i>
         <div id="mly"></div>
+       
     </div>
+
     <div id="pano-container" class="col-md-12 col-sm-12" style="height: 50vh;padding:0;display: none;">
         <div id="pano" style="width: 100%;"></div>
     </div>
 
     <link rel="stylesheet" href="css/mapillary.css">
+    <link rel="stylesheet" href="css/boton-google.css">
+    <link rel="stylesheet" href="css/modal.css">
     <script src="js/funciones-mapillary.js"></script>
+    <script src="js/funciones-googleview.js"></script>
     <script src="js/modal.js"></script>
 
     <!-- menu hamburguesa -->

@@ -4,7 +4,40 @@
  * Y por último lo añade como control al mapa 
  * */
 
-var botonMly = document.createElement('img');
+let botonMly = document.createElement('img');
+let lyrZonaDisponible = undefined;
+
+function mostrarZonasDisponibles(){
+
+    var options = {
+        attribution: true,
+        interactive: true,
+        maxNativeZoom: 14,
+        vectorTileLayerStyles: {
+          "mapillary-images": {
+            radius: 1,
+            weight: 1,
+            color: "#39AF64"
+            },
+          "mapillary-sequences": {
+              weight: 1,
+              color: "#AF3964",
+          }
+        }
+      }
+
+      lyrZonaDisponible = new L.vectorGrid.protobuf("https://d25uarhxywzl1j.cloudfront.net/v0.1/{z}/{x}/{y}.mvt", options)
+      .on('mouseover', function(e){
+        var url = "https://images.mapillary.com/" + e.layer.properties.key  + "/thumb-2048.jpg"; e.layer.properties.ikey
+        L.popup()
+          .setContent("<img src='" + url + "' width='160'/>")
+		  .setLatLng(e.latlng)
+		  .openOn(map);
+      })
+      .addTo(map);
+
+    return;
+}
 
 $(document).ready(function(){
     botonMly.src = 'images/mapillary-icon.png';
@@ -12,17 +45,22 @@ $(document).ready(function(){
     botonMly.id = 'boton-mapillary';
 
     botonMly.addEventListener('click', function(){
+        
+        
+
         let btngog = document.getElementById('boton-google'); //boton google street view
+
         if (this.classList.contains('mapillary-activado')) {
             this.classList.remove('mapillary-activado');
+            map.removeLayer(lyrZonaDisponible);
             
         }else if(btngog == undefined || btngog == null || !btngog.classList.contains('googleviewer-activado')){
             this.classList.add('mapillary-activado');
+            mostrarZonasDisponibles();
 
         }else if(btngog.classList.contains('googleviewer-activado')){
             btngog.classList.remove('googleviewer-activado');
             this.classList.add('mapillary-activado');
-            
         }
     });
     document.getElementById('map').appendChild(botonMly);

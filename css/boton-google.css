@@ -1,4 +1,5 @@
-#boton-mapillary{
+
+#boton-google {
     display: block;
     z-index: 1001;
     position: absolute;
@@ -8,16 +9,7 @@
     border: 3px solid rgba(255,255,255, 0.4);
     border-radius: 4px;
 }
-
-#mly {
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    float: left;
-}
-
-.mapillary-activado{
+.googleviewer-activado{
     opacity: 0.8;
     border: 3px solid rgba(86,86,86, 1) !important;
 }

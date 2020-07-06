@@ -11,9 +11,9 @@ span.onclick = function () {
 }
 
 function mostrarModal(e) {
-    
+
     let mly = null;
-    
+
     let btnMapillary = document.getElementById('boton-mapillary');
 
     if (btnMapillary != null && btnMapillary.classList.contains('mapillary-activado')) {
@@ -28,13 +28,13 @@ function mostrarModal(e) {
             component: {
                 cache: false,
                 cover: false,
-                attribution: false
+                attribution: true
             },
         });
         mly.moveCloseTo(e.latlng.lat, e.latlng.lng);
         return mly;
     }
-    
+
     let btnGoogle = document.getElementById('boton-google');
     if (btnGoogle != null && btnGoogle.classList.contains('googleviewer-activado')) {
         document.getElementById("map-container").style.height = '50vh';
