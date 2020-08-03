@@ -1,14 +1,22 @@
 
 let span = document.getElementsByClassName("close")[0];
-
+let closeGoogleView = document.getElementById("closeGoogleView");
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function () {
     document.getElementById('map').style.height = '100vh';
     document.getElementById('mly-container').style.display = 'none';
     map.invalidateSize(true);
-    mly.moveCloseTo(null, null);
+    //mly.moveCloseTo(null, null);
 }
+
+closeGoogleView.onclick = function() {
+    document.getElementById('map').style.height = '100vh';
+    document.getElementById('pano-container').style.display = 'none';
+    map.invalidateSize(true);
+    //panorama.moveCloseTo(null, null);
+}
+
 
 function mostrarModal(e) {
 
@@ -35,9 +43,12 @@ function mostrarModal(e) {
         return mly;
     }
 
+    let panorama = null;
+
     let btnGoogle = document.getElementById('boton-google');
+
     if (btnGoogle != null && btnGoogle.classList.contains('googleviewer-activado')) {
-        document.getElementById("map-container").style.height = '50vh';
+        document.getElementById("map").style.height = '48vh';
         document.getElementById('pano-container').style.display = 'block';
         var pos = { lat: e.latlng.lat, lng: e.latlng.lng };
         panorama = new google.maps.StreetViewPanorama(
@@ -45,15 +56,18 @@ function mostrarModal(e) {
             position: pos,
             pov: {
                 heading: 34,
-                pitch: 10
+                pitch: 3
             },
             enableCloseButton: true
         });
+        /*
         panorama.addListener('visible_changed', function () {
             document.getElementById("map-container").style.height = '100vh';
             document.getElementById('pano-container').style.display = "none";
             map.invalidateSize(true);
-        })
+        });
+*/
+        // panorama.moveCloseTo(e.latlng.lat, e.latlng.lng);
         return panorama;
     }
 }

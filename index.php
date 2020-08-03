@@ -86,10 +86,10 @@ mb_internal_encoding("UTF-8");
     <div id="mly-container" class="col-md-12 col-sm-12" style="height: 49vh;padding:0; display: none;">
         <i class="fa fa-times-circle close" aria-hidden="true"></i>
         <div id="mly"></div>
-       
     </div>
 
-    <div id="pano-container" class="col-md-12 col-sm-12" style="height: 50vh;padding:0;display: none;">
+    <div id="pano-container" class="col-md-12 col-sm-12" style="height: 49vh;padding:0;display: none;">
+        <i class="fa fa-times-circle close" aria-hidden="true" id="closeGoogleView"></i>
         <div id="pano" style="width: 100%;"></div>
     </div>
 

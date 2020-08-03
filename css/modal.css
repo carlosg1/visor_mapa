@@ -21,19 +21,6 @@
 
 }
 
-/* The Close Button */
-.close {
-    
-    position: fixed;
-    z-index: 1001;
-    /* top: 30%; */
-    left: 2%;
-    top: 60%;
-    font-size: 30px;
-    color: black;
-    
-}
-
 .close:hover,
 .close:focus {
     color: #ccc;

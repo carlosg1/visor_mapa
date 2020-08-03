@@ -45,8 +45,6 @@ $(document).ready(function(){
     botonMly.id = 'boton-mapillary';
 
     botonMly.addEventListener('click', function(){
-        
-        
 
         let btngog = document.getElementById('boton-google'); //boton google street view
 

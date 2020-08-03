@@ -3,14 +3,14 @@
     display: block;
     z-index: 1001;
     position: absolute;
-    right: 10px;
-    top: 135px;
+    right: 0.625rem;
+    top: 11rem;
     cursor: pointer;
-    border: 3px solid rgba(255,255,255, 0.4);
+    border: 0.188rem solid rgba(255,255,255, 0.4);
     border-radius: 4px;
 }
 .googleviewer-activado{
     opacity: 0.8;
-    border: 3px solid rgba(86,86,86, 1) !important;
+    border: 0.188rem solid rgba(86,86,86, 1) !important;
 }
 
