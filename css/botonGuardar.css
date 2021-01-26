@@ -1,0 +1,19 @@
+.botonGuardar{
+	display: block;
+	position: absolute;
+	top: 295px;
+	right: 10px;
+	z-index: 1001;
+	color: #21b40b;
+	font-size: 36px;
+	transition: all .2s ease-in;
+	width: 32px;
+	-webkit-text-stroke: 1px green;
+}
+
+
+.botonGuardar:hover{
+	cursor: pointer;
+	color: #000;
+	-webkit-text-stroke: 2px #21b40b;
+}

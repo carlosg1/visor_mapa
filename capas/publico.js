@@ -29,6 +29,7 @@ $(document).ready(function() {
     vw_cloaca_social = wmsMcc51.getLayer("infraestructura:vw_cloaca_social");
     vw_instal_canio_acceso_domicilio = wmsMcc51.getLayer("obras_municipales:vw_instal_canio_acceso_domicilio");
     vw_intervencion_en_plazas = wmsMcc51.getLayer("obras_municipales:vw_intervencion_en_plazas");
+    vw_plaza_recreacion = wmsMcc51.getLayer("obras_municipales:vw_plaza_recreacion");
     vw_obras_de_bacheo = wmsMcc51.getLayer("obras_municipales:vw_obras_de_bacheo");
     vw_obras_santa_catalina_viviendas = wmsMcc51.getLayer("obras_municipales:vw_obras_santa_catalina_viviendas");
     vw_instalacion_canios_cruce_calle = wmsMcc51.getLayer("obras_municipales:vw_instalacion_canios_cruce_calle");
@@ -38,6 +39,7 @@ $(document).ready(function() {
     vw_ejido_urbano = wmsMcc51.getLayer("planeamiento_urbano:vw_ejido_urbano_rural");
     vw_medianas = wmsMcc51.getLayer("planeamiento_urbano:vw_medianas");
     vw_edificios_historicos = wmsMcc51.getLayer("planeamiento_urbano:vw_edificios_historicos");
+    vw_parcelas_por_distrito = wmsMcc51.getLayer("app:vw_calculo_factibilidad"); // agregado por carlos 13/11/2020
 
     // Informacion Municipal
     vw_centros_de_pago  = wmsMcc51.getLayer("informacion_municipal:vw_centros_de_pago");
@@ -226,4 +228,19 @@ $(document).ready(function() {
 
     vw_manzanas  = wmsMcc51.getLayer("informacion_catastral:vw_manzanas_de_la_ciudad");
 
+
+    //toma las capas pasadas como parametro por get y las activa
+    let ca = new URLSearchParams(window.location.search).get('c');
+    if(ca){
+        ca = ca.split(',');
+            if(ca.length > 0){
+                ca.forEach(e => {
+                    arbolMCC.jstree('select_node', e);
+                });
+            }
+    }
+    
+    
+    //agrega el boton para compartir la url (copia al portapapeles la url )
+    compartirUrl();
 });

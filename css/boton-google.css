@@ -1,0 +1,15 @@
+
+#boton-google {
+    display: block;
+    z-index: 1001;
+    position: absolute;
+    right: 0.625rem;
+    top: 11rem;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 36px;
+}
+.googleviewer-activado{
+    filter: grayscale(100);
+}
+

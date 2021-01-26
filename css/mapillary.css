@@ -1,0 +1,30 @@
+#boton-mapillary{
+    display: block;
+    z-index: 1001;
+    position: absolute;
+    right: 10px;
+    top: 135px;
+    cursor: pointer;
+    /* border: 3px solid rgba(255,255,255, 0.4); */
+    width: 36px;
+    border-radius: 4px;
+}
+
+
+.close{
+    font-size: 18px;
+    color: white;
+}
+
+#mly {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    float: left;
+}
+
+.mapillary-activado{
+    filter: grayscale(100);
+}
+

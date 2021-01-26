@@ -15,7 +15,7 @@ $(document).ready(function() {
 
     //opcionWms.pane = map.createPane('labels').style.zIndex = 510;
 
-    lyr_man_pluv = new wms_GIS("http://190.7.30.142:8000/geoserver/wms?", opcionWms).getLayer("infra:Red de Agua de Potable");
+    lyr_man_pluv = new wms_GIS("https://190.7.30.142:8000/geoserver/wms?", opcionWms).getLayer("infra:Red de Agua de Potable");
 
 });
 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>impresion</title>
+    <style>
+        .centrado200 {
+            background-color: #fff;
+            border: blue solid 2px; 
+            position: absolute;
+            height: 300px;
+            width: 400px;
+            left: 50%;
+            top: 50%;
+            margin-top: -150px;
+            margin-left: -192px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="centrado200">
+        <div>Aqui va el mapa</div>
+        
+        <div><input type="button" value="Imprimir" onclick="let popup=window.open('imp.html?c=1|2|5|8', 'Impresion', 'menubar=0,location=0');popup.print();"></div>
+        
+    </div>
+
+    
+</body>
+</html>
