@@ -213,6 +213,7 @@ $(document).ready(function() {
     /*
      * Informacion catastral
      */
+    vw_plazas_de_la_ciudad = wmsMcc51.getLayer("vw_plazas_de_la_ciudad")
 
     vw_asentamiento_renabap  = wmsMcc51.getLayer("informacion_catastral:vw_asentamiento_renabap");
 
@@ -227,7 +228,6 @@ $(document).ready(function() {
     vw_parcelas  = wmsMcc51.getLayer("informacion_catastral:vw_parcelas");
 
     vw_manzanas  = wmsMcc51.getLayer("informacion_catastral:vw_manzanas_de_la_ciudad");
-
 
     //toma las capas pasadas como parametro por get y las activa
     let ca = new URLSearchParams(window.location.search).get('c');

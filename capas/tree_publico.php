@@ -246,6 +246,9 @@
             <li id="infoCatastral" data-jstree='{"icon": "images/icon/folder-1-16.png", "category":"Informacion catastral", "class": "folder"}'>Informacion catastral
                 <ul>
                     
+                    <li id="vw_plazas_de_la_ciudad" 
+                        data-jstree='{"icon": "images/icon/vw_plazas_de_la_ciudad.jpg", "category":"Red vial"}'>Espacios verdes</li>
+                    
                     <li id="vw_asentamiento_renabap" 
                         data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_asentamiento_renabap&WS=informacion_catastral'; ?>", "category":"Red vial"}'>Asentamientos informales (Re.Na.Ba.P.)</li>
 

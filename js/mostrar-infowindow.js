@@ -53,7 +53,7 @@ var wms_GIS = L.WMS.Source.extend({
 
         var datos1 = undefined;
         var datos = JSON.parse(info);
-        
+
 
         /* que layer */
         var queLayer = datos.features[0].id.split('.');
@@ -814,6 +814,15 @@ var wms_GIS = L.WMS.Source.extend({
         }
 
         // Informacion catastral
+
+        // espacios verdes
+        if (queLayer[0] == "vw_plazas_de_la_ciudad") {
+            datos1 = '<div><h2>Espacios verdes</h2></div>';
+            datos1 += '<b>Nombre</b>: ' + datos.features[0].properties['nombre_plaza'];
+            datos1 += '<BR />' + '<b>Clasificaci&oacute;n</b>: ' + datos.features[0].properties['clasificacion'];
+            datos1 += '<BR />' + '<b>Barrio</b>: ' + datos.features[0].properties['nombre_barrio'];
+        }
+
         if (queLayer[0] == "vw_barrios") {
             datos1 = '<div><h2>BARRIOS</h2></div>';
             datos1 += '<b>Barrio</b>: ' + datos.features[0].properties['NAM'];

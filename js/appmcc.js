@@ -827,6 +827,12 @@ $(document).ready(function () {
                     /***
                      * Informacion catastral
                      */
+                    case 'vw_plazas_de_la_ciudad': {
+                        capasParaImprimir.push(vw_plazas_de_la_ciudad._name);
+                        map.addLayer(vw_plazas_de_la_ciudad);
+                        $.post(api_uso_capas, {capa: vw_plazas_de_la_ciudad._name});
+                    }
+                        break;
                     case 'vw_asentamiento_renabap': {
                         capasParaImprimir.push(vw_asentamiento_renabap._name);
                         map.addLayer(vw_asentamiento_renabap);
@@ -1494,6 +1500,12 @@ $(document).ready(function () {
                         break;
 
                     // Informacion catastral
+                    case 'vw_plazas_de_la_ciudad':{
+                        vw_plazas_de_la_ciudad.remove();
+                        let i = capasParaImprimir.indexOf(vw_plazas_de_la_ciudad._name);
+                        if(i != -1) capasParaImprimir.splice(i, 1);
+                        else console.log('No existe el elemento');}
+                        break;
                     case 'vw_asentamiento_renabap':{
                         vw_asentamiento_renabap.remove();
                         let i = capasParaImprimir.indexOf(vw_asentamiento_renabap._name);
