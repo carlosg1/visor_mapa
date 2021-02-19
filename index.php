@@ -65,6 +65,7 @@ $sql_barrios->execute();
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.8/jstree.min.js" integrity="sha256-NPMXVob2cv6rH/kKUuzV2yXKAQIFUzRw+vJBq4CLi2E=" crossorigin="anonymous"></script>
 
+    <script src="https://unpkg.com/leaflet.nontiledlayer@1.0.8/dist/NonTiledLayer.js"></script>
     <script src="mapa/mapa.js"></script>
     <script src="js/mostrar-infowindow.js"></script>
 

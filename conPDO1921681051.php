@@ -16,15 +16,15 @@ try{
 catch(PDOException $e){
 
 	print 'Direccion General de Sistemas de Informacion Geografica<br /><br />';
-	
+
 	print 'Excepcion: <br />' . $e->getMessage() . '<br />';
-	
+
 	print 'Lo sentimos pero no se pudo conectar a la base de datos.';
-	
+
 	// print $e;
-	
+
 	exit;
-	
+
 }
 /* 
  * To change this license header, choose License Headers in Project Properties.
