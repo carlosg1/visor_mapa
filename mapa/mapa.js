@@ -49,6 +49,8 @@ $(document).ready(function() {
             maxWidth: 150
       }).addTo(map);
 
+      L.control.locate({ locateOptions: { maxZoom: 17}, position: 'bottomright' }).addTo(map);
+
       map.on('mousemove', function(event) {
             var a = 'Mapa publico - ' + '<a href="https://gis.ciudaddecorrientes.gov.ar" target="_blank">Direccion Gral de SIG</a> - ';
 

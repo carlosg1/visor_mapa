@@ -1659,7 +1659,68 @@ $(document).ready(function () {
         title: 'Aviso!!'
     });
 
+
+// ======================================*********************************************=====================================
+const inputBusqueda = document.getElementById('input-busqueda');
+const autocompletCalles = $('#autocompletCalles');
+const autocompletBarrios = $('#autocompletBarrios');
+
+$(inputBusqueda).keyup(function (e) {
+    let selected = $('input[name="opciones_busca-radio"]:checked').val();
+    let value = inputBusqueda.value;
+    if (e.keyCode == 13) {
+        e.preventDefault();
+        buscar(value);
+    }else if(value != ''){
+        if((inputBusqueda.value.length % 3) == 0){ //cada tres teclas hace la peticion
+            
+                $.get('rec_elem.php?queBusca='+selected+'&nombre_calle='+value, function(response){
+                    
+                    if(selected == 'Calle'){
+                        autocompletCalles.html('');
+                        autocompletCalles.css('display', 'block');
+                        if(response != "-1"){
+                            let data = JSON.parse(response);
+                            data.forEach(element => {
+                                if(element.name) autocompletCalles.append(`<li data-name="${element.name}"><span class="fa-li"><i class="fas fa-map-marker-alt"></i></span>${element.name}</li>`);
+                            }); 
+                        }
+                    }else if(selected == 'Barrio'){
+                        autocompletBarrios.html('');
+                        autocompletBarrios.css('display', 'block');
+                        if(response != "-1"){
+                            let data = JSON.parse(response);
+                            data.forEach(element => {
+                                if(element.name) autocompletBarrios.append(`<li data-name="${element.name}"><span class="fa-li"><i class="fas fa-map-marker-alt"></i></span>${element.name}</li>`);
+                            }); 
+                        }
+                    }                         
+                });
+            
+        }
+    }else{
+        autocompletCalles.css('display', 'none');
+        autocompletBarrios.css('display', 'none');
+    }
+});
+
+autocompletBarrios.on('click', 'li', function(){
+    inputBusqueda.value = $(this).data('name');
+    autocompletBarrios.css('display', 'none');
+});
+
+autocompletCalles.on('click', 'li', function(){
+    inputBusqueda.value = $(this).data('name');
+    autocompletCalles.css('display', 'none');
+});
+
+// ======================================*********************************************=====================================
+
+
+
+    /*
     const inputBusqueda = document.getElementById('input-busqueda');
+
 
     $(inputBusqueda).keyup(function(){
         let selected = $('input[name="opciones_busca-radio"]:checked').val();
@@ -1671,7 +1732,9 @@ $(document).ready(function () {
             filtrar(query, '#autocompletBarrios')
         }
     })
+*/
 
+/*
     function filtrar(query, lista){
         let elements = $(lista).children();
         if(query != ''){
@@ -1698,7 +1761,7 @@ $(document).ready(function () {
             $(lista).css('display', 'none')
         }
     }
-
+*/
     // expande opciones de busqueda
     $("#input-busqueda").focus(function () {
         $("#opci-contenedor").animate({

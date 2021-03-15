@@ -40,7 +40,9 @@ function calleYaltura($c, $conn)
             $altura_hasta = $row['altura_hasta'];
         }
     }else{
-        return false;
+        $altura_desde = $altura_buscada;
+        $altura_hasta = $altura_buscada + 1 ;
+        //return false;
     };
 
 

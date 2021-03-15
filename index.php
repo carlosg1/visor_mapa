@@ -1,6 +1,6 @@
 <?php
 mb_internal_encoding("UTF-8");
-
+/*
 require_once('./conPDO1921681051.php');
 $sql_calles = "SELECT DISTINCT nombre_calles FROM gismcc.calles";
 $sql_calles = $conPdoPg->prepare($sql_calles);
@@ -9,6 +9,7 @@ $sql_calles->execute();
 $sql_barrios = "SELECT DISTINCT nombre_barrio FROM gismcc.vw_barrios_de_la_ciudad";
 $sql_barrios = $conPdoPg->prepare($sql_barrios);
 $sql_barrios->execute();
+*/
 ?>
 <!doctype html>
 <html lang="en">
@@ -25,6 +26,7 @@ $sql_barrios->execute();
     <link rel="stylesheet" href="css/Control.OSMGeocoder.css">
     <link rel="stylesheet" href="css/leaflet-measure.css">
     <link rel="stylesheet" href="libs/snackbar/snackbar.min.css">
+    <link rel="stylesheet" href="css/L.Control.Locate.min.css">
     <link rel="stylesheet" href="css/estilo.css">
 	<link rel="stylesheet" href="css/botonGuardar.css">
     <!--MAPILLARY-->
@@ -67,6 +69,7 @@ $sql_barrios->execute();
 
     <script src="https://unpkg.com/leaflet.nontiledlayer@1.0.8/dist/NonTiledLayer.js"></script>
     <script src="mapa/mapa.js"></script>
+    <script src="js/L.Control.Locate.min.js"></script>
     <script src="js/mostrar-infowindow.js"></script>
 
     <script src="js/appmcc.js"></script>
@@ -173,23 +176,14 @@ $sql_barrios->execute();
         <div id="contenedorArboles">
 
 
-        	
             <!-- BUSCADOR -->
             <div class="input-group mb-3">
                 <input type="text" id="input-busqueda" class="form-control shadow-none" autocomplete="off" placeholder="Buscar calle, ej: Mendoza" aria-label="" aria-describedby="basic-addon2">
                 <ul id="autocompletCalles" >
-                    <?php
-                    while($calle = $sql_calles->fetch(PDO::FETCH_OBJ)){
-                        echo '<li>'.$calle->nombre_calles.'</li>';
-                    }
-                    ?>
+                    
                 </ul>
                 <ul id="autocompletBarrios">
-                    <?php
-                    while($barrio = $sql_barrios->fetch(PDO::FETCH_OBJ)){
-                        echo '<li>'.$barrio->nombre_barrio.'</li>';
-                    }
-                    ?>
+                    
                 </ul>
                 <div class="input-group-append" id="busca-root_borrar-busqueda" style="display:none">
                     <span class="input-group-text"><i class="fa fa-times"></i></span>
@@ -198,6 +192,33 @@ $sql_barrios->execute();
                     <span class="input-group-text" id="lupa"><i class="fa fa-search"></i></span>
                 </div>
             </div>
+
+
+        	
+            <!-- BUSCADOR -->
+            <!-- <div class="input-group mb-3">
+                <input type="text" id="input-busqueda" class="form-control shadow-none" autocomplete="off" placeholder="Buscar calle, ej: Mendoza" aria-label="" aria-describedby="basic-addon2">
+                <ul id="autocompletCalles" >
+                    <?php /*
+                    while($calle = $sql_calles->fetch(PDO::FETCH_OBJ)){
+                        echo '<li>'.$calle->nombre_calles.'</li>';
+                    } */
+                    ?>
+                </ul>
+                <ul id="autocompletBarrios">
+                    <?php /*
+                    while($barrio = $sql_barrios->fetch(PDO::FETCH_OBJ)){
+                        echo '<li>'.$barrio->nombre_barrio.'</li>';
+                    } */
+                    ?>
+                </ul>
+                <div class="input-group-append" id="busca-root_borrar-busqueda" style="display:none">
+                    <span class="input-group-text"><i class="fa fa-times"></i></span>
+                </div>
+                <div class="input-group-append">
+                    <span class="input-group-text" id="lupa"><i class="fa fa-search"></i></span>
+                </div>
+            </div> -->
 
 
             <!-- OPCIONES DE BUSCADOR -->
