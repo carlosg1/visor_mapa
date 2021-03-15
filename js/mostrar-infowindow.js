@@ -192,9 +192,61 @@ var wms_GIS = L.WMS.Source.extend({
         }
 
         // Obras municipales //
+        // obras de cordon cuneta //
+        if (queLayer[0] == "vw_obras_cordones_cuneta") {
+            datos1 = '<div style="width:338px;"><h2>Cord&oacute;n Cuneta</h2></div>';
+            datos1 += '<BR />' + '<span style="font-size:18pt;"><b>A&ntilde;o:</b> ' + (datos.features[0].properties['fecha'] ? datos.features[0].properties['fecha'] : '<span style="color:red;">Sin dato</span></span>');
+
+           // datos1 += '<div style="width:358px;"></div>';
+
+            datos1 += '<div style="border-top: 1px solid #7f7f7f; padding-top: 7px; margin-top: 7px; font-family: Roboto; font-size: 11px; color: #7f7f7f">DIR. GRAL. DE S.I.G.</div>';
+
+            this._map.openPopup(datos1, latlng);
+
+            $('.leaflet-popup-content').css('width', 338);
+            $('.leaflet-popup').css('left', Number($('.leaflet-popup').css('left').substring(0, 4)) - 125 + 'px');
+
+            return false;
+        }
+
+        // obras de enripiado //
+        if (queLayer[0] == "vw_obras_ripio") {
+            let fecha = (datos.features[0].properties['fecha'] ? datos.features[0].properties['fecha'].substring(0,10).split('-') : ' - - ');
+            datos1 = '<div style="width:338px;"><h2>Enripiado</h2></div>';
+            datos1 += '<BR />' + '<span style="font-size:14pt;">' + (datos.features[0].properties['cantidad'] ? datos.features[0].properties['cantidad'] : ' ') + ' ' + (datos.features[0].properties['unidad'] ? datos.features[0].properties['unidad'] : ' ') + '</span>';
+            datos1 += '<BR />' + '<b>Fecha:</b> ' + fecha[2] + '/' + fecha[1] + '/' + fecha[0];
+            
+            datos1 += '<BR />' + '<b>Ubicaci&oacute;n:</b> ' + (datos.features[0].properties['nombre'] ? datos.features[0].properties['nombre'] : ' ') + ' ' + (datos.features[0].properties['altura'] ? datos.features[0].properties['altura'] : ' ');
+
+            datos1 += '<div style="border-top: 1px solid #7f7f7f; padding-top: 7px; margin-top: 7px; font-family: Roboto; font-size: 11px; color: #7f7f7f">DIR. GRAL. DE S.I.G.</div>';
+
+            this._map.openPopup(datos1, latlng);
+
+            $('.leaflet-popup-content').css('width', 338);
+            $('.leaflet-popup').css('left', Number($('.leaflet-popup').css('left').substring(0, 4)) - 125 + 'px');
+
+            return false;
+        }
+
+        // obras de pavimento //
+        if (queLayer[0] == "vw_obras_pavimento") {
+            datos1 = '<div style="width:558px;"><h2>Pavimento</h2></div>';
+            datos1 += '<BR />' + '<span>A&ntilde;o: ' + (datos.features[0].properties['anio'] ? datos.features[0].properties['anio'] : ' ') + '</span>';
+            datos1 += '<BR />' + (datos.features[0].properties['metros'] ? datos.features[0].properties['metros'] + ' Mts.' : ' ');
+            
+            datos1 += '<div style="border-top: 1px solid #7f7f7f; padding-top: 7px; margin-top: 7px; font-family: Roboto; font-size: 11px; color: #7f7f7f">DIR. GRAL. DE S.I.G.</div>';
+
+            this._map.openPopup(datos1, latlng);
+
+            $('.leaflet-popup-content').css('width', 558);
+            $('.leaflet-popup').css('left', Number($('.leaflet-popup').css('left').substring(0, 4)) - 124 + 'px');
+
+            return false;
+        }
+
         // obra santa catalina
         if (queLayer[0] == "vw_obras_santa_catalina_viviendas") {
-            datos1 = '<div style="width:558px;"><h2>Obras de vivienda Santa Catalina</h2></div>';
+            datos1 = '<div style="width:558px;"><h2>Vivienda Santa Catalina</h2></div>';
             datos1 += '<div style="width:558px;"><img width="560" height="315" src="images/fotos/casas-santa-catalina.png" border="2" /></div>';
 
             datos1 += '<div style="border-top: 1px solid #7f7f7f; padding-top: 7px; margin-top: 7px; font-family: Roboto; font-size: 11px; color: #7f7f7f">DIR. GRAL. DE S.I.G.</div>';

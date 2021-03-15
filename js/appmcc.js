@@ -250,6 +250,30 @@ $(document).ready(function () {
                     }
                         break;
 
+                    case 'vw_obras_cordones_cuneta': {
+                        capasParaImprimir.push(vw_obras_cordones_cuneta._name);
+                        map.addLayer(vw_obras_cordones_cuneta);
+                        $.post(api_uso_capas, {capa: vw_obras_cordones_cuneta._name});
+
+                    }
+                        break;
+
+                    case 'vw_obras_pavimento': {
+                        capasParaImprimir.push(vw_obras_pavimento._name);
+                        map.addLayer(vw_obras_pavimento);
+                        $.post(api_uso_capas, {capa: vw_obras_pavimento._name});
+
+                    }
+                        break;
+
+                    case 'vw_obras_ripio': {
+                        capasParaImprimir.push(vw_obras_ripio._name);
+                        map.addLayer(vw_obras_ripio);
+                        $.post(api_uso_capas, {capa: vw_obras_ripio._name});
+
+                    }
+                        break;
+
                     case 'vw_cloaca_social': {
                         capasParaImprimir.push(vw_cloaca_social._name);
                         map.addLayer(vw_cloaca_social);
@@ -932,6 +956,27 @@ $(document).ready(function () {
                     case 'red_desague_cloacal':{
                         vw_red_desague_cloaca.remove();
                         let i = capasParaImprimir.indexOf(vw_red_desague_cloaca._name);
+                        if(i != -1) capasParaImprimir.splice(i, 1);
+                        else console.log('No existe el elemento');}
+                        break;
+
+                    case 'vw_obras_cordones_cuneta':{
+                        vw_obras_cordones_cuneta.remove();
+                        let i = capasParaImprimir.indexOf(vw_obras_cordones_cuneta._name);
+                        if(i != -1) capasParaImprimir.splice(i, 1);
+                        else console.log('No existe el elemento');}
+                        break;
+
+                    case 'vw_obras_pavimento':{
+                        vw_obras_pavimento.remove();
+                        let i = capasParaImprimir.indexOf(vw_obras_pavimento._name);
+                        if(i != -1) capasParaImprimir.splice(i, 1);
+                        else console.log('No existe el elemento');}
+                        break;
+
+                    case 'vw_obras_ripio':{
+                        vw_obras_ripio.remove();
+                        let i = capasParaImprimir.indexOf(vw_obras_ripio._name);
                         if(i != -1) capasParaImprimir.splice(i, 1);
                         else console.log('No existe el elemento');}
                         break;

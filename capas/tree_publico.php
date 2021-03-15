@@ -52,7 +52,7 @@
                         </ul>
                     </li>
                     <li id="rehabilitacionSumideros" data-jstree='{"icon": "images/puntos_gral.png", "category":"Plan Hidrico"}'>Rehabilitaci&oacute;n de Sumideros
-				  <ul>
+				        <ul>
                             <li id="sumideroLimpio" data-jstree='{"icon": "images/icon/sumidero_limpio.png", "category":"Plan Hidrico"}'>Limpio</li>
                             <li id="sumideroPendiente" data-jstree='{"icon": "images/icon/sumidero_pendiente.png", "category":"Plan Hidrico"}'>Pendiente</li>
                         </ul>
@@ -86,6 +86,12 @@
 
             <li id="obrasMunicipales" data-jstree='{"icon": "images/icon/folder-1-16.png", "category": "Obras", "class": "folder"}'>Obras
                 <ul>
+
+                    <li id="vw_obras_cordones_cuneta" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_obras_cordones_cuneta&WS=app'; ?>", "category": "Obras"}'>Cord&oacute;n cuneta</li>
+
+                    <li id="vw_obras_ripio" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_obras_ripio&WS=app'; ?>", "category": "Obras"}'>Enripiado</li>
+
+                    <li id="vw_obras_pavimento" data-jstree='{"icon": "legend/vw_obras_pavimento.png", "category": "Obras"}'>Pavimento</li>
 
                     <li id="vw_cloaca_social" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_cloaca_social&WS=infraestructura'; ?>", "category": "Obras"}'>Instalaci&oacute;n Cloaca social</li>
 

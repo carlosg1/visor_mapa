@@ -26,6 +26,9 @@ $(document).ready(function() {
     vw_puntos_wifi = wmsMcc51.getLayer("infraestructura:vw_puntos_wifi");
 
     // obras municipales
+    vw_obras_ripio = wmsMcc51.getLayer("app:vw_obras_ripio");
+    vw_obras_cordones_cuneta = wmsMcc51.getLayer("app:vw_obras_cordones_cuneta");
+    vw_obras_pavimento = wmsMcc51.getLayer("app:vw_obras_pavimento");
     vw_cloaca_social = wmsMcc51.getLayer("infraestructura:vw_cloaca_social");
     vw_instal_canio_acceso_domicilio = wmsMcc51.getLayer("obras_municipales:vw_instal_canio_acceso_domicilio");
     vw_intervencion_en_plazas = wmsMcc51.getLayer("obras_municipales:vw_intervencion_en_plazas");
