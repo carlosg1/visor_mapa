@@ -1660,58 +1660,47 @@ $(document).ready(function () {
     });
 
 
+    
 // ======================================*********************************************=====================================
+//            26/03/2021                 //
 const inputBusqueda = document.getElementById('input-busqueda');
-const autocompletCalles = $('#autocompletCalles');
-const autocompletBarrios = $('#autocompletBarrios');
+const autocompletado = $('#autocompletado');
 
 $(inputBusqueda).keyup(function (e) {
     let selected = $('input[name="opciones_busca-radio"]:checked').val();
     let value = inputBusqueda.value;
+    
     if (e.keyCode == 13) {
         e.preventDefault();
+        autocompletado.html('');
         buscar(value);
     }else if(value != ''){
         if((inputBusqueda.value.length % 3) == 0){ //cada tres teclas hace la peticion
             
-                $.get('rec_elem.php?queBusca='+selected+'&nombre_calle='+value, function(response){
+                $.get('autocompletado.php?queBusca='+selected+'&nombre_calle='+value, function(response){
                     
                     if(selected == 'Calle'){
-                        autocompletCalles.html('');
-                        autocompletCalles.css('display', 'block');
+                        autocompletado.html('');
                         if(response != "-1"){
                             let data = JSON.parse(response);
                             data.forEach(element => {
-                                if(element.name) autocompletCalles.append(`<li data-name="${element.name}"><span class="fa-li"><i class="fas fa-map-marker-alt"></i></span>${element.name}</li>`);
+                               // if(element.name) autocompletCalles.append(`<li data-name="${element.name}"><span class="fa-li"><i class="fas fa-map-marker-alt"></i></span>${element.name}</li>`);
+                               if(element.name) autocompletado.append(`<option value="${element.name}">${element.name}</option>`);
                             }); 
                         }
                     }else if(selected == 'Barrio'){
-                        autocompletBarrios.html('');
-                        autocompletBarrios.css('display', 'block');
+                        autocompletado.html('');
                         if(response != "-1"){
                             let data = JSON.parse(response);
                             data.forEach(element => {
-                                if(element.name) autocompletBarrios.append(`<li data-name="${element.name}"><span class="fa-li"><i class="fas fa-map-marker-alt"></i></span>${element.name}</li>`);
+                                if(element.name) autocompletado.append(`<option value="${element.name}">${element.name}</option>`);
                             }); 
                         }
                     }                         
                 });
             
         }
-    }else{
-        autocompletCalles.css('display', 'none');
-        autocompletBarrios.css('display', 'none');
     }
-});
-
-autocompletBarrios.on('click', 'li', function(){
-    inputBusqueda.value = $(this).data('name');
-    autocompletBarrios.css('display', 'none');
-});
-
-autocompletCalles.on('click', 'li', function(){
-    inputBusqueda.value = $(this).data('name');
-    autocompletCalles.css('display', 'none');
 });
 
 // ======================================*********************************************=====================================

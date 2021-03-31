@@ -1,58 +1,36 @@
 <?php
 require('conPDO1921681051.php');
+$busqueda = $_GET['nombre_calle'];
+switch ($_GET['queBusca']) {
+    case 'Calle':
+        $busqueda = strtoupper(trim($_GET['nombre_calle']));
+        $sql = "SELECT distinct nombre_calles AS name FROM gismcc.calles  WHERE nombre_calles LIKE '%$busqueda%'";
+        $sql = $conPdoPg->query($sql);
+        $res = [];
+        while ($row = $sql->fetchObject()) {
+            $res[] = $row;
+        }
 
-$busqueda = $_GET['busqueda'];
-$busqueda = strtoupper($busqueda);
+        echo json_encode($res);
+        break;
+    case 'Barrio':
+        $busqueda = strtoupper(trim($_GET['nombre_calle']));
+        $sql = "SELECT 
+                        nombre_barrio AS name, 
+                        st_asgeojson(ST_Transform(ST_SetSrid(the_geom_barrios, 22185), 4326))::json as \"geometry\"
+                FROM gismcc.vw_barrios_de_la_ciudad
+                WHERE translate(nombre_barrio, 'áéíóúÁÉÍÓÚäëïöüÄËÏÖÜ', 'aeiouAEIOUaeiouAEIOU') LIKE '%$busqueda%'";
+        $sql = $conPdoPg->query($sql);
+        $res = [];
+        while ($row = $sql->fetchObject()) {
+            $res[] = $row;
+        }
 
-$sql = "SELECT set_limit(0.5), * FROM (
-            SELECT nombre_calles || ' ' || altur_par AS nombre,
-                    'Calle' AS tipo,
-                    the_geom_calles AS the_geom
-            FROM gismcc.vw_calles_de_la_ciudad
-
-            UNION ALL
-
-            SELECT descripcion AS  nombre,
-                   tipo AS tipo,
-                   the_geom AS the_geom
-            FROM gismcc.vw_dependencias_municipales
-
-            UNION ALL
-
-            SELECT nombre_barrio AS nombre,
-                   'Barrio' AS tipo,
-                   the_geom_barrios AS the_geom
-            FROM gismcc.vw_barrios_de_la_ciudad
-
-            UNION ALL
-
-            SELECT
-                (
-                    CASE
-                        WHEN nombre_plaza IS NULL THEN 'S/N'
-                        ELSE nombre_plaza
-                    END
-                ) AS nombre,
-                (
-                    CASE
-                        WHEN clasificacion IS NULL THEN 'ESPACIO VERDE'
-                        ELSE clasificacion
-                    END
-                ) AS tipo,
-                the_geom AS the_geom
-            FROM
-                gismcc.vw_espacio_verde
-
-            
-) AS foo WHERE foo.nombre % '%$busqueda%' AND similarity(foo.nombre, '$busqueda') >= 0.3";
-
-$sql = $conPdoPg->prepare($sql);
-$sql->execute();
-
-$datos = [];
-while ($fila = $sql->fetch(PDO::FETCH_ASSOC)) {
-    $datos[] = $fila;
+        echo json_encode($res);
+        break;
+    default:
+        # code...
+        break;
 }
-
-header('Content-Type: application/json');
-echo json_encode($datos);
+ 
+$conPdoPg = null;

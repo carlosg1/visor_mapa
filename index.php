@@ -168,7 +168,7 @@ $sql_barrios->execute();
 
         <div class="topBanner">
             <span>
-                <img src="images/topBanner.jpg" alt="Municipalidad de Corrientes">
+                <img src="images/new-logo.png" alt="Municipalidad de Corrientes">
             </span>
         </div>
 
@@ -178,13 +178,8 @@ $sql_barrios->execute();
 
             <!-- BUSCADOR -->
             <div class="input-group mb-3">
-                <input type="text" id="input-busqueda" class="form-control shadow-none" autocomplete="off" placeholder="Buscar calle, ej: Mendoza" aria-label="" aria-describedby="basic-addon2">
-                <ul id="autocompletCalles" >
-                    
-                </ul>
-                <ul id="autocompletBarrios">
-                    
-                </ul>
+                <input list="autocompletado" type="text" id="input-busqueda" class="form-control shadow-none" autocomplete="off" placeholder="Buscar calle, ej: Mendoza" aria-label="" aria-describedby="basic-addon2">
+                <datalist id="autocompletado"></datalist>
                 <div class="input-group-append" id="busca-root_borrar-busqueda" style="display:none">
                     <span class="input-group-text"><i class="fa fa-times"></i></span>
                 </div>
@@ -192,34 +187,6 @@ $sql_barrios->execute();
                     <span class="input-group-text" id="lupa"><i class="fa fa-search"></i></span>
                 </div>
             </div>
-
-
-        	
-            <!-- BUSCADOR -->
-            <!-- <div class="input-group mb-3">
-                <input type="text" id="input-busqueda" class="form-control shadow-none" autocomplete="off" placeholder="Buscar calle, ej: Mendoza" aria-label="" aria-describedby="basic-addon2">
-                <ul id="autocompletCalles" >
-                    <?php /*
-                    while($calle = $sql_calles->fetch(PDO::FETCH_OBJ)){
-                        echo '<li>'.$calle->nombre_calles.'</li>';
-                    } */
-                    ?>
-                </ul>
-                <ul id="autocompletBarrios">
-                    <?php /*
-                    while($barrio = $sql_barrios->fetch(PDO::FETCH_OBJ)){
-                        echo '<li>'.$barrio->nombre_barrio.'</li>';
-                    } */
-                    ?>
-                </ul>
-                <div class="input-group-append" id="busca-root_borrar-busqueda" style="display:none">
-                    <span class="input-group-text"><i class="fa fa-times"></i></span>
-                </div>
-                <div class="input-group-append">
-                    <span class="input-group-text" id="lupa"><i class="fa fa-search"></i></span>
-                </div>
-            </div> -->
-
 
             <!-- OPCIONES DE BUSCADOR -->
             <div id="opciones" class="oculto" style="text-align: center; width: 90%; margin:0 auto;">

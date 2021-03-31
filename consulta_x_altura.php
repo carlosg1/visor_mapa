@@ -15,12 +15,12 @@ function calleYaltura($c, $conn)
     $calle_buscada = strtoupper(trim(implode(' ',$c)));
 
     $query_altura = "WITH a1 AS(
-                                    SELECT id_secuencia_traza, altura FROM gismcc.calles
-                                    WHERE calles.id_traza = (SELECT id_traza FROM gismcc.calles WHERE translate(calles.nombre_calles, 'áéíóúÁÉÍÓÚäëïöüÄËÏÖÜ', 'aeiouAEIOUaeiouAEIOU') ILIKE '%$calle_buscada%' LIMIT 1)
-                                    AND altura < $altura_buscada
-                                    ORDER BY altura DESC
-                                    LIMIT 1
-                                )
+        SELECT id_secuencia_traza, altura FROM gismcc.calles
+        WHERE calles.id_traza = (SELECT id_traza FROM gismcc.calles WHERE translate(calles.nombre_calles, 'áéíóúÁÉÍÓÚäëïöüÄËÏÖÜ', 'aeiouAEIOUaeiouAEIOU') ILIKE '%$calle_buscada%' LIMIT 1)
+        AND altura < $altura_buscada
+        ORDER BY altura DESC
+        LIMIT 1
+    )
 
     SELECT DISTINCT
         calles.id_secuencia_traza,

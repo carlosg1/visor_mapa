@@ -153,7 +153,7 @@ switch($que_busca){
 
     case 'dependencia municipal':
 
-        $qry = "SELECT st_asgeojson(ST_Transform(ST_SetSrid(the_geom, 22185), 4326))::json as \"geometry\"
+        $qry = "SELECT descripcion as name, st_asgeojson(ST_Transform(ST_SetSrid(the_geom, 22185), 4326))::json as \"geometry\"
         FROM gismcc.vw_dependencias_municipales
         WHERE upper(descripcion) LIKE '%$nombre_calle%'";
 
@@ -174,8 +174,7 @@ switch($que_busca){
 
             }
 
-            $ret .=  $reg->geometry;
-
+            $ret .=  $reg->geometry = substr($reg->geometry, 0, (strlen($reg->geometry) - 1)) . ', "name": '.'"'.$reg->name . '"}';
             $c++;
         }
 

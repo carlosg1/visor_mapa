@@ -222,7 +222,6 @@
                             <li id="recorrido_ramal_108_C" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=recorrido_ramal_108_C'; ?>", "category":"Transporte"}'>Linea 108 C</li>
                             <li id="recorrido_ramal_109_A_Laguna_Soto" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=recorrido_ramal_109_A_Laguna_Soto'; ?>", "category":"Transporte"}'>Linea 109 A - Lag. Soto</li>
                             <li id="recorrido_ramal_109_B_Yecoha" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=recorrido_ramal_109_B_Yecoha'; ?>", "category":"Transporte"}'>Linea 109 B - Yecoha</li>
-
                             <li id="recorrido_ramal_110_A" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=recorrido_ramal_110_A'; ?>", "category":"Transporte"}'>Linea 110 A</li>
                             <li id="recorrido_ramal_110_B" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=recorrido_ramal_110_B'; ?>", "category":"Transporte"}'>Linea 110 B</li>
                             <li id="recorrido_ramal_110_C_sta_catalina" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=recorrido_ramal_110_C_sta_catalina'; ?>", "category":"Transporte"}'>Linea 110 C sta. Catalina</li>
@@ -251,10 +250,10 @@
 
             <li id="infoCatastral" data-jstree='{"icon": "images/icon/folder-1-16.png", "category":"Informacion catastral", "class": "folder"}'>Informacion catastral
                 <ul>
-                    
+
                     <li id="vw_plazas_de_la_ciudad" 
                         data-jstree='{"icon": "images/icon/vw_plazas_de_la_ciudad.jpg", "category":"Red vial"}'>Espacios verdes</li>
-                    
+
                     <li id="vw_asentamiento_renabap" 
                         data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_asentamiento_renabap&WS=informacion_catastral'; ?>", "category":"Red vial"}'>Asentamientos informales (Re.Na.Ba.P.)</li>
 
