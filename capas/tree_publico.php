@@ -2,7 +2,7 @@
 /*
  * Actualizado: 29/10/2019
  * Developer: Lic Carlos Garcia - carlosgctes@gmail.com
- * Uso: para agregar una capa a la rama de informacion publica
+ * Uso: para agregar una capa a la rama de información publica
  * agregar una entrada <li> al archivo tree_publico.php
  *
  */
@@ -10,7 +10,6 @@
 // include('../glg.php');
 
 ?>
-
 
 
 <!-- VISOR PUBLICO -->
@@ -25,6 +24,9 @@
         <ul>
             <li id="ambienteDesa" data-jstree='{"icon": "images/icon/folder-1-16.png", "category":"Ambiente y Desarrollo Sustentable"}'>Ambiente y Desarrollo Sustentable
                 <ul>
+                    <!-- <li id="vw_arbolado" data-jstree='{"icon": "images/icon/arbolado.png", "category":"Ambiente y Desarrollo Sustentable"}'>Arbolado</li> -->
+                    <li id="vw_arbolado" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_arbolado&WS=ambiente'; ?>", "category":"Ambiente y Desarrollo Sustentable"}'>Arbolado</li>
+
                     <li id="vw_recoleccion_diferenciada" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_recoleccion_diferenciada&WS=ambiente'; ?>", "category":"Ambiente y Desarrollo Sustentable"}'>Recoleccion Diferenciada
                         <ul>
                             <li id="recDif_juan_vera" data-jstree='{"category": "Ambiente y Desarrollo Sustentable"}'>
@@ -90,9 +92,9 @@
                     <li id="vw_obras_cordones_cuneta" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_obras_cordones_cuneta&WS=app'; ?>", "category": "Obras"}'>Cord&oacute;n cuneta</li>
 
                     <li id="vw_obras_ripio" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_obras_ripio&WS=app'; ?>", "category": "Obras"}'>Enripiado</li>
-
-                    <li id="vw_obras_pavimento" data-jstree='{"icon": "legend/vw_obras_pavimento.png", "category": "Obras"}'>Pavimento</li>
-
+                    
+                    <li id="vw_obras_pavimento" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_obras_pavimento&WS=app'; ?>", "category": "Obras"}'>Pavimento</li>
+                    
                     <li id="vw_cloaca_social" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_cloaca_social&WS=infraestructura'; ?>", "category": "Obras"}'>Instalaci&oacute;n Cloaca social</li>
 
                     <li id="vw_instal_canio_acceso_domicilio" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_instal_canio_acceso_domicilio&WS=obras_municipales'; ?>", "category": "Obras"}'>Instalaci&oacute;n Acceso Domicilio</li>
@@ -222,6 +224,7 @@
                             <li id="recorrido_ramal_108_C" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=recorrido_ramal_108_C'; ?>", "category":"Transporte"}'>Linea 108 C</li>
                             <li id="recorrido_ramal_109_A_Laguna_Soto" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=recorrido_ramal_109_A_Laguna_Soto'; ?>", "category":"Transporte"}'>Linea 109 A - Lag. Soto</li>
                             <li id="recorrido_ramal_109_B_Yecoha" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=recorrido_ramal_109_B_Yecoha'; ?>", "category":"Transporte"}'>Linea 109 B - Yecoha</li>
+
                             <li id="recorrido_ramal_110_A" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=recorrido_ramal_110_A'; ?>", "category":"Transporte"}'>Linea 110 A</li>
                             <li id="recorrido_ramal_110_B" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=recorrido_ramal_110_B'; ?>", "category":"Transporte"}'>Linea 110 B</li>
                             <li id="recorrido_ramal_110_C_sta_catalina" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=recorrido_ramal_110_C_sta_catalina'; ?>", "category":"Transporte"}'>Linea 110 C sta. Catalina</li>
@@ -240,7 +243,7 @@
 
             <li id="redVial" data-jstree='{"icon": "images/icon/folder-1-16.png", "class": "folder"}'>Red vial
                 <ul>
-                    <li id="vw_alturas_calles" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_alturas_calles&WS=red_vial'; ?>", "category":"Red vial"}'>Altura de calle</li>
+                    <li id="vw_alturas_calles" data-jstree='{"icon": "images/altura_calles.svg", "category":"Red vial"}'>Altura de calle</li>
                     <li id="vw_ide_calle" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_ide_calle&WS=red_vial'; ?>", "category":"Red vial"}'>Calles</li>
                     <li id="vw_ide_calle_por_tipo_calzada" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_ide_calle_por_tipo_calzada&WS=red_vial'; ?>", "category":"Red vial"}'>Calles por tipo de calzada</li>
                 </ul>
@@ -250,10 +253,10 @@
 
             <li id="infoCatastral" data-jstree='{"icon": "images/icon/folder-1-16.png", "category":"Informacion catastral", "class": "folder"}'>Informacion catastral
                 <ul>
-
+                    
                     <li id="vw_plazas_de_la_ciudad" 
                         data-jstree='{"icon": "images/icon/vw_plazas_de_la_ciudad.jpg", "category":"Red vial"}'>Espacios verdes</li>
-
+                    
                     <li id="vw_asentamiento_renabap" 
                         data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_asentamiento_renabap&WS=informacion_catastral'; ?>", "category":"Red vial"}'>Asentamientos informales (Re.Na.Ba.P.)</li>
 

@@ -38,15 +38,32 @@ if(file_exists($ruta_legend . $layer . '.png')){
 
     $ws = array_key_exists("WS", $_REQUEST) . '/' ? $_REQUEST['WS'] : "";
 
-    $url = "https://gisdesa.ciudaddecorrientes.gov.ar:8282/geoserver/" . $ws . "wms?REQUEST=GetLegendGraphic&VERSION=1.1.1&FORMAT=image/png&WIDTH=16&HEIGHT=16&TRANSPARENT=true&LAYER=" . $layer;
+    $url = "https://gisdesa.ciudaddecorrientes.gov.ar:8282/geoserver/" . $ws . "/wms?REQUEST=GetLegendGraphic&VERSION=1.1.1&FORMAT=image/png&WIDTH=16&HEIGHT=16&TRANSPARENT=true&LAYER=" . $layer;
 
     $curl = curl_init();
+/*
+    curl_setopt_array($curl, array(
+        CURLOPT_PORT => "8282",
+        CURLOPT_URL => $url,
+        CURLOPT_HTTPHEADER => array('Content-Type: image/png'),
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => "",
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 30,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => "GET",
+        CURLOPT_POSTFIELDS => "",
+        CURLOPT_SSL_VERIFYPEER => false,
+        CURLOPT_FOLLOWLOCATION => true
+      ));
+*/
+
 
     curl_setopt($curl, CURLOPT_URL, $url);
 
     curl_setopt($curl, CURLOPT_HEADER, 0);
 
-    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, true);
+    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
@@ -55,6 +72,7 @@ if(file_exists($ruta_legend . $layer . '.png')){
     curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
 
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
 
     $return_data = curl_exec($curl);
 

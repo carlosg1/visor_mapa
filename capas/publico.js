@@ -8,6 +8,7 @@ let lyr_man_pluv, lyr_man_sumidero, lyr_red_agua_potable;
 $(document).ready(function() {
 
     // Ambiente
+    vw_arbolado = wmsMcc51.getLayer("ambiente:vw_arbolado");
     vw_recoleccion_diferenciada = wmsMcc51.getLayer("ambiente:vw_recoleccion_diferenciada");
     vw_puntos_verdes = wmsMcc51.getLayer("ambiente:vw_puntos_verdes");
 

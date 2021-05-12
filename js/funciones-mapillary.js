@@ -25,7 +25,7 @@ function mostrarZonasDisponibles(){
           }
         }
       }
-
+/*
       lyrZonaDisponible = new L.vectorGrid.protobuf("https://d25uarhxywzl1j.cloudfront.net/v0.1/{z}/{x}/{y}.mvt", options)
       .on('mouseover', function(e){
         var url = "https://images.mapillary.com/" + e.layer.properties.key  + "/thumb-320.jpg"; e.layer.properties.ikey
@@ -35,6 +35,14 @@ function mostrarZonasDisponibles(){
 		  .openOn(map);
       })
       .addTo(map);
+*/
+      // actualizado: 21/04/2021
+    lyrZonaDisponible = L.tileLayer('https://raster-tiles.mapillary.com/v0.1/{z}/{x}/{y}.png', {
+        maxZoom: 17,
+        id: 'mapillary.sequences',
+        interactive: true
+    }).addTo(map);
+
 
     return;
 }

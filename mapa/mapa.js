@@ -58,6 +58,8 @@ $(document).ready(function() {
 
       }, true);
 
+      let checkGetCoord = $('#getCoord');
+
       map.on('click', function(e) {
             if (e.originalEvent.target.id != 'boton-mapillary' && e.originalEvent.target.id != 'boton-google') {
                   let visor = mostrarModal(e); //Esta función esta definida en el archivo modal.js
@@ -67,7 +69,28 @@ $(document).ready(function() {
 
                   this.invalidateSize(true);
             }
+
+            if(checkGetCoord.prop('checked')){
+                  getCoord(e);
+            }
       });
+
+      function getCoord(e){
+            Snackbar.show({
+                text: e.latlng.lat.toFixed(10)+', '+e.latlng.lng.toFixed(10),
+                actionText: 'Copiar',
+                pos: 'bottom-center',
+                onActionClick: function(){
+                    navigator.clipboard.writeText(e.latlng.lat+', '+e.latlng.lng).then(function(){
+                        Snackbar.show({
+                            pos: 'bottom-center',
+                            text: 'Copiado en el portapapeles',
+                            actionText: 'Entendido'
+                        });
+                    });
+                }
+            });
+      }
 
 	document.getElementById('boton-imprimir').addEventListener('click', () => {
 
@@ -96,7 +119,6 @@ $(document).ready(function() {
 		let url = 'http://gis.ciudaddecorrientes.gov.ar/nahuel/idemcc-nuevo/imp/imp.html?centro=-27.47040794866046|-58.837939040812415&zoom=15.72&capas='+capas+'&tags='+'['+tags+']';
 		let popup=window.open(url, 'Impresion', 'menubar=0,location=0');
 	});
-
 
 
 });

@@ -200,6 +200,13 @@ $(document).ready(function () {
                         // deseleccionar los nodos hijos
                         break;
 
+                    // ambiente
+                    case 'vw_arbolado': 
+                        capasParaImprimir.push(vw_arbolado._name);
+                        map.addLayer(vw_arbolado);
+                        $.post(api_uso_capas, {capa: vw_arbolado._name});
+                    break;
+
                     case 'vw_recoleccion_diferenciada': {
                         capasParaImprimir.push(vw_recoleccion_diferenciada._name);
                         map.addLayer(vw_recoleccion_diferenciada);
@@ -910,6 +917,13 @@ $(document).ready(function () {
 
             case 'deselect_node':
                 switch (data.node.id) {
+
+                    case 'vw_arbolado':{
+                        vw_arbolado.remove();
+                        let i = capasParaImprimir.indexOf(vw_arbolado._name);
+                        if(i != -1) capasParaImprimir.splice(i, 1);
+                        else console.log('No existe el elemento');}
+                        break;
 
                     case 'vw_recoleccion_diferenciada':{
                         vw_recoleccion_diferenciada.remove();

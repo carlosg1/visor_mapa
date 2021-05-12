@@ -58,6 +58,20 @@ var wms_GIS = L.WMS.Source.extend({
         /* que layer */
         var queLayer = datos.features[0].id.split('.');
 
+        /*  */
+        // Arbolado
+        if (queLayer[0] == "vw_arbolado") {
+            datos1 = '<div style="width:320px;"><h2>Arbolado</h2></div>';
+            datos1 += '<br><b>ID:</b> ' + datos.features[0].properties['fid'];
+            datos1 += '<br><b>Especie:</b> ' + datos.features[0].properties['especie'];
+            datos1 += '<br/><b>Variante:</b> ' + datos.features[0].properties['otra_especie'];
+            datos1 += '<br/><b>Estado sanitario:</b> ' + datos.features[0].properties['estado_sanitario'];
+            datos1 += '<br/><b>Enfermedad:</b> ' + datos.features[0].properties['enfermedad'];
+            datos1 += '<br/><b>Estado poda:</b> ' + datos.features[0].properties['estado_poda'];
+            datos.features[0].properties['img1'] ? datos1 += '<br/><b>Link:</b> <a href="' + datos.features[0].properties['img1'] + '" target="_blank">Foto</a>' : '';
+            //datos1 += '<br/><b>Link:</b> <iframe src="'+datos.features[0].properties['img1'] + ' width="200" height="300"></iframe>' ;
+        }
+
         // recoleccion diferenciada
         if (queLayer[0] == "vw_recoleccion_diferenciada") {
             datos1 = '<div><h2>Recolecci&oacute;n diferenciada</h2></div>';
@@ -321,11 +335,11 @@ var wms_GIS = L.WMS.Source.extend({
 
             if (datos.features[0].properties['catalogo'] != null) {
                 datos1 += '<BR />' + '<span class="titulo1">Informaci&oacute;n relacionada</span>';
-                datos1 += '<br />' + '<a id="lnk-distrito" target="_blank" href="http://gis.ciudaddecorrientes.gob.ar/idemcc/images/fotos/catalogo_edificios_historicos/' + datos.features[0].properties['catalogo'] + '.pdf">pdf ' + datos.features[0].properties['catalogo'] + '</a>';
+                datos1 += '<br />' + '<a id="lnk-distrito" target="_blank" href="http://gis.ciudaddecorrientes.gov.ar/idemcc/images/fotos/catalogo_edificios_historicos/' + datos.features[0].properties['catalogo'] + '.pdf">pdf ' + datos.features[0].properties['catalogo'] + '</a>';
             }
 
             if (datos.features[0].properties['foto_num'] != null) {
-                datos1 += '<div style="width:300px;height:164px;border: #666 solid 2px;"><img border="0" width="300" height="164" src="http://gis.ciudaddecorrientes.gob.ar/idemcc/images/fotos/fotos_edificios_historicos/' + datos.features[0].properties['foto_num'] + ' .png" /></div>';
+                datos1 += '<div style="width:300px;height:164px;border: #666 solid 2px;"><img border="0" width="300" height="164" src="http://gis.ciudaddecorrientes.gov.ar/idemcc/images/fotos/fotos_edificios_historicos/' + datos.features[0].properties['foto_num'] + ' .png" /></div>';
             }
         }
 

@@ -45,7 +45,7 @@ function calleYaltura($c, $conn)
         //return false;
     };
 
-
+    
     // $porcentaje = (($altura_buscada - $altura_desde) / 100);
 
     $query_claudio = "WITH a as(
