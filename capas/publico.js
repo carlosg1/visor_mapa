@@ -230,15 +230,15 @@ $(document).ready(function() {
 
     vw_grupo_viviendas_invico  = wmsMcc51.getLayer("informacion_catastral:vw_grupo_vivienda_invico");
 
-    // vw_barrios  = wmsMcc51.getLayer("informacion_catastral:vw_barrios_de_la_ciudad");
+    vw_barrios  = wmsMcc51.getLayer("informacion_catastral:vw_barrios_de_la_ciudad");
 
-    vw_barrios = L.nonTiledLayer.wms('https://gisdesa.ciudaddecorrientes.gov.ar:8282/geoserver/wms', {
-        opacity: 1.0,
-        layers: 'informacion_catastral:vw_barrios_de_la_ciudad',
-        format: 'image/png',
-        transparent: true,
-        attribution: '<a href="https://gis.ciudaddecorrientes.gov.ar/">GIS MCC<a>'
-    });
+    // vw_barrios = L.nonTiledLayer.wms('https://gisdesa.ciudaddecorrientes.gov.ar:8282/geoserver/wms', {
+    //     opacity: 1.0,
+    //     layers: 'informacion_catastral:vw_barrios_de_la_ciudad',
+    //     format: 'image/png',
+    //     transparent: true,
+    //     attribution: '<a href="https://gis.ciudaddecorrientes.gov.ar/">GIS MCC<a>'
+    // });
 
     vw_ph_parcelas  = wmsMcc51.getLayer("informacion_catastral:vw_ph_parcelas");
 
