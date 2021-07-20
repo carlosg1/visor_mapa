@@ -81,10 +81,12 @@
                     <li id="vw_centros_distribuidores_dpec" data-jstree='{"icon": "images/icon/distribuidores_dpec.png", "category": "Infraestructura"}'>Centros de distribucion DPEC</li>
 
                     <li id="vw_puntos_wifi" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_puntos_wifi&WS=infraestructura'; ?>", "category": "Infraestructura"}'>Puntos WiFi</li>
+                    
+                    <li id="vw_semaforo" data-jstree='{"icon": "images/legend/semaforos.png", "category": "Infraestructura"}'>Semaforos</li>
                 </ul>
             </li>
 
-            <!-- Obras Municipales -->
+            <!-- Obras -->
 
             <li id="obrasMunicipales" data-jstree='{"icon": "images/icon/folder-1-16.png", "category": "Obras", "class": "folder"}'>Obras
                 <ul>
@@ -107,10 +109,18 @@
 
                     <li id="vw_alumbrado_publico_led" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_alumbrado_publico_led&WS=infraestructura'; ?>", "category": "Obras"}'>Instalaci&oacute;n luminaria LED</li>
 
-                    <li id="vw_obras_santa_catalina_viviendas" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_obras_santa_catalina_viviendas&WS=obras_municipales'; ?>", "category": "Obras"}'>Obra Santa Catalina</li>
+                    <!-- <li id="vw_obras_santa_catalina_viviendas" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_obras_santa_catalina_viviendas&WS=obras_municipales'; ?>", "category": "Obras"}'>Obra Santa Catalina</li> -->
 
                     <li id="vw_instalacion_canios_cruce_calle" data-jstree='{"icon": "<?php echo 'glg.php?LAYER=vw_instalacion_canios_cruce_calle&WS=obras_municipales'; ?>", "category": "Obras"}'>Instalaci&oacute;n Caños</li>
-                </ul>
+
+                    <li id="vw_obras_vereda" data-jstree='{"icon": "images/legend/vw_obras_vereda.png", "category": "Obras"}'>Veredas</li>
+
+                    <li id="vw_limpieza_de_canales_a_cielo_abierto" data-jstree='{"icon": "images/legend/vw_limpieza_de_canales_a_cielo_abierto.png", "category": "Obras"}'>Limpieza de canales a cielo abierto</li>
+
+                    <li id="vw_instalacion_de_camaras" data-jstree='{"icon": "images/legend/vw_instalacion_de_camaras.png", "category": "Obras"}'>Instalaci&oacute;n de c&aacute;maras</li>
+
+                    <li id="vw_espacios_recuperados" data-jstree='{"icon": "images/legend/vw_espacios_recuperados.png", "category": "Obras"}'>Espacios recuperados</li>
+                </ul> 
             </li>
 
             <!-- Planeamiento Urbano -->

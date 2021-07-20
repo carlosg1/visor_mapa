@@ -25,8 +25,9 @@ $(document).ready(function() {
     vw_bocas_de_registro = wmsMcc51.getLayer("infraestructura:vw_bocas_de_registro");
     vw_centros_distribuidores_dpec = wmsMcc51.getLayer("infraestructura:vw_centros_distribuidores_dpec");
     vw_puntos_wifi = wmsMcc51.getLayer("infraestructura:vw_puntos_wifi");
+    vw_semaforo = wmsMcc51.getLayer("infraestructura:vw_semaforo"); // agregado el 21/5/2021
 
-    // obras municipales
+    // obras --// mod. 13/5/2021
     vw_obras_ripio = wmsMcc51.getLayer("app:vw_obras_ripio");
     vw_obras_cordones_cuneta = wmsMcc51.getLayer("app:vw_obras_cordones_cuneta");
     vw_obras_pavimento = wmsMcc51.getLayer("app:vw_obras_pavimento");
@@ -37,6 +38,10 @@ $(document).ready(function() {
     vw_obras_de_bacheo = wmsMcc51.getLayer("obras_municipales:vw_obras_de_bacheo");
     vw_obras_santa_catalina_viviendas = wmsMcc51.getLayer("obras_municipales:vw_obras_santa_catalina_viviendas");
     vw_instalacion_canios_cruce_calle = wmsMcc51.getLayer("obras_municipales:vw_instalacion_canios_cruce_calle");
+    vw_obras_vereda = wmsMcc51.getLayer("app:vw_obras_vereda"); // agregado 13/5/2021
+    vw_limpieza_de_canales_a_cielo_abierto = wmsMcc51.getLayer("app:vw_limpieza_de_canales_a_cielo_abierto"); // agregado 17/5/2021
+    vw_instalacion_de_camaras = wmsMcc51.getLayer("app:vw_instalacion_de_camaras"); // agregado 18/5/2021
+    vw_espacios_recuperados = wmsMcc51.getLayer("app:vw_espacios_recuperados"); // agregado 18/5/2021
 
     // planeamiento urbano
     vw_distritos_planeamiento_urbano = wmsMcc51.getLayer("planeamiento_urbano:vw_distritos_planeamiento_urbano");

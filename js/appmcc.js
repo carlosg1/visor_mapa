@@ -106,8 +106,6 @@ $(document).ready(function () {
 
     })
         .on('changed.jstree', function (e, data) {
-            // console.log('e == ', e);
-            // console.log('data == ', data);
 
             nodoSeleccionado = data.instance.get_node(data.selected[data.selected.length - 1]).id;
 
@@ -182,6 +180,10 @@ $(document).ready(function () {
 
     // el tree de capas mcc
     arbolMCC = $('#arbolMCC').jstree({
+        "checkbox": {
+            cascade: "",
+            three_state: false
+        },
         'plugins': ["wholerow", "checkbox"]
     }).on('changed.jstree', function (e, data) {
         // console.log('e == ', e);
@@ -346,6 +348,13 @@ $(document).ready(function () {
                     }
                         break;
 
+                    case 'vw_semaforo': {
+                        capasParaImprimir.push(vw_semaforo._name);
+                        map.addLayer(vw_semaforo);
+                        $.post(api_uso_capas, {capa: vw_semaforo._name});
+                    }
+                        break;
+
                     case 'vw_obras_de_bacheo': {
                         capasParaImprimir.push(vw_obras_de_bacheo._name);
                         map.addLayer(vw_obras_de_bacheo);
@@ -370,6 +379,38 @@ $(document).ready(function () {
                         ]);
                         $.post(api_uso_capas, {capa: vw_instalacion_canios_cruce_calle._name});
                     }
+                        break;
+
+                    case 'vw_obras_vereda':
+                        {
+                            capasParaImprimir.push(vw_obras_vereda._name);
+                            map.addLayer(vw_obras_vereda);
+                            $.post(api_uso_capas, {capa: vw_obras_vereda._name});
+                        }
+                        break;
+
+                    case 'vw_limpieza_de_canales_a_cielo_abierto':
+                        {
+                            capasParaImprimir.push(vw_limpieza_de_canales_a_cielo_abierto._name);
+                            map.addLayer(vw_limpieza_de_canales_a_cielo_abierto);
+                            $.post(api_uso_capas, {capa: vw_limpieza_de_canales_a_cielo_abierto._name});
+                        }
+                        break;
+
+                    case 'vw_instalacion_de_camaras':
+                        {
+                            capasParaImprimir.push(vw_instalacion_de_camaras._name);
+                            map.addLayer(vw_instalacion_de_camaras);
+                            $.post(api_uso_capas, {capa: vw_instalacion_de_camaras._name});
+                        }
+                        break;
+
+                    case 'vw_espacios_recuperados':
+                        {
+                            capasParaImprimir.push(vw_espacios_recuperados._name);
+                            map.addLayer(vw_espacios_recuperados);
+                            $.post(api_uso_capas, {capa: vw_espacios_recuperados._name});
+                        }
                         break;
 
                     case 'vw_distritos_planeamiento_urbano': {
@@ -906,6 +947,124 @@ $(document).ready(function () {
                         $.post(api_uso_capas, {capa: vw_manzanas._name});
                     }
                         break;
+                    // #############################
+                    // NUEVAS CAPAS DE OBRAS
+                    // #############################
+
+                    case "bacheo":
+                        prenderObra(1)
+                        break;
+                    case "instalacion_leds":
+                        prenderObra(2)
+                        break;
+                    case "intervencion_plazas":
+                        prenderObra(3)
+                        break;
+                    case "reparacion_cordones":
+                        prenderObra(4)
+                        break;
+                    case "rehabilitacion_sumideros":
+                        prenderObra(5)
+                        break;
+                    case "rehabilitacion_pluviales":
+                        prenderObra(6)
+                        break;
+                    case "tubos_acceso_dom":
+                        prenderObra(7)
+                        break;
+                    case "tubos_cruce_calle":
+                        prenderObra(8)
+                        break;
+                    case "cloacas_social":
+                        prenderObra(9)
+                        break;
+                    case "veredas":
+                        prenderObra(11)
+                        break;
+                    case "cordon_cuneta":
+                        prenderObra(12)
+                        break;
+                    case "obras_enripiado":
+                        prenderObra(13)
+                        break;
+                    case "pavimento":
+                        prenderObra(14)
+                        break;
+                    case "recapado":
+                        prenderObra(15)
+                        break;
+                    case "espacios_recuperados":
+                        prenderObra(16)
+                        break;
+                    case 'instalacion_camaras':
+                        prenderObra(17)
+                        break
+                    case 'desarrollo_habitacional':
+                        prenderObra(18)
+                        break
+
+                    case 'vivienda_lote_propio':
+                        prenderObra(19)
+                        break
+
+                    case 'limpieza_de_canales':
+                        prenderObra(20)
+                        break;
+                    case 'carteles':
+                        prenderObra(21)
+                        break;
+                    case 'infra_salud':
+                        prenderObra(102)
+                        break
+                    case 'infra_seguridad':
+                        prenderObra(103)
+                        break;
+                    case 'infra_servicios':
+                        prenderObra(104)
+                        break;
+                    case 'infra_telec':
+                        prenderObra(105)
+                        break;
+                    case 'infra_transporte':
+                        prenderObra(106)
+                        break;
+                    case 'infra_educ':
+                        prenderObra(108)
+                        break;
+                    case 'infra_electrica':
+                        prenderObra(109)
+                        break;
+                    case 'infra_religiosa':
+                        prenderObra(110)
+                        break;
+                    case 'mejoras_edif':
+                        prenderObra(111)
+                        break;
+                    case 'obras_complement':
+                        prenderObra(112)
+                        break;
+                    case 'obras_hogares':
+                        prenderObra(113)
+                        break
+                    case 'obras_hidricas':
+                        prenderObra(114)
+                        break;
+                    case 'obras_nuevo_edif':
+                        prenderObra(115)
+                        break;
+                    case 'obras_viales':
+                        prenderObra(116)
+                        break;
+                    case 'obras_viales_comp':
+                        prenderObra(117)
+                        break;
+                    case 'obras_cult_dep_tur':
+                        prenderObra(118)
+                        break;
+                    case 'puestas_valor_parques':
+                        prenderObra(119);
+                        break;
+                    
                 }
                 break;
 
@@ -917,6 +1076,118 @@ $(document).ready(function () {
 
             case 'deselect_node':
                 switch (data.node.id) {
+
+                    case "bacheo":
+                        apagarObra(1);
+                        break;
+                    case "instalacion_leds":
+                        apagarObra(2)
+                        break;
+                    case "intervencion_plazas":
+                        apagarObra(3)
+                        break;
+                    case "reparacion_cordones":
+                        apagarObra(4)
+                        break;
+                    case "rehabilitacion_sumideros":
+                        apagarObra(5)
+                        break;
+                    case "rehabilitacion_pluviales":
+                        apagarObra(6)
+                        break;
+                    case "tubos_acceso_dom":
+                        apagarObra(7)
+                        break;
+                    case "tubos_cruce_calle":
+                        apagarObra(8)
+                        break;
+                    case "cloacas_social":
+                        apagarObra(9)
+                        break;
+                    case "veredas":
+                        apagarObra(11)
+                        break;
+                    case "cordon_cuneta":
+                        apagarObra(12)
+                        break;
+                    case "obras_enripiado":
+                        apagarObra(13)
+                        break;
+                    case "pavimento":
+                        apagarObra(14)
+                        break;
+                    case "recapado":
+                        apagarObra(15)
+                        break;
+                    case "espacios_recuperados":
+                        apagarObra(16)
+                        break;
+                    case 'instalacion_camaras':
+                        apagarObra(17)
+                        break
+                    case 'desarrollo_habitacional':
+                        apagarObra(18)
+                        break
+                    case 'vivienda_lote_propio':
+                        apagarObra(19)
+                        break
+                    case 'limpieza_de_canales':
+                        apagarObra(20)
+                        break
+                    case 'carteles':
+                        apagarObra(21)
+                        break
+                    case 'infra_salud':
+                        apagarObra(102)
+                        break
+                    case 'infra_seguridad':
+                        apagarObra(103)
+                        break;
+                    case 'infra_servicios':
+                        apagarObra(104)
+                        break;
+                    case 'infra_telec':
+                        apagarObra(105)
+                        break;
+                    case 'infra_transporte':
+                        apagarObra(106)
+                        break;
+                    case 'infra_educ':
+                        apagarObra(108)
+                        break;
+                    case 'infra_electrica':
+                        apagarObra(109)
+                        break;
+                    case 'infra_religiosa':
+                        apagarObra(110)
+                        break;
+                    case 'mejoras_edif':
+                        apagarObra(111)
+                        break;
+                    case 'obras_complement':
+                        apagarObra(112)
+                        break;
+                    case 'obras_hogares':
+                        apagarObra(113)
+                        break
+                    case 'obras_hidricas':
+                        apagarObra(114)
+                        break;
+                    case 'obras_nuevo_edif':
+                        apagarObra(115)
+                        break;
+                    case 'obras_viales':
+                        apagarObra(116)
+                        break;
+                    case 'obras_viales_comp':
+                        apagarObra(117)
+                        break;
+                    case 'obras_cult_dep_tur':
+                        apagarObra(118)
+                        break;
+                    case 'puestas_valor_parques':
+                        apagarObra(119);
+                        break;
 
                     case 'vw_arbolado':{
                         vw_arbolado.remove();
@@ -1051,6 +1322,15 @@ $(document).ready(function () {
                         else console.log('No existe el elemento');}
                         break;
 
+                    case 'vw_semaforo':
+                        {
+                            vw_semaforo.remove();
+                            let i = capasParaImprimir.indexOf(vw_semaforo._name);
+                            if(i != -1) capasParaImprimir.splice(i, 1);
+                            else console.log('No existe el elemento');
+                        }
+                        break;
+
                     case 'vw_obras_de_bacheo':{
                         vw_obras_de_bacheo.remove();
                         let i = capasParaImprimir.indexOf(vw_obras_de_bacheo._name);
@@ -1070,6 +1350,42 @@ $(document).ready(function () {
                         let i = capasParaImprimir.indexOf(vw_instalacion_canios_cruce_calle._name);
                         if(i != -1) capasParaImprimir.splice(i, 1);
                         else console.log('No existe el elemento');}
+                        break;
+
+                    case 'vw_obras_vereda':
+                        {
+                            vw_obras_vereda.remove();
+                        let i = capasParaImprimir.indexOf(vw_instalacion_canios_cruce_calle._name);
+                        if(i != -1) capasParaImprimir.splice(i, 1);
+                        else console.log('no existe el elemento: ', vw_obras_vereda._name);
+                        }
+                        break;
+
+                    case 'vw_limpieza_de_canales_a_cielo_abierto':
+                        {
+                            vw_limpieza_de_canales_a_cielo_abierto.remove();
+                        let i = capasParaImprimir.indexOf(vw_limpieza_de_canales_a_cielo_abierto._name);
+                        if(i != -1) capasParaImprimir.splice(i, 1);
+                        else console.log('no existe el elemento: ', vw_limpieza_de_canales_a_cielo_abierto._name);
+                        }
+                        break;
+
+                    case 'vw_instalacion_de_camaras':
+                        {
+                            vw_instalacion_de_camaras.remove();
+                        let i = capasParaImprimir.indexOf(vw_instalacion_de_camaras._name);
+                        if(i != -1) capasParaImprimir.splice(i, 1);
+                        else console.log('no existe el elemento: ', vw_instalacion_de_camaras._name);
+                        }
+                        break;
+
+                    case 'vw_espacios_recuperados':
+                        {
+                            vw_espacios_recuperados.remove();
+                        let i = capasParaImprimir.indexOf(vw_espacios_recuperados._name);
+                        if(i != -1) capasParaImprimir.splice(i, 1);
+                        else console.log('no existe el elemento: ', vw_espacios_recuperados._name);
+                        }
                         break;
 
                     case 'vw_distritos_planeamiento_urbano':{
@@ -1717,54 +2033,7 @@ $(inputBusqueda).keyup(function (e) {
     }
 });
 
-// ======================================*********************************************=====================================
 
-
-
-    /*
-    const inputBusqueda = document.getElementById('input-busqueda');
-
-
-    $(inputBusqueda).keyup(function(){
-        let selected = $('input[name="opciones_busca-radio"]:checked').val();
-        let query = $(this).val();
-
-        if(selected == 'Calle'){
-            filtrar(query, '#autocompletCalles');
-        }else if(selected == 'Barrio'){
-            filtrar(query, '#autocompletBarrios')
-        }
-    })
-*/
-
-/*
-    function filtrar(query, lista){
-        let elements = $(lista).children();
-        if(query != ''){
-            $(lista).css('display', 'block')
-            elements.filter(function( index ) {
-                
-                if(this.innerText.toLowerCase().indexOf(query.toLowerCase()) > -1){
-                    $(this).click(function(){
-                        $(inputBusqueda).val($(this).text());
-                        $(lista).css('display', 'none');
-                    });
-                    $(this).hover(function(){
-                        $(this).css("background-color", "lightgray");
-                    }, function(){
-                        $(this).css("background-color", "white");
-                    })
-                    return this;
-                }else{
-                    this.style.display = 'none';
-                }
-               
-            }).css( "display", "list-item" );
-        }else{
-            $(lista).css('display', 'none')
-        }
-    }
-*/
     // expande opciones de busqueda
     $("#input-busqueda").focus(function () {
         $("#opci-contenedor").animate({
@@ -1995,4 +2264,288 @@ $(inputBusqueda).keyup(function (e) {
         resultadosKML = ``;
         if ($('#btnGuardar')) borrarBoton(); //declarada en botonGuardar.js
     });
+
+    setTimeout(() => {
+        decodeHash();
+    }, 1000)
+
+    async function decodeHash() {
+        
+
+        let hashsearch = new URLSearchParams(location.search);
+        let hash = hashsearch.get('h');
+        if (hash && hash != '') {
+            
+
+            let param1, param0
+
+            let response = await fetch('convert.php?cod='+hash)
+            let decodificado = await response.text()
+
+            let data = decodificado.split('&') 
+            param1 = data[1] //n_zona o nombre_barrio
+            param0 = data[0] //id_barrios o nombre
+
+            localStorage.setItem('filter', param1);
+            document.getElementById('quit_filtro').classList.remove('d-none');
+
+            //saveVisit(param1, param0); 
+            
+            //Consulta y pinta el poligono dela zona en el mapa ----------------------------------------------------------------
+            fetch('obras.php?query=getPolygon&request='+param1)
+            .then(response => response.json())
+            .then(response => {
+                let geojson = L.geoJSON(response.data, {
+                    style: { "color": "#424949", "weight": 6, "opacity": 0.65, "fillOpacity": 0.00 }
+                })
+
+                layers_from_qr.push(geojson.addTo(map))
+                map.fitBounds(geojson.getBounds())
+                hideButtons(); //esconde los botones
+            })
+            .catch(err => console.log(err))
+            // -----------------------------------------------------------------------------------------------------------
+            
+            arbolMCC.jstree('open_node', 'obrasMunicipales');
+            let obras_nodes_ids = $('#obrasMunicipales ul li');
+            obras_nodes_ids.each((index, element) => arbolMCC.jstree('select_node', element.id));
+            
+        }else{
+            try {
+                localStorage.removeItem('filter');
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+    }
+
+    function pointToLayer(feature, latlng) {
+        let icon = getIcon(feature.properties.idobra);
+
+        //Si existe la propiedad options significa que es de tipo L.icon
+        if (icon.options) return L.marker(latlng, { icon: icon })
+        else return L.circleMarker(latlng, icon)
+    }
+
+    function getIcon(idobra) {
+        let icon;
+        switch (idobra) {
+            case 1:
+                icon = L.icon({ iconUrl: "images/vialidad1805/bacheo.png", iconSize: [20, 20] });
+                break;
+            case 2:
+                icon = { radius: 4, fillColor: "#FADC02", color: "#FFF", weight: 1, opacity: 1, fillOpacity: 0.8 }
+                break;
+            case 3:
+                icon = L.icon({ iconUrl: "images/vialidad1805/interv_plaza.png", iconSize: [20, 20] });
+                break;
+            case 4:
+                icon = { radius: 4, fillColor: "#FE59C4", color: "#DD008F", weight: 1, opacity: 1, fillOpacity: 0.8 }
+                break;
+            case 5:
+                icon = { radius: 4, fillColor: "#00BBFC", color: "#05A9C6", weight: 1, opacity: 1, fillOpacity: 0.8 }
+                break;
+            case 6:
+                icon = { color: "#03E5FC", weight: 2, opacity: 0.99 }
+                break;
+            case 7:
+                icon = { color: "#01C00D", weight: 2, opacity: 0.99 }
+                break;
+            case 8:
+                icon = { color: "#01C00D", weight: 2, opacity: 0.99 }
+                break;
+            case 9:
+                icon = { color: "#855336", weight: 2, opacity: 0.99 }
+                break;
+            case 10:
+                icon = { color: "#855336", weight: 2, opacity: 0.99 }
+                break;
+            case 11:
+                icon = { color: "#2D3AFD", weight: 2, opacity: 0.99 }
+                break;
+            case 12:
+                icon = { color: "#A747A5", weight: 2, opacity: 0.99 }
+                break;
+            case 13:
+                icon = { color: "#E8B00E", weight: 2, opacity: 0.99 }
+                break;
+            case 14:
+                icon = { color: "#FC3E3E", weight: 2, opacity: 0.99 }
+                break;
+            case 15:
+                icon = { color: "#FB8C3F", weight: 2, opacity: 0.99 }
+                break;
+            case 16:
+                icon = L.icon({ iconUrl: 'images/vialidad1805/gps (2).png', iconSize: [20, 20], iconAnchor: [10, 20] })
+                break;
+            case 17:
+                icon = L.icon({ iconUrl: 'images/vialidad1805/camaras.png', iconSize: [20, 20] })
+                break;
+            case 18:
+                icon = { fillColor: "#e0e0e0", color: "#000", weight: 1, opacity: 1, fillOpacity: 0.5 }
+                break;
+            case 19:
+                icon = L.icon({ iconUrl: 'images/vialidad1805/viviendas.png', iconSize: [24, 24], iconAnchor: [12, 12] })
+                break;
+            case 20:
+                icon = { color: "#000000", weight: 2, opacity: 0.99 }
+                break;
+            case 21: //carteles
+                icon = L.icon({ iconUrl: "images/vialidad1805/carteles.png", iconSize: [20, 20] });
+                break;
+            case 101: //desarrollo habitacional
+                icon = { fillColor: "#e0e0e0", color: "#000", weight: 1, opacity: 1, fillOpacity: 0.5 }
+                break;
+            case 102: //infraestructura de salud
+                icon = L.icon({ iconUrl: "images/vialidad1805/infra_salud.png", iconSize: [20, 20] });
+                break;
+            case 103: //infraestructura de seguridad
+                icon = L.icon({ iconUrl: 'images/vialidad1805/infra_seguridad.png', iconSize: [20, 20] });
+                break;
+            case 104: //infraestructura de servicios
+                icon = L.icon({ iconUrl: 'images/vialidad1805/gps.png', iconSize: [20, 20], iconAnchor: [10, 20] });
+                break;
+            case 105: //infraestructura de telecomunicaciones
+                icon = L.icon({ iconUrl: 'images/vialidad1805/marker.png', iconSize: [20, 20], iconAnchor: [10, 20] });
+                break;
+            case 106: //infraestructura de transporte
+                icon = L.icon({ iconUrl: 'images/vialidad1805/marker-green.png', iconSize: [20, 20], iconAnchor: [10, 20] });
+                break;
+            case 108: //infraestructura educ
+                icon = L.icon({ iconUrl: 'images/vialidad1805/infra_educ.png', iconSize: [20, 20] });
+                break;
+            case 109: //infra electrica
+                icon = L.icon({ iconUrl: 'images/vialidad1805/lighting.png', iconSize: [20, 20] });
+                break;
+            case 110: // infra religiosa
+                icon = L.icon({ iconUrl: 'images/vialidad1805/eclipse.png', iconSize: [20, 20] });
+                break;
+            case 111: //mejoras en edif publicos
+                icon = L.icon({ iconUrl: 'images/vialidad1805/edificio.png', iconSize: [20, 20] });
+                break;
+            case 112: //obras complementarias
+                icon = L.icon({ iconUrl: 'images/vialidad1805/rec.png', iconSize: [20, 20] });
+                break;
+            case 113: //obras en hogares de niños y ancianos
+                icon = L.icon({ iconUrl: 'images/vialidad1805/rec(1).png', iconSize: [20, 20] });
+                break;
+            case 114: //obras hidricas
+                icon = L.icon({ iconUrl: 'images/vialidad1805/obras_hidricas.png', iconSize: [20, 20] });
+                break;
+            case 115: //obras nuevo edif publico
+                icon = L.icon({ iconUrl: 'images/vialidad1805/rec(3).png', iconSize: [20, 20] });
+                break;
+            case 116: //obras viales
+                icon = L.icon({ iconUrl: 'images/vialidad1805/hexagon.svg', iconSize: [20, 20] });
+                break;
+            case 117: //obras viales complementarias
+                icon = L.icon({ iconUrl: 'images/vialidad1805/hexagon(1).svg', iconSize: [20, 20] });
+                break;
+            case 118: //obras vinculados a la cultura, deporte,
+                icon = L.icon({ iconUrl: 'images/vialidad1805/hexagon(2).svg', iconSize: [20, 20] });
+                break;
+            case 119: //puesta en valor de parquez y plazas
+                icon = L.icon({ iconUrl: 'images/vialidad1805/hexagon(3).svg', iconSize: [20, 20] });
+                break;
+            default:
+                //icon = { radius: 4, fillColor: "#FE59C4", color: "#DD008F", weight: 1, opacity: 1, fillOpacity: 0.8 }
+                break;
+        }
+
+        return icon;
+    };
+
+    function getObras(idobra, param1) {
+
+
+
+        if (!idobra) idobra = '';
+        if (!param1) param1 = '';
+
+        fetch('obras.php?query=getObras&request=' + param1 + '&obra=' + idobra)
+        .then(res => res.json())
+        .then(res => {
+            let geojson = L.geoJSON(res.data, {
+                style: (feature) => getIcon(feature.geometry.properties.idobra),
+                pointToLayer: pointToLayer,
+                onEachFeature: (feature, layer) => {
+                    layer.name = feature.properties.idobra;
+                    layer.bindPopup(`
+                    <h3><b>Obra</b>: ${feature.properties.obra}</h3>
+                    <h4><b>Cantidad</b>: ${feature.properties.cantidad}</h4>
+                `);
+                }
+            });
+
+            layers_from_qr.push(geojson.addTo(map)); //capa_obras definido en la cabecera del index 
+        })
+        .catch(err => console.log(err));
+    }
+
+    function prenderObra(idobra) {
+        let filter = localStorage.getItem('filter')
+        if (filter) getObras(idobra, filter)
+        else getObras(idobra);
+    }
+
+    function apagarObra(idobra) {
+        map.eachLayer(function (l) {
+            if (idobra == 9) {
+                if (l.name == 9 || l.name == 10) l.remove(); //para el caso de cloaca social que se muestran juntas las obras cloca social y cloaca social conex dom    
+            } else {
+                if (l.name == idobra) l.remove();
+            }
+
+        });
+    }
+
+    document.getElementById('quit_filtro').addEventListener('click', function () {
+        this.classList.add('d-none');
+        localStorage.removeItem('filter');
+        layers_from_qr.forEach(e => e.remove());
+        arbolMCC.jstree('open_node', 'obrasMunicipales');
+        let obras_nodes_ids = $('#obrasMunicipales ul li');
+        obras_nodes_ids.each((index, element) => arbolMCC.jstree('deselect_node', element.id));
+        showButtons()
+    });
+
+    function saveVisit(param1, param0){
+        /* 
+        let position = await getCurrentPosition(); */
+        let dispositivo = window.mobileCheck() ? 'mobile' : 'desktop';
+        let fm = new FormData()
+        fm.append('url', location.href)
+        fm.append('id', param1)
+        fm.append('nombre', param0)
+        fm.append('dispositivo', dispositivo)
+
+        fetch(location.origin+'/app-qr-counter/api_zona_qr.php?query=create', { method: 'POST', body: fm })
+        .then(res=>res.json())
+        .then(res=>console.log(res))
+        .catch(err=>console.log(err));
+    }
+
 });
+
+window.mobileCheck = function () {
+    let check = false;
+    (function (a) { if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4))) check = true; })(navigator.userAgent || navigator.vendor || window.opera);
+    return check;
+};
+
+function hideButtons(){
+    $('#boton-mapillary').addClass('d-none')
+    $('#boton-google').addClass('d-none')
+    $('#boton-imprimir').addClass('d-none')
+    //$('#compartir').addClass('d-none')
+    measureControl.remove()
+}
+
+function showButtons(){
+    $('#boton-mapillary').removeClass('d-none')
+    $('#boton-google').removeClass('d-none')
+    $('#boton-imprimir').removeClass('d-none')
+    //$('#compartir').removeClass('d-none')
+    measureControl.addTo(map) 
+}

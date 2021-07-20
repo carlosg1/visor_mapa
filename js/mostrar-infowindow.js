@@ -205,7 +205,39 @@ var wms_GIS = L.WMS.Source.extend({
             datos1 += '<div style="width:300px;">&nbsp;</div>';
         }
 
+        // semaforos 
+        if (queLayer[0] == "vw_semaforo") {
+            datos1 = '';
+            datos1 += '<div class="card text-dark mr-2">';
+            datos1 += '  <div class="card-body">';
+            datos1 += '    <h5 class="card-title" style="color:#709F6A; font-family:\'Quicksand\', sans-serif;font-weight:700;font-size:12pt">Semaforos</h5>';
+            datos1 += '    <p class="card-text">';
+            datos1 += '      <div>';
+            datos1 += '        <span class="prompt" style="width:159px;display:inline-block;">Calle: </span>';
+            datos1 += '        <span style="display:inline-block;">' + datos.features[0].properties['calle1'] + ' y ' + datos.features[0].properties['calle2'] + '</span>';
+            datos1 += '      </div>';
+            datos1 += '      <div>';
+            datos1 += '        <span class="prompt" style="width:159px;display:inline-block;">Nro Artefactos: </span>';
+            datos1 += '        <span style="display:inline-block;">' + datos.features[0].properties['nro_artef'] + '</span>';
+            datos1 += '      </div>';
+            datos1 += '      <div>';
+            datos1 += '        <span class="prompt" style="width:159px;display:inline-block;">Soporte: </span>';
+            datos1 += '        <span style="display:inline-block;">' + datos.features[0].properties['soporte'] + '</span>';
+            datos1 += '      </div>';
+            datos1 += '      <div style="margin-top:12px; border-top: #8C8C8C solid 1px;">';
+            datos1 += '        <span style="color:#8C8C8C;">Direcci&oacute;n General de Sistemas de Informaci&oacute;n Geogr&aacute;fica</span>';
+            datos1 += '      </div>';
+            datos1 += '    </p>';
+            datos1 += '  </div>';
+            datos1 += '</div>';
+
+            this._map.openPopup(datos1, latlng, {minWidth:415});
+
+            return false;
+        }
+
         // Obras municipales //
+
         // obras de cordon cuneta //
         if (queLayer[0] == "vw_obras_cordones_cuneta") {
             datos1 = '<div style="width:338px;"><h2>Cord&oacute;n Cuneta</h2></div>';
@@ -269,6 +301,171 @@ var wms_GIS = L.WMS.Source.extend({
 
             $('.leaflet-popup-content').css('width', 558);
             $('.leaflet-popup').css('left', Number($('.leaflet-popup').css('left').substring(0, 4)) - 125 + 'px');
+
+            return false;
+        }
+
+        // obras en veredas
+        if (queLayer[0] == "vw_obras_vereda") {
+            datos1 = '';
+            datos1 += '<div class="card text-dark mr-2">';
+            datos1 += '  <div class="card-body">';
+            datos1 += '    <h5 class="card-title" style="color:#709F6A; font-family:\'Quicksand\', sans-serif;font-weight:700;font-size:12pt">Veredas</h5>';
+            datos1 += '    <p class="card-text">';
+            datos1 += '      <div>';
+            datos1 += '        <span class="prompt" style="width:159px;display:inline-block;">Estado: </span>';
+            datos1 += '        <span style="display:inline-block;">' + datos.features[0].properties['estado'] + '</span>';
+            datos1 += '      </div>';
+            datos1 += '      <div>';
+            datos1 += '        <span class="prompt" style="width:159px;display:inline-block;">Nombre: </span>';
+            datos1 += '        <span style="display:inline-block;">' + datos.features[0].properties['nombre'] + '</span>';
+            datos1 += '      </div>';
+            datos1 += '      <div>';
+            datos1 += '        <span class="prompt" style="width:159px;display:inline-block;">Año de ejecuci&oacute;n: </span>';
+            datos1 += '        <span style="display:inline-block;">' + datos.features[0].properties['anio'] + '</span>';
+            datos1 += '      </div>';
+            datos1 += '      <div>';
+            datos1 += '        <span class="prompt" style="width:159px;display:inline-block;">Fondo: </span>';
+            datos1 += '        <span style="display:inline-block;">' + datos.features[0].properties['fondo'] + '</span>';
+            datos1 += '      </div>';
+            datos1 += '      <div>';
+            datos1 += '        <span class="prompt" style="width:159px;display:inline-block;">Metros: </span>';
+            datos1 += '        <span style="display:inline-block;">' + datos.features[0].properties['metros'] + '</span>';
+            datos1 += '      </div>';
+            datos1 += '    </p>';
+            datos1 += '  </div>';
+            datos1 += '</div>';
+        }
+
+        // limpieza de canales a cielo abierto //
+        if (queLayer[0] == "vw_limpieza_de_canales_a_cielo_abierto") {
+            datos1 = '';
+            datos1 += '<div class="card text-dark mr-2">';
+            datos1 += '  <div class="card-body">';
+            datos1 += '    <h5 class="card-title" style="color:#709F6A; font-family:\'Quicksand\', sans-serif;font-weight:700;font-size:12pt">Limpieza de can&aacute;les a cielo abierto</h5>';
+            datos1 += '    <p class="card-text">';
+            datos1 += '      <div>';
+            datos1 += '        <span class="prompt" style="width:159px;display:inline-block;">Estado: </span>';
+            datos1 += '        <span style="display:inline-block;">' + datos.features[0].properties['estado'] + '</span>';
+            datos1 += '      </div>';
+            datos1 += '      <div>';
+            datos1 += '        <span class="prompt" style="width:159px;display:inline-block;">Nombre: </span>';
+            datos1 += '        <span style="display:inline-block;">' + datos.features[0].properties['nombre'] + '</span>';
+            datos1 += '      </div>';
+            datos1 += '      <div>';
+            datos1 += '        <span class="prompt" style="width:159px;display:inline-block;">Año de ejecuci&oacute;n: </span>';
+            datos1 += '        <span style="display:inline-block;">' + datos.features[0].properties['anio'] + '</span>';
+            datos1 += '      </div>';
+            datos1 += '      <div>';
+            datos1 += '        <span class="prompt" style="width:159px;display:inline-block;">Fondo: </span>';
+            datos1 += '        <span style="display:inline-block;">' + datos.features[0].properties['fondo'] + '</span>';
+            datos1 += '      </div>';
+            datos1 += '      <div>';
+            datos1 += '        <span class="prompt" style="width:159px;display:inline-block;">Obra: </span>';
+            datos1 += '        <span style="display:inline-block;">' + datos.features[0].properties['obra'] + '</span>';
+            datos1 += '      </div>';
+            datos1 += '      <div>';
+            datos1 += '        <span class="prompt" style="width:159px;display:inline-block;">Cantidad: </span>';
+            datos1 += '        <span style="display:inline-block;">' + datos.features[0].properties['cantidad'] + '</span>';
+            datos1 += '      </div>';
+            datos1 += '      <div>';
+            datos1 += '        <span class="prompt" style="width:159px;display:inline-block;">Metros: </span>';
+            datos1 += '        <span style="display:inline-block;">' + datos.features[0].properties['metros'] + ' ' + datos.features[0].properties['unidad'] + '</span>';
+            datos1 += '      </div>';
+            datos1 += '      <div style="margin-top:12px; border-top: #8C8C8C solid 1px;">';
+            datos1 += '        <span style="color:#8C8C8C;">Direcci&oacute;n General de Sistemas de Informaci&oacute;n Geogr&aacute;fica</span>';
+            datos1 += '      </div>';
+            datos1 += '    </p>';
+            datos1 += '  </div>';
+            datos1 += '</div>';
+
+            this._map.openPopup(datos1, latlng, {minWidth:415});
+
+            return false;
+        }
+
+        // instalacion de camaras //
+        if (queLayer[0] == "vw_instalacion_de_camaras") {
+            datos1 = '';
+            datos1 += '<div class="card text-dark mr-2">';
+            datos1 += '  <div class="card-body">';
+            datos1 += '    <h5 class="card-title" style="color:#709F6A; font-family:\'Quicksand\', sans-serif;font-weight:700;font-size:12pt">Instalaci&oacute;n de C&aacute;maras</h5>';
+            datos1 += '    <p class="card-text">';
+            datos1 += '      <div>';
+            datos1 += '        <span class="prompt" style="width:159px;display:inline-block;">Estado: </span>';
+            datos1 += '        <span style="display:inline-block;">' + datos.features[0].properties['estado'] + '</span>';
+            datos1 += '      </div>';
+            datos1 += '      <div>';
+            datos1 += '        <span class="prompt" style="width:159px;display:inline-block;">Ubicaci&oacuten: </span>';
+            datos1 += '        <span style="display:inline-block;">' + datos.features[0].properties['nombre'] + '</span>';
+            datos1 += '      </div>';
+            datos1 += '      <div>';
+            datos1 += '        <span class="prompt" style="width:159px;display:inline-block;">Año de ejecuci&oacute;n: </span>';
+            datos1 += '        <span style="display:inline-block;">' + datos.features[0].properties['anio'] + '</span>';
+            datos1 += '      </div>';
+            datos1 += '      <div>';
+            datos1 += '        <span class="prompt" style="width:159px;display:inline-block;">Fondo: </span>';
+            datos1 += '        <span style="display:inline-block;">' + datos.features[0].properties['fondo'] + '</span>';
+            datos1 += '      </div>';
+            datos1 += '      <div>';
+            datos1 += '        <span class="prompt" style="width:159px;display:inline-block;">Obra: </span>';
+            datos1 += '        <span style="display:inline-block;">' + datos.features[0].properties['obra'] + '</span>';
+            datos1 += '      </div>';
+            datos1 += '      <div>';
+            datos1 += '        <span class="prompt" style="width:159px;display:inline-block;">Cantidad: </span>';
+            datos1 += '        <span style="display:inline-block;">' + datos.features[0].properties['cantidad'] + ' ' + datos.features[0].properties['unidad'] +  '</span>';
+            datos1 += '      </div>';
+            datos1 += '      <div style="margin-top:12px; border-top: #8C8C8C solid 1px;">';
+            datos1 += '        <span style="color:#8C8C8C;">Direcci&oacute;n General de Sistemas de Informaci&oacute;n Geogr&aacute;fica</span>';
+            datos1 += '      </div>';
+            datos1 += '    </p>';
+            datos1 += '  </div>';
+            datos1 += '</div>';
+
+            this._map.openPopup(datos1, latlng, {minWidth:415});
+
+            return false;
+        }
+
+        // Espacio recuperado //
+        if (queLayer[0] == "vw_espacios_recuperados") {
+            datos1 = '';
+            datos1 += '<div class="card text-dark mr-2">';
+            datos1 += '  <div class="card-body">';
+            datos1 += '    <h5 class="card-title" style="color:#709F6A; font-family:\'Quicksand\', sans-serif;font-weight:700;font-size:12pt">Espacios recuperados</h5>';
+            datos1 += '    <p class="card-text">';
+            datos1 += '      <div>';
+            datos1 += '        <span class="prompt" style="width:159px;display:inline-block;">Estado: </span>';
+            datos1 += '        <span style="display:inline-block;">' + datos.features[0].properties['estado'] + '</span>';
+            datos1 += '      </div>';
+            datos1 += '      <div>';
+            datos1 += '        <span class="prompt" style="width:159px;display:inline-block;">Ubicaci&oacuten: </span>';
+            datos1 += '        <span style="display:inline-block;">' + datos.features[0].properties['nombre'] + '</span>';
+            datos1 += '      </div>';
+            datos1 += '      <div>';
+            datos1 += '        <span class="prompt" style="width:159px;display:inline-block;">Año de ejecuci&oacute;n: </span>';
+            datos1 += '        <span style="display:inline-block;">' + datos.features[0].properties['anio'] + '</span>';
+            datos1 += '      </div>';
+            datos1 += '      <div>';
+            datos1 += '        <span class="prompt" style="width:159px;display:inline-block;">Fondo: </span>';
+            datos1 += '        <span style="display:inline-block;">' + datos.features[0].properties['fondo'] + '</span>';
+            datos1 += '      </div>';
+            datos1 += '      <div>';
+            datos1 += '        <span class="prompt" style="width:159px;display:inline-block;">Obra: </span>';
+            datos1 += '        <span style="display:inline-block;">' + datos.features[0].properties['obra'] + '</span>';
+            datos1 += '      </div>';
+            datos1 += '      <div>';
+            datos1 += '        <span class="prompt" style="width:159px;display:inline-block;">Cantidad: </span>';
+            datos1 += '        <span style="display:inline-block;">' + datos.features[0].properties['cantidad'] + ' ' + datos.features[0].properties['unidad'] +  '</span>';
+            datos1 += '      </div>';
+            datos1 += '      <div style="margin-top:12px; border-top: #8C8C8C solid 1px;">';
+            datos1 += '        <span style="color:#8C8C8C;">Direcci&oacute;n General de Sistemas de Informaci&oacute;n Geogr&aacute;fica</span>';
+            datos1 += '      </div>';
+            datos1 += '    </p>';
+            datos1 += '  </div>';
+            datos1 += '</div>';
+
+            this._map.openPopup(datos1, latlng, {minWidth:415});
 
             return false;
         }
@@ -339,7 +536,7 @@ var wms_GIS = L.WMS.Source.extend({
             }
 
             if (datos.features[0].properties['foto_num'] != null) {
-                datos1 += '<div style="width:300px;height:164px;border: #666 solid 2px;"><img border="0" width="300" height="164" src="http://gis.ciudaddecorrientes.gov.ar/idemcc/images/fotos/fotos_edificios_historicos/' + datos.features[0].properties['foto_num'] + ' .png" /></div>';
+                datos1 += '<div style="/* width:300px; */ border: #666 solid 2px;"><img border="0" width="100%" src="http://gis.ciudaddecorrientes.gov.ar/idemcc/images/fotos/fotos_edificios_historicos/' + datos.features[0].properties['foto_num'] + ' .png" /></div>';
             }
         }
 
@@ -889,7 +1086,7 @@ var wms_GIS = L.WMS.Source.extend({
             datos1 += '<BR />' + '<b>Barrio</b>: ' + datos.features[0].properties['nombre_barrio'];
         }
 
-        if (queLayer[0] == "vw_barrios") {
+        if (queLayer[0] == "vw_barrios_de_la_ciudad") {
             datos1 = '<div><h2>BARRIOS</h2></div>';
             datos1 += '<b>Barrio</b>: ' + datos.features[0].properties['NAM'];
             datos1 += '<BR />' + '<b>Tipo</b>: ' + datos.features[0].properties['GNA'];
@@ -1028,7 +1225,7 @@ var wms_GIS = L.WMS.Source.extend({
         // verifico si hay datos que mostrar
         if (datos1 != undefined) {
 
-            datos1 += '<div style="border-top: 1px solid #7f7f7f; padding-top: 7px; margin-top: 7px; font-family: Roboto; font-size: 11px; color: #7f7f7f">DIR. GRAL. DE S.I.G.</div>';
+            datos1 += '<div class="mr-2" style="border-top: 1px solid #7f7f7f; padding-top: 7px; margin-top: 7px; font-family: Roboto; font-size: 11px; color: #7f7f7f">DIR. GRAL. DE S.I.G.</div>';
 
             this._map.openPopup(datos1, latlng);
 

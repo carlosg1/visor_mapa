@@ -49,8 +49,6 @@ $sql_barrios->execute();
     <script src="js/Control.OSMGeocoder.js"></script>
     <script src="js/leaflet-measure.js"></script>
 
-
-
     <!-- <script src="js/Leaflet.VectorGrid.js"></script> -->
     <script src="https://unpkg.com/leaflet.vectorgrid@latest/dist/Leaflet.VectorGrid.bundled.js"></script>
 

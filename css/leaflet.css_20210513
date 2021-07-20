@@ -1,5 +1,5 @@
 /* required styles */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+
 .leaflet-pane,
 .leaflet-tile,
 .leaflet-marker-icon,
@@ -386,7 +386,7 @@
 /* Default icon URLs */
 .leaflet-default-icon-path {
 	background-image: url(images/marker-icon.png);
-	}
+}
 
 
 /* attribution and scale controls */
@@ -498,24 +498,24 @@
 	background: white;
 	color: #333;
 	box-shadow: 0 3px 14px rgba(0,0,0,0.4);
-	} 
+	}
 .leaflet-container a.leaflet-popup-close-button {
 	position: absolute;
-	top: 3px;
-	right: 7px;
+	top: 0;
+	right: 0;
 	padding: 4px 4px 0 0;
 	border: none;
 	text-align: center;
 	width: 18px;
 	height: 14px;
-	font: 26px/18px 'Open Sans', Tahoma, Verdana, sans-serif;
-	color: #636363;
+	font: 16px/14px Tahoma, Verdana, sans-serif;
+	color: #c3c3c3;
 	text-decoration: none;
 	font-weight: bold;
 	background: transparent;
 	}
 .leaflet-container a.leaflet-popup-close-button:hover {
-	color: rgb(26, 22, 236);
+	color: #999;
 	}
 .leaflet-popup-scrolled {
 	overflow: auto;
