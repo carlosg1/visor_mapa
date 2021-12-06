@@ -2289,7 +2289,7 @@ $(inputBusqueda).keyup(function (e) {
             localStorage.setItem('filter', param1);
             document.getElementById('quit_filtro').classList.remove('d-none');
 
-            //saveVisit(param1, param0); 
+            saveVisit(param1, param0); 
             
             //Consulta y pinta el poligono dela zona en el mapa ----------------------------------------------------------------
             fetch('obras.php?query=getPolygon&request='+param1)

@@ -472,27 +472,31 @@ var wms_GIS = L.WMS.Source.extend({
 
         // Planeamiento urbano //
 
+        // Planeamiento urbano //
+
         // Distritos codigo planeamiento urbano
-        if (queLayer[0] == "vw_distritos_planeamiento_urbano") {
-            datos1 = '<div><h2>Distritos del C&oacute;digo de Planeamiento Urbano</h2></div>';
-            datos1 += '<b>Distrito:</b> ' + datos.features[0].properties['distrito'];
-            datos1 += '<BR />' + '<b>F.O.S.:</b> ' + datos.features[0].properties['fos'];
-            datos1 += '<BR />' + '<b>F.O.T.:</b> ' + datos.features[0].properties['fot'];
-            datos1 += '<BR />' + '<b>Altura m&aacute;xima:</b> ' + datos.features[0].properties['altura_maxima'];
-            datos1 += '<BR />' + '<b>Altura basamento:</b> ' + datos.features[0].properties['altura_basamento'];
-            datos1 += '<BR />' + '<b>Semiperimetro:</b> ' + datos.features[0].properties['semiperimetro'];
-            datos1 += '<BR />' + '<b>Perimetro libre:</b> ' + datos.features[0].properties['perimetro_libre'];
-            datos1 += '<BR />' + '<b>Perimetro libre:</b> ' + datos.features[0].properties['altura_entre_medianera'];
+        if(queLayer[0] == "vw_distritos_planeamiento_urbano"){
+          datos1 = '<div><h2>Distritos del C&oacute;digo de Planeamiento Urbano</h2></div>';
+          datos1 += '<b>Distrito:</b> ' + datos.features[0].properties['distrito'];
+          datos1 += '<BR />' + '<b>F.O.S.:</b> ' + datos.features[0].properties['fos'];
+          datos1 += '<BR />' + '<b>F.O.T.:</b> ' + datos.features[0].properties['fot'];
+          datos1 += '<BR />' + '<b>Altura m&aacute;xima:</b> ' + nvl(datos.features[0].properties['altura_maxima']);
+          datos1 += '<BR />' + '<b>Altura basamento:</b> ' + nvl(datos.features[0].properties['altura_basamento']);
+          datos1 += '<BR />' + '<b>Semiperimetro:</b> ' + nvl(datos.features[0].properties['semiperimetro']);
+          datos1 += '<BR />' + '<b>Perimetro libre:</b> ' + nvl(datos.features[0].properties['perimetro_libre']);
+          datos1 += '<BR />' + '<b>Perimetro libre:</b> ' + nvl(datos.features[0].properties['altura_entre_medianera']);
 
-            if (datos.features[0].properties['pdf_distrito_part'] != null) {
-                datos1 += '<BR />';
-                datos1 += '<BR />' + '<a id="lnk-distrito" target="_blank" href="http://gis.ciudaddecorrientes.gov.ar/idemcc/images/distritos2017/' + datos.features[0].properties['pdf_distrito_part'] + '">Ver la documentaci&oacute;n del distrito ' + datos.features[0].properties['distrito'] + '</a>';
-            }
+          if(datos.features[0].properties['pdf_distrito_part'] != null) {
+            datos1 += '<BR />';
+            datos1 += '<BR />' + '<a id="lnk-distrito" target="_blank" href="https://gis.ciudaddecorrientes.gov.ar/idemcc/images/distritos2017/' + datos.features[0].properties['pdf_distrito_part'] + '">Ver la documentaci&oacute;n del distrito ' + datos.features[0].properties['distrito'] + '</a>';
+          }
 
-            datos1 += '<BR />' + '<a id="lnk-distrito" target="_blank" href="http://gis.ciudaddecorrientes.gob.ar/idemcc/images/distritos2017/Planilla4.pdf">Planilla de referencia</a>';
+          datos1 += '<BR />' + '<a id="lnk-distrito" target="_blank" href="https://gis.ciudaddecorrientes.gov.ar/idemcc/images/distritos2017/Planilla3.pdf">Planilla 3: Usos Seg&uacute;n Distritos</a>';
 
-            datos1 += '<BR />' + '<a id="lnk-distrito" target="_blank" href="http://gis.ciudaddecorrientes.gob.ar/idemcc/images/distritos2017/CodigoPlaneamientoUrbano31-10-17.pdf">C&oacute;digo de Planiamiento Urbano</a>';
+          datos1 += '<BR />' + '<a id="lnk-distrito" target="_blank" href="https://gis.ciudaddecorrientes.gov.ar/idemcc/images/distritos2017/Planilla4.pdf">Planilla 4: de referencia</a>';
 
+          datos1 += '<BR />' + '<a id="lnk-distrito" target="_blank" href="https://gis.ciudaddecorrientes.gov.ar/idemcc/images/distritos2017/Texto_Ordenado_CodigoPlaneamientoUrbano_Abril_2020.pdf">C&oacute;digo de Planiamiento Urbano</a>';
+          
         }
 
         // ejido urbano
@@ -662,6 +666,13 @@ var wms_GIS = L.WMS.Source.extend({
             datos1 += '<BR />' + '<span class="prompt1">Direcci&oacute;n:</span> ' + datos.features[0].properties['direccion'];
         }
 
+        // saps
+        if (queLayer[0] == "vw_saps") {
+            datos1 = '<div><h2>S.A.P.S.</h2></div>';
+            datos1 += '<span class="prompt1">Delegaci&oacute;n:</span> ' + datos.features[0].properties['nombre'];
+            datos1 += '<BR />' + '<span class="prompt1">Direcci&oacute;n:</span> ' + datos.features[0].properties['direccion'];
+        }
+
         // Centros de salud
         if (queLayer[0] == "vw_centros_de_salud") {
             datos1 = '<div><h2>Centros de Salud</h2></div>';
@@ -685,7 +696,7 @@ var wms_GIS = L.WMS.Source.extend({
         }
 
         // Areas programaticas salud
-        if (queLayer[0] == "vw_areas_program&aacute;ticas_saps") {
+        if (queLayer[0] == "vw_areas_programaticas_saps") {
             datos1 = '<div><h2>Areas programaticas Salud</h2></div>';
             datos1 += '<span class="prompt1">Zona:</span> ' + datos.features[0].properties['zona'];
             datos1 += '<BR /><BR />';

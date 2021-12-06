@@ -9,7 +9,13 @@ function compartirUrl(){
 		let capasActivas = [];
 		seleccionados = $('#arbolMCC').jstree('get_selected', true);
 		seleccionados.forEach(e => capasActivas.push(e.id));
-		let url = location.origin + location.pathname + '?menu='+menu_abierto+ '&c=' + capasActivas.toString() + location.hash;
+
+		let hashsearch = new URLSearchParams(location.search);
+        let hash = hashsearch.get('h');
+
+		if(!hash) hash = '';
+
+		let url = location.origin + location.pathname + '?h='+hash+'&menu='+menu_abierto+ '&c=' + capasActivas.toString() + location.hash;
 		navigator.clipboard.writeText(url).then(function(){
 			Snackbar.show({
 				pos : 'bottom-left',
